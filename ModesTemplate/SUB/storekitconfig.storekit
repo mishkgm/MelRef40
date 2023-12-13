@@ -1,0 +1,190 @@
+{
+  "identifier" : "AA51FFBD",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+
+  ],
+  "settings" : {
+    "_applicationInternalID" : "6451389847",
+    "_developerTeamID" : "WSL2HKX9YP",
+    "_failTransactionsEnabled" : false,
+    "_lastSynchronizedDate" : 719251811.27919102,
+    "_locale" : "en_US",
+    "_storefront" : "USA",
+    "_storeKitErrors" : [
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Load Products"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Purchase"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Verification"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Store Sync"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Subscription Status"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Transaction"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Manage Subscriptions Sheet"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Refund Request Sheet"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Offer Code Redeem Sheet"
+      }
+    ]
+  },
+  "subscriptionGroups" : [
+    {
+      "id" : "21363540",
+      "localizations" : [
+
+      ],
+      "name" : "subscribes",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "4.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "6451389812",
+          "introductoryOffer" : null,
+          "localizations" : [
+
+          ],
+          "productID" : "main_sub",
+          "recurringSubscriptionPeriod" : "P1W",
+          "referenceName" : "main",
+          "subscriptionGroupID" : "21363540",
+          "type" : "RecurringSubscription"
+        }
+      ]
+    },
+    {
+      "id" : "21364068",
+      "localizations" : [
+
+      ],
+      "name" : "unlockerOne",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "3.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "6451414022",
+          "introductoryOffer" : null,
+          "localizations" : [
+
+          ],
+          "productID" : "unlockOne",
+          "recurringSubscriptionPeriod" : "P1W",
+          "referenceName" : "unlock1",
+          "subscriptionGroupID" : "21364068",
+          "type" : "RecurringSubscription"
+        }
+      ]
+    },
+    {
+      "id" : "21364177",
+      "localizations" : [
+
+      ],
+      "name" : "unlockerThree",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "9.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "6451414495",
+          "introductoryOffer" : null,
+          "localizations" : [
+
+          ],
+          "productID" : "unlockThree",
+          "recurringSubscriptionPeriod" : "P1W",
+          "referenceName" : "unlock3",
+          "subscriptionGroupID" : "21364177",
+          "type" : "RecurringSubscription"
+        }
+      ]
+    },
+    {
+      "id" : "21363891",
+      "localizations" : [
+
+      ],
+      "name" : "unlockerTwo",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "1.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "6451414134",
+          "introductoryOffer" : null,
+          "localizations" : [
+
+          ],
+          "productID" : "unlockTwo",
+          "recurringSubscriptionPeriod" : "P1W",
+          "referenceName" : "unlock2",
+          "subscriptionGroupID" : "21363891",
+          "type" : "RecurringSubscription"
+        }
+      ]
+    }
+  ],
+  "version" : {
+    "major" : 3,
+    "minor" : 0
+  }
+}

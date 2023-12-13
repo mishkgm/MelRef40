@@ -1,0 +1,113 @@
+{
+  "pins" : [
+    {
+      "identity" : "alamofire",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Alamofire/Alamofire.git",
+      "state" : {
+        "revision" : "3dc6a42c7727c49bf26508e29b0a0b35f9c7e1ad",
+        "version" : "5.8.1"
+      }
+    },
+    {
+      "identity" : "dropdown",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/AssistoLab/DropDown.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "2ab6f6ce19f0117d1a76ea043ef8f57722c65d16"
+      }
+    },
+    {
+      "identity" : "ios_sdk",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/adjust/ios_sdk",
+      "state" : {
+        "branch" : "master",
+        "revision" : "54096650288c5c4411a24c5594e28f033a77aff7"
+      }
+    },
+    {
+      "identity" : "iqkeyboardmanager",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/hackiftekhar/IQKeyboardManager.git",
+      "state" : {
+        "revision" : "c00b1ae9fa1ad8af4465bb6ca901f6943fc98eba",
+        "version" : "6.5.16"
+      }
+    },
+    {
+      "identity" : "promisekit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/mxcl/PromiseKit.git",
+      "state" : {
+        "revision" : "cb70b070cde06837cd10a1febdf6105c1a3bb348",
+        "version" : "8.1.1"
+      }
+    },
+    {
+      "identity" : "pushwoosh-xcframework",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Pushwoosh/Pushwoosh-XCFramework",
+      "state" : {
+        "revision" : "53877ebcf48ef24daaf310254b10f58624e29fd5",
+        "version" : "6.5.5"
+      }
+    },
+    {
+      "identity" : "realm-core",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/realm/realm-core.git",
+      "state" : {
+        "revision" : "c569bec4d04da84030d94f376437bc4efda3686b",
+        "version" : "13.23.1"
+      }
+    },
+    {
+      "identity" : "realm-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/realm/realm-swift.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "95cb711d60801e82542b866d16d75608c40d7b2e"
+      }
+    },
+    {
+      "identity" : "sdwebimage",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SDWebImage/SDWebImage",
+      "state" : {
+        "revision" : "1b9a2e902cbde5fdf362faa0f4fd76ea74d74305",
+        "version" : "5.18.5"
+      }
+    },
+    {
+      "identity" : "snapkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SnapKit/SnapKit",
+      "state" : {
+        "revision" : "f222cbdf325885926566172f6f5f06af95473158",
+        "version" : "5.6.0"
+      }
+    },
+    {
+      "identity" : "swiftydropbox",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/dropbox/SwiftyDropbox.git",
+      "state" : {
+        "revision" : "5bda01b02a87568801a5b2af07e3fdb075dce69c",
+        "version" : "9.2.0"
+      }
+    },
+    {
+      "identity" : "swiftygif",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/kirualex/SwiftyGif",
+      "state" : {
+        "revision" : "d6d26061d6553a493781ad3df4a8e275c43fc373",
+        "version" : "5.4.4"
+      }
+    }
+  ],
+  "version" : 2
+}

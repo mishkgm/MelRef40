@@ -1,0 +1,187 @@
+/*
+  LocalizableSubscription.strings
+  Equalizer - Volume Booster EQ
+
+  Created by User on 04.05.2023.
+  
+*/
+
+/**/
+"iOSAfterID"="* Cet essai se renouvelle automatiquement en un abonnement payant et continuera à se renouveler automatiquement jusqu'à ce que vous l'annuliez. * Vous devez être abonné pour utiliser cette application. Pas de contenu gratuit. * Les paiements d'abonnement seront débités de votre compte iTunes lors de la confirmation de votre achat. * Les abonnements seront automatiquement renouvelés et le paiement sera débité de votre compte iTunes à moins que le renouvellement automatique ne soit désactivé au moins 24 heures avant la fin de la période en cours. Le coût du renouvellement dépend de votre plan d'abonnement. Nos plans d'abonnement standard sont : * Abonnement d'une semaine (%@) Pour les autres devises, le prix correspond au même niveau de prix sur la matrice de tarification de l'App Store. * L'abonnement avec une période d'essai gratuite sera automatiquement renouvelé en un abonnement payant. Vous pouvez annuler ou gérer le renouvellement automatique de votre essai gratuit dans les paramètres de votre compte après l'achat. L'annulation prendra effet 24 heures après le dernier jour de la période d'abonnement en cours et vous serez rétrogradé au service gratuit. * Veuillez noter : toute portion inutilisée d'une période d'essai gratuite de 3 jours (si offerte) sera perdue lorsque vous achetez un abonnement premium pendant la période d'essai gratuite. S'il vous plaît, pour plus d'informations, consultez notre politique de confidentialité et nos conditions d'utilisation.";
+/**/
+"iOSButtonID"="CONTINUER";
+/**/
+"iOSStart3daysTitleID"="COMMENCEZ 3 JOURS GRATUITEMENT PUIS 5,99 $/SEMAINE";
+
+/**/
+"LoadingID"="CHARGEMENT";
+
+/**/
+"PrivacyID"="Politique de confidentialité";
+
+/**/
+"restore"="Restaurer";
+
+/**/
+"TermsID"="Conditions d'utilisation";
+
+/**/
+"SliderID1"="OBTENEZ L'EMPLACEMENT DE L'ARMURE FIERCE DEITY";
+/**/
+"SliderID2"="TROUVEZ 5 CAPACITÉS DES SAGES ET DE LA FORÊT DE KOROK";
+/**/
+"SliderID3"="TOUTES LES GROTTES ET PUITS SUR LA CARTE";
+/**/
+"SliderID4"="TOUS LES 152 SANCTUAIRES SUR LA CARTE INTERACTIVE";
+/**/
+"SliderID5"="COLLECTIONNEZ TOUS LES ENSEMBLES D'ARMURE PAR LIEUX";
+
+/**/
+"Text0ID"="CHOISISSEZ VOTRE ENSEMBLE D'ARMURE";
+
+/**/
+"Text17ID"="CHOISISSEZ LA COMPÉTENCE SOUHAITÉE";
+
+/**/
+"Text18ID"="Capacité amiibo";
+
+/**/
+"Text19ID"="Capacité de fusible";
+
+/**/
+"Text20ID"="Capacité d'ascension";
+
+/**/
+"Text21ID"="Capacité de rappel";
+
+/**/
+"Text22ID"="Capacité de la caméra";
+
+/**/
+
+"Text30ID"="Problème de connectivité";
+"Text31ID"="La connexion Internet semble être hors ligne ☹️";
+
+
+
+"continue" = "Continue";
+"textFirst" = "TEXT TEXT TEXT TEXT
+TEXT TEXT TEXT ";
+"textSecond" = "TEXT TEXT TEXT TEXT
+TEXT TEXT TEXT ";
+
+
+"view1Content1" = "TEXT TEXT";
+"view1Content2" = "TEXT TEXT";
+"view1Content3" = "TEXT TEXT";
+"view1Content4" = "TEXT TEXT";
+"view1Content5" = "TEXT TEXT";
+"view1Content6" = "TEXT TEXT";
+"view1Content7" = "TEXT TEXT";
+"view1Content8" = "TEXT TEXT";
+"view1Content9" = "TEXT TEXT";
+"view1Content10" = "TEXT TEXT";
+
+"view2Content1" = "TEXT TEXT";
+"view2Content2" = "TEXT TEXT";
+"view2Content3" = "TEXT TEXT";
+"view2Content4" = "TEXT TEXT";
+"view2Content5" = "TEXT TEXT";
+"view2Content6" = "TEXT TEXT";
+"view2Content7" = "TEXT TEXT";
+"view2Content8" = "TEXT TEXT";
+"view2Content9" = "TEXT TEXT";
+"view2Content10" = "TEXT TEXT";
+
+
+"slider_one" = "TEXT TEXT TEXT TEXT
+TEXT TEXT TEXT ";
+"slider_two" = "TEXT TEXT TEXT TEXT
+TEXT TEXT TEXT ";
+"slider_three" = "TEXT TEXT TEXT TEXT
+TEXT TEXT TEXT ";
+"slider_four" = "TEXT TEXT TEXT TEXT
+TEXT TEXT TEXT ";
+"slider_five" = "TEXT TEXT TEXT TEXT
+TEXT TEXT TEXT ";
+
+
+"restore" = "Restore";
+"price_label" = "Start 3-days for FREE \n Then 000000000 /week";
+"price_label_bold" = " $5.99";
+
+"agreement_full_text" = "* This trial automatically renews into a paid subscription and will continue to automatically renew until you cancel.* You need to be subscribed to use this app. No free content.* Subscription payments will be charged to your iTunes account at confirmation of your purchase.* Subscriptions will automatically renew and payment will be charged to your iTunes account unless auto-renew is turned off at least 24 hours prior to the end of the current period. The cost of the renewal depends on your Subscription Plan. Our standard Subscription Plans are:* 1-week Subscription (000000000).  For other currencies, the price corresponds to the same price tier on the App Store Pricing Matrix.* Subscription with a free trial period will automatically renew to a paid subscription. You can cancel or manage your free trial’s auto-renewal in your Account Settings after purchase. The cancellation will take effect 24-hours after the last day of the current subscription period and you will be downgraded to the free service.* Please note: any unused portion of a free trial period of 3 days(if offered) will be forfeited when you purchase a premium subscription during the free trial period.Please, for more information see our Privacy Policy and Terms of Use.";
+"terms_of_use" = "Terms of Use";
+"privacy_policy" = "Privacy Policy";
+
+"error_iap" = "Error";
+"inval_prod_id" = "Invalid product";
+"faledRestore" = "Faled to restore";
+"notPurchases" = "You not have purchases";
+
+"melonMods" = "MELON MODS";
+"emptyLabel" = "No saved works yet";
+
+"downloadLabel" = "Download";
+"shareLabel" = "Share";
+"startEditModeLabel" = "Start Edit Mode";
+"modDescription" = "Mod Description";
+"subsInfo" = "SUBSCRIPTION INFO";
+"settings" = "settings";
+"categoriesLabel" = "Categories";
+"loading" = "Loading";
+"Can’t save mod without name" = "Can’t save mod without name";
+
+"My_Works" = "My works";
+"Mods_" = "Mods";
+"Editor_" = "Editor";
+"Favorite_" = "Favorite";
+
+"MISC TEMPLATES" = "Misc templates";
+"LIVING TEMPLATES" = "Living templates";
+
+"SET ITEM SETTINGS" = "Misc templates";
+"SET COLLIDERS" = "Set colliders";
+"SELECT TEXTURE" = "Select texture";
+"SET PROPRTIES" = "Set properties";
+
+"search" = "Search";
+
+
+"success" = "Success";
+"success_completed" = "Action done!";
+
+"show_all" = "View all";
+
+"Subscription" = "Subscription";
+"watchVideo" = "Watch Video";
+
+"firstLabel_s" = "Hooray!";
+"descriptionTitle_s" = "You have received an exclusive offer for a subscription to Melon Playground!
+Our paid subscription will give you access to the full collection of tools and skins, which will help you create even more Blue scenes. ";
+"thirdLabel_s" = "Click the \"Subscribe\" button and start creating your masterpieces today!";
+"actionTitle_s" = "Subscribe!";
+
+"firstLabel_w" = "Welcome to Melon Playground.";
+"descriptionTitle_w" = "To start playing and enjoying this exciting platform, we invite you to watch our short video and get an Blue prize.";
+"thirdLabel_w" = "Click on the \"Watch now\" button and enjoy our game to the fullest!";
+"actionTitle_w" = "Watch now";
+
+"Enabled" = "Active";
+"Disabled" = "Disabled";
+"saveChange" = "Do you want to save changes?";
+"cancel" = "Cancel";
+
+"nothingToSave" = "Nothing to saved";
+
+"successDownloadFile" = "Downloading successful";
+"successDownloadFile2" = "File saved at `Files`";
+
+"wait" = "Waiting";
+
+"load_texture" = "LOAD TEXTURE:";
+
+"noName" = "Can't save mod without name";
+"noInternetConnection" = "No internet connection";
+
+

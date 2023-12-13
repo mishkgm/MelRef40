@@ -1,0 +1,94 @@
+/* 
+  Localizable.strings
+  ModesTemplate
+
+  Created by evhn on 29.11.2023.
+  
+*/
+
+"skins" = "Skins";
+"mods" = "Mods";
+"items" = "Items";
+"editor" = "Editor";
+"favourite" = "Favourites";
+"myWorks" = "My works";
+"setting" = "Setting";
+
+"cancel-action" = "Cancel";
+"delete-action" = "Delete";
+
+"start-edit-mod" = "Start edit mod";
+"download" = "Download";
+"downloaded" = "Downloaded";
+"share" = "Share";
+"export" = "Export";
+
+"complete-saved" = "Saved";
+"complete-downloaded" = "Downloaded";
+"favourite" = "Favorite";
+"" = "";
+"" = "";
+
+"iOSAfterID"="* ניסיון זה מתחדש אוטומטית למנוי בתשלום ותמשיך להתחדש אוטומטית עד שתבטל. * אתה צריך להיות מנוי כדי להשתמש באפליקציה זו. אין תוכן חינמי. * תשלומי מנוי יחויבו בחשבון iTunes שלך עם אישור הרכישה. * מינויים יתחדשו אוטומטית והתשלום יחויב בחשבון iTunes שלך, אלא אם החידוש האוטומטי כבוי לפחות 24 שעות לפני תום התקופה הנוכחית. עלות החידוש תלויה בתוכנית המנוי שלך. תוכניות המנוי הסטנדרטיות שלנו הן: * מנוי לשבוע אחד ($4.99) עבור מטבעות אחרים, המחיר מתאים לאותה דרגת מחיר במטריצת התמחור של App Store. * מנוי עם תקופת ניסיון חינם יתחדש אוטומטית למנוי בתשלום. אתה יכול לבטל או לנהל את החידוש האוטומטי של תקופת הניסיון בחינם שלך בהגדרות החשבון שלך לאחר הרכישה. הביטול ייכנס לתוקף 24 שעות לאחר היום האחרון של תקופת המנוי הנוכחית ותשודרג לשירות החינמי. * שימו לב: כל חלק שלא נעשה בו שימוש מתקופת ניסיון חינם של 3 ימים (אם מוצעת) יבוטל בעת רכישת מנוי פרימיום במהלך תקופת הניסיון בחינם. אנא, למידע נוסף עיין במדיניות הפרטיות ובתנאי השימוש שלנו.";
+/**/
+"iOSButtonID"="לְהַמשִׁיך";
+/**/
+"iOSStart3daysTitleID"="התחל 3 ימים בחינם ואז 4.99 $ לשבוע";
+
+/**/
+"LoadingID"="טוען";
+
+/**/
+"PrivacyID"="מדיניות הפרטיות";
+
+/**/
+"restore"="לשחזר";
+
+/**/
+"TermsID"="תנאי שימוש";
+
+/**/
+"SliderID1"="קבל את  האלוהות העז";
+/**/
+"SliderID2"="מצא 5 ים ויער קורוק";
+/**/
+"SliderID3"="כל המערות במפה";
+/**/
+"SliderID4"="כל 152 המקדטראקטיבית";
+/**/
+"SliderID5"="אסוף את כל י מיקומים";
+
+/**/
+"TextTitle1ID"="בחר את ערכתון שלך";
+
+/**/
+"TextTitle2ID"="בחר את היכוהרצויה";
+
+/**/
+"Text1ID"="יכולת Amiibo";
+
+/**/
+"Text2ID"="יכולת פיוז";
+
+/**/
+"Text3ID"="יכולת עלייה";
+
+/**/
+"Text4ID"="יכולת זכירה";
+
+/**/
+"Text5ID"="יכולת מצלמה";
+
+/**/
+
+"ConnectivityTitle"="בעיית קישוריות";
+"ConnectivityDescription"="נראה שהחיבור לאינטרנט לא מקוון ☹️";
+
+
+"error_iap" = "Error";
+"inval_prod_id" = "Invalid product";
+"faledRestore" = "Failed to restore";
+"notPurchases" = "No Purchases";
+
+"terms_of_use" = "Terms of Use";
+"privacy_policy" = "Privacy Policy";

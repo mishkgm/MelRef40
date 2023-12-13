@@ -1,0 +1,187 @@
+/*
+  LocalizableSubscription.strings
+  Equalizer - Volume Booster EQ
+
+  Created by User on 04.05.2023.
+  
+*/
+
+/**/
+"iOSAfterID"="* Bản dùng thử này tự động gia hạn thành đăng ký trả phí và sẽ tiếp tục tự động gia hạn cho đến khi bạn hủy. * Bạn cần đăng ký để sử dụng ứng dụng này. Không có nội dung miễn phí. * Thanh toán đăng ký sẽ được tính vào tài khoản iTunes của bạn khi xác nhận giao dịch mua của bạn. * Đăng ký sẽ tự động gia hạn và thanh toán sẽ được tính vào tài khoản iTunes của bạn trừ khi tắt tự động gia hạn ít nhất 24 giờ trước khi kết thúc giai đoạn hiện tại. Chi phí gia hạn tùy thuộc vào Gói đăng ký của bạn. Gói đăng ký tiêu chuẩn của chúng tôi là: * Đăng ký 1 tuần (%@) Đối với các loại tiền tệ khác, giá tương ứng với cùng một mức giá trên Ma trận giá của App Store. * Đăng ký có thời gian dùng thử miễn phí sẽ tự động gia hạn thành đăng ký trả phí. Bạn có thể hủy hoặc quản lý việc tự động gia hạn bản dùng thử miễn phí của mình trong Cài đặt tài khoản sau khi mua. Việc hủy bỏ sẽ có hiệu lực sau 24 giờ kể từ ngày cuối cùng của thời hạn đăng ký hiện tại và bạn sẽ bị hạ cấp xuống dịch vụ miễn phí. * Xin lưu ý: mọi phần chưa sử dụng trong thời gian dùng thử miễn phí 3 ngày (nếu được cung cấp) sẽ bị mất khi bạn mua đăng ký trả phí trong thời gian dùng thử miễn phí. Vui lòng, để biết thêm thông tin, hãy xem Chính sách quyền riêng tư và Điều khoản sử dụng của chúng tôi.";
+/**/
+"iOSButtonID"="TIẾP TỤC";
+/**/
+"iOSStart3daysTitleID"="BẮT ĐẦU 3 NGÀY MIỄN PHÍ SAU ĐÓ $5,99/TUẦN";
+
+/**/
+"LoadingID"="ĐANG TẢI";
+
+/**/
+"PrivacyID"="Chính sách bảo mật";
+
+/**/
+"restore"="Khôi phục";
+
+/**/
+"TermsID"="Điều khoản sử dụng";
+
+/**/
+"SliderID1"="GET FIERCE DEITY ARMOR VỊ TRÍ";
+/**/
+"SliderID2"="TÌM 5 KHẢ NĂNG CỦA CÁC THẦY VÀ RỪNG KOROK";
+/**/
+"SliderID3"="TẤT CẢ CÁC Hang VÀ Giếng TRÊN BẢN ĐỒ";
+/**/
+"SliderID4"="TẤT CẢ 152 THỜ TRÊN BẢN ĐỒ TƯƠNG TÁC";
+/**/
+"SliderID5"="THU THẬP TẤT CẢ CÁC BỘ GIÁP THEO VỊ TRÍ";
+
+/**/
+"Text0ID"="CHỌN BỘ GIÁP CỦA BẠN";
+
+/**/
+"Text17ID"="CHỌN KHẢ NĂNG MONG MUỐN";
+
+/**/
+"Text18ID"="Khả năng Amiibo";
+
+/**/
+"Text19ID"="khả năng cầu chì";
+
+/**/
+"Text20ID"="khả năng đi lên";
+
+/**/
+"Text21ID"="khả năng nhớ lại";
+
+/**/
+"Text22ID"="khả năng máy ảnh";
+
+/**/
+
+"Text30ID"="Sự cố kết nối";
+"Text31ID"="Kết nối Internet dường như đang ngoại tuyến ☹️";
+
+
+"continue" = "Continue";
+"textFirst" = "TEXT TEXT TEXT TEXT
+TEXT TEXT TEXT ";
+"textSecond" = "TEXT TEXT TEXT TEXT
+TEXT TEXT TEXT ";
+
+
+"view1Content1" = "TEXT TEXT";
+"view1Content2" = "TEXT TEXT";
+"view1Content3" = "TEXT TEXT";
+"view1Content4" = "TEXT TEXT";
+"view1Content5" = "TEXT TEXT";
+"view1Content6" = "TEXT TEXT";
+"view1Content7" = "TEXT TEXT";
+"view1Content8" = "TEXT TEXT";
+"view1Content9" = "TEXT TEXT";
+"view1Content10" = "TEXT TEXT";
+
+"view2Content1" = "TEXT TEXT";
+"view2Content2" = "TEXT TEXT";
+"view2Content3" = "TEXT TEXT";
+"view2Content4" = "TEXT TEXT";
+"view2Content5" = "TEXT TEXT";
+"view2Content6" = "TEXT TEXT";
+"view2Content7" = "TEXT TEXT";
+"view2Content8" = "TEXT TEXT";
+"view2Content9" = "TEXT TEXT";
+"view2Content10" = "TEXT TEXT";
+
+
+"slider_one" = "TEXT TEXT TEXT TEXT
+TEXT TEXT TEXT ";
+"slider_two" = "TEXT TEXT TEXT TEXT
+TEXT TEXT TEXT ";
+"slider_three" = "TEXT TEXT TEXT TEXT
+TEXT TEXT TEXT ";
+"slider_four" = "TEXT TEXT TEXT TEXT
+TEXT TEXT TEXT ";
+"slider_five" = "TEXT TEXT TEXT TEXT
+TEXT TEXT TEXT ";
+
+
+"restore" = "Restore";
+"price_label" = "Start 3-days for FREE \n Then 000000000 /week";
+"price_label_bold" = " $5.99";
+
+"agreement_full_text" = "* This trial automatically renews into a paid subscription and will continue to automatically renew until you cancel.* You need to be subscribed to use this app. No free content.* Subscription payments will be charged to your iTunes account at confirmation of your purchase.* Subscriptions will automatically renew and payment will be charged to your iTunes account unless auto-renew is turned off at least 24 hours prior to the end of the current period. The cost of the renewal depends on your Subscription Plan. Our standard Subscription Plans are:* 1-week Subscription (000000000).  For other currencies, the price corresponds to the same price tier on the App Store Pricing Matrix.* Subscription with a free trial period will automatically renew to a paid subscription. You can cancel or manage your free trial’s auto-renewal in your Account Settings after purchase. The cancellation will take effect 24-hours after the last day of the current subscription period and you will be downgraded to the free service.* Please note: any unused portion of a free trial period of 3 days(if offered) will be forfeited when you purchase a premium subscription during the free trial period.Please, for more information see our Privacy Policy and Terms of Use.";
+"terms_of_use" = "Terms of Use";
+"privacy_policy" = "Privacy Policy";
+
+"error_iap" = "Error";
+"inval_prod_id" = "Invalid product";
+"faledRestore" = "Faled to restore";
+"notPurchases" = "You not have purchases";
+
+"melonMods" = "MELON MODS";
+"emptyLabel" = "No saved works yet";
+
+"downloadLabel" = "Download";
+"shareLabel" = "Share";
+"startEditModeLabel" = "Start Edit Mode";
+"modDescription" = "Mod Description";
+"subsInfo" = "SUBSCRIPTION INFO";
+"settings" = "settings";
+"categoriesLabel" = "Categories";
+"loading" = "Loading";
+"Can’t save mod without name" = "Can’t save mod without name";
+
+"My_Works" = "My works";
+"Mods_" = "Mods";
+"Editor_" = "Editor";
+"Favorite_" = "Favorite";
+
+"MISC TEMPLATES" = "Misc templates";
+"LIVING TEMPLATES" = "Living templates";
+
+"SET ITEM SETTINGS" = "Misc templates";
+"SET COLLIDERS" = "Set colliders";
+"SELECT TEXTURE" = "Select texture";
+"SET PROPRTIES" = "Set properties";
+
+"search" = "Search";
+
+
+"success" = "Success";
+"success_completed" = "Action done!";
+
+"show_all" = "View all";
+
+"Subscription" = "Subscription";
+"watchVideo" = "Watch Video";
+
+"firstLabel_s" = "Hooray!";
+"descriptionTitle_s" = "You have received an exclusive offer for a subscription to Melon Playground!
+Our paid subscription will give you access to the full collection of tools and skins, which will help you create even more Blue scenes. ";
+"thirdLabel_s" = "Click the \"Subscribe\" button and start creating your masterpieces today!";
+"actionTitle_s" = "Subscribe!";
+
+"firstLabel_w" = "Welcome to Melon Playground.";
+"descriptionTitle_w" = "To start playing and enjoying this exciting platform, we invite you to watch our short video and get an Blue prize.";
+"thirdLabel_w" = "Click on the \"Watch now\" button and enjoy our game to the fullest!";
+"actionTitle_w" = "Watch now";
+
+"Enabled" = "Active";
+"Disabled" = "Disabled";
+"saveChange" = "Do you want to save changes?";
+"cancel" = "Cancel";
+
+"nothingToSave" = "Nothing to saved";
+
+"successDownloadFile" = "Downloading successful";
+"successDownloadFile2" = "File saved at `Files`";
+
+"wait" = "Waiting";
+
+"load_texture" = "LOAD TEXTURE:";
+
+"noName" = "Can't save mod without name";
+"noInternetConnection" = "No internet connection";
+
+
+

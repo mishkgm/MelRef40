@@ -1,0 +1,187 @@
+/*
+  LocalizableSubscription.strings
+  Equalizer - Volume Booster EQ
+
+  Created by User on 04.05.2023.
+  
+*/
+
+/**/
+"iOSAfterID"="* Bu deneme otomatik olarak ücretli bir abonelik olarak yenilenir ve siz iptal edene kadar otomatik olarak yenilenmeye devam eder. * Bu uygulamayı kullanmak için abone olmanız gerekmektedir. Ücretsiz içerik yok. * Abonelik ödemeleri, satın alma işleminizin onaylanmasıyla birlikte iTunes hesabınıza yansıtılacaktır. * Abonelikler otomatik olarak yenilenecek ve otomatik yenileme, cari dönemin bitiminden en az 24 saat önce kapatılmadığı sürece iTunes hesabınızdan tahsil edilecektir. Yenilemenin maliyeti Abonelik Planınıza bağlıdır. Standart Abonelik Planlarımız şunlardır: * 1 Haftalık Abonelik (%@) Diğer para birimleri için fiyat, App Store Fiyatlandırma Matrisindeki aynı fiyat kademesine karşılık gelir. * Ücretsiz deneme süresi olan abonelik, otomatik olarak ücretli bir abonelikle yenilenir. Satın aldıktan sonra Hesap Ayarlarınızda ücretsiz denemenizin otomatik olarak yenilenmesini iptal edebilir veya yönetebilirsiniz. İptal, mevcut abonelik süresinin son gününden 24 saat sonra geçerli olacak ve ücretsiz hizmete indirileceksiniz. * Lütfen unutmayın: 3 günlük ücretsiz deneme süresinin (eğer teklif edilirse) kullanılmayan kısmı, ücretsiz deneme süresi boyunca bir premium abonelik satın aldığınızda kaybedilecektir. Lütfen, daha fazla bilgi için Gizlilik Politikamıza ve Kullanım Koşullarımıza bakın.";
+/**/
+"iOSButtonID"="DEVAM ETMEK";
+/**/
+"iOSStart3daysTitleID"="3 GÜN ÜCRETSİZ BAŞLAYIN, SONRA HAFTADA 5,99 $";
+
+/**/
+"LoadingID"="YÜKLENİYOR";
+
+/**/
+"PrivacyID"="Gizlilik Politikası";
+
+/**/
+"restore"="Eski haline getirmek";
+
+/**/
+"TermsID"="Kullanım Şartları";
+
+/**/
+"SliderID1"="HIRSIZ DEITY ZIRH KONUMUNU ALIN";
+/**/
+"SliderID2"="BİLGELERİN VE KOROK ORMANININ 5 YETENEĞİNİ BULUN";
+/**/
+"SliderID3"="HARİTADAKİ TÜM MAĞARA VE KUYULAR";
+/**/
+"SliderID4"="İNTERAKTİF HARİTA ÜZERİNDEKİ 152 TAPINAĞIN TÜMÜ";
+/**/
+"SliderID5"="KONUMA GÖRE TÜM ZIRH SETLERİNİ TOPLA";
+
+/**/
+"Text0ID"="ZIRH SETİNİZİ SEÇİN";
+
+/**/
+"Text17ID"="İSTEDİĞİNİZ YETENEĞİ SEÇİN";
+
+/**/
+"Text18ID"="Amiibo yeteneği";
+
+/**/
+"Text19ID"="Sigorta yeteneği";
+
+/**/
+"Text20ID"="Yükselme yeteneği";
+
+/**/
+"Text21ID"="Hatırlama yeteneği";
+
+/**/
+"Text22ID"="Kamera yeteneği";
+
+/**/
+
+"Text30ID"="Bağlantı Sorunu";
+"Text31ID"="İnternet bağlantısı çevrimdışı görünüyor ☹️";
+
+
+
+"continue" = "Continue";
+"textFirst" = "TEXT TEXT TEXT TEXT
+TEXT TEXT TEXT ";
+"textSecond" = "TEXT TEXT TEXT TEXT
+TEXT TEXT TEXT ";
+
+
+"view1Content1" = "TEXT TEXT";
+"view1Content2" = "TEXT TEXT";
+"view1Content3" = "TEXT TEXT";
+"view1Content4" = "TEXT TEXT";
+"view1Content5" = "TEXT TEXT";
+"view1Content6" = "TEXT TEXT";
+"view1Content7" = "TEXT TEXT";
+"view1Content8" = "TEXT TEXT";
+"view1Content9" = "TEXT TEXT";
+"view1Content10" = "TEXT TEXT";
+
+"view2Content1" = "TEXT TEXT";
+"view2Content2" = "TEXT TEXT";
+"view2Content3" = "TEXT TEXT";
+"view2Content4" = "TEXT TEXT";
+"view2Content5" = "TEXT TEXT";
+"view2Content6" = "TEXT TEXT";
+"view2Content7" = "TEXT TEXT";
+"view2Content8" = "TEXT TEXT";
+"view2Content9" = "TEXT TEXT";
+"view2Content10" = "TEXT TEXT";
+
+
+"slider_one" = "TEXT TEXT TEXT TEXT
+TEXT TEXT TEXT ";
+"slider_two" = "TEXT TEXT TEXT TEXT
+TEXT TEXT TEXT ";
+"slider_three" = "TEXT TEXT TEXT TEXT
+TEXT TEXT TEXT ";
+"slider_four" = "TEXT TEXT TEXT TEXT
+TEXT TEXT TEXT ";
+"slider_five" = "TEXT TEXT TEXT TEXT
+TEXT TEXT TEXT ";
+
+
+"restore" = "Restore";
+"price_label" = "Start 3-days for FREE \n Then 000000000 /week";
+"price_label_bold" = " $5.99";
+
+"agreement_full_text" = "* This trial automatically renews into a paid subscription and will continue to automatically renew until you cancel.* You need to be subscribed to use this app. No free content.* Subscription payments will be charged to your iTunes account at confirmation of your purchase.* Subscriptions will automatically renew and payment will be charged to your iTunes account unless auto-renew is turned off at least 24 hours prior to the end of the current period. The cost of the renewal depends on your Subscription Plan. Our standard Subscription Plans are:* 1-week Subscription (000000000).  For other currencies, the price corresponds to the same price tier on the App Store Pricing Matrix.* Subscription with a free trial period will automatically renew to a paid subscription. You can cancel or manage your free trial’s auto-renewal in your Account Settings after purchase. The cancellation will take effect 24-hours after the last day of the current subscription period and you will be downgraded to the free service.* Please note: any unused portion of a free trial period of 3 days(if offered) will be forfeited when you purchase a premium subscription during the free trial period.Please, for more information see our Privacy Policy and Terms of Use.";
+"terms_of_use" = "Terms of Use";
+"privacy_policy" = "Privacy Policy";
+
+"error_iap" = "Error";
+"inval_prod_id" = "Invalid product";
+"faledRestore" = "Faled to restore";
+"notPurchases" = "You not have purchases";
+
+"melonMods" = "MELON MODS";
+"emptyLabel" = "No saved works yet";
+
+"downloadLabel" = "Download";
+"shareLabel" = "Share";
+"startEditModeLabel" = "Start Edit Mode";
+"modDescription" = "Mod Description";
+"subsInfo" = "SUBSCRIPTION INFO";
+"settings" = "settings";
+"categoriesLabel" = "Categories";
+"loading" = "Loading";
+"Can’t save mod without name" = "Can’t save mod without name";
+
+"My_Works" = "My works";
+"Mods_" = "Mods";
+"Editor_" = "Editor";
+"Favorite_" = "Favorite";
+
+"MISC TEMPLATES" = "Misc templates";
+"LIVING TEMPLATES" = "Living templates";
+
+"SET ITEM SETTINGS" = "Misc templates";
+"SET COLLIDERS" = "Set colliders";
+"SELECT TEXTURE" = "Select texture";
+"SET PROPRTIES" = "Set properties";
+
+"search" = "Search";
+
+
+"success" = "Success";
+"success_completed" = "Action done!";
+
+"show_all" = "View all";
+
+"Subscription" = "Subscription";
+"watchVideo" = "Watch Video";
+
+"firstLabel_s" = "Hooray!";
+"descriptionTitle_s" = "You have received an exclusive offer for a subscription to Melon Playground!
+Our paid subscription will give you access to the full collection of tools and skins, which will help you create even more Blue scenes. ";
+"thirdLabel_s" = "Click the \"Subscribe\" button and start creating your masterpieces today!";
+"actionTitle_s" = "Subscribe!";
+
+"firstLabel_w" = "Welcome to Melon Playground.";
+"descriptionTitle_w" = "To start playing and enjoying this exciting platform, we invite you to watch our short video and get an Blue prize.";
+"thirdLabel_w" = "Click on the \"Watch now\" button and enjoy our game to the fullest!";
+"actionTitle_w" = "Watch now";
+
+"Enabled" = "Active";
+"Disabled" = "Disabled";
+"saveChange" = "Do you want to save changes?";
+"cancel" = "Cancel";
+
+"nothingToSave" = "Nothing to saved";
+
+"successDownloadFile" = "Downloading successful";
+"successDownloadFile2" = "File saved at `Files`";
+
+"wait" = "Waiting";
+
+"load_texture" = "LOAD TEXTURE:";
+
+"noName" = "Can't save mod without name";
+"noInternetConnection" = "No internet connection";
+
+

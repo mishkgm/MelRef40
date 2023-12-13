@@ -1,0 +1,187 @@
+/*
+  LocalizableSubscription.strings
+  Equalizer - Volume Booster EQ
+
+  Created by User on 04.05.2023.
+  
+*/
+
+/**/
+"iOSAfterID"="* यह परीक्षण स्वचालित रूप से सशुल्क सब्सक्रिप्शन में नवीनीकृत हो जाता है और जब तक आप रद्द नहीं करते तब तक स्वचालित रूप से नवीनीकृत होता रहेगा। * इस ऐप का उपयोग करने के लिए आपको सब्सक्राइब करना होगा। कोई मुफ्त सामग्री नहीं। * आपकी खरीद की पुष्टि होने पर आपके आईट्यून्स खाते से सदस्यता भुगतान लिया जाएगा। * सदस्यता स्वचालित रूप से नवीनीकृत हो जाएगी और भुगतान आपके आईट्यून्स खाते से लिया जाएगा जब तक कि वर्तमान अवधि के अंत से कम से कम 24 घंटे पहले ऑटो-नवीनीकरण बंद न हो जाए। नवीनीकरण की लागत आपकी सदस्यता योजना पर निर्भर करती है। हमारी मानक सदस्यता योजनाएं हैं: * 1-सप्ताह की सदस्यता (%@) अन्य मुद्राओं के लिए, कीमत ऐप स्टोर मूल्य निर्धारण मैट्रिक्स पर समान मूल्य स्तर से मेल खाती है। * नि: शुल्क परीक्षण अवधि के साथ सदस्यता स्वचालित रूप से भुगतान की गई सदस्यता के लिए नवीनीकृत हो जाएगी। आप खरीद के बाद अपनी खाता सेटिंग्स में अपने नि: शुल्क परीक्षण के स्वत: नवीनीकरण को रद्द या प्रबंधित कर सकते हैं। रद्दीकरण वर्तमान सदस्यता अवधि के अंतिम दिन के 24 घंटे बाद प्रभावी होगा और आपको निःशुल्क सेवा में डाउनग्रेड कर दिया जाएगा। * कृपया ध्यान दें: जब आप नि:शुल्क परीक्षण अवधि के दौरान प्रीमियम सदस्यता खरीदते हैं तो 3 दिनों की निःशुल्क परीक्षण अवधि (यदि पेशकश की जाती है) के किसी भी अप्रयुक्त हिस्से को जब्त कर लिया जाएगा। कृपया, अधिक जानकारी के लिए हमारी गोपनीयता नीति और उपयोग की शर्तें देखें।";
+/**/
+"iOSButtonID"="जारी रखना";
+/**/
+"iOSStart3daysTitleID"="3-दिन निःशुल्क प्रारंभ करें, फिर $4.99/सप्ताह";
+
+/**/
+"LoadingID"="लोड हो रहा है";
+
+/**/
+"PrivacyID"="गोपनीयता नीति";
+
+/**/
+"restore"="पुनर्स्थापित करना";
+
+/**/
+"TermsID"="उपयोग की शर्तें";
+
+/**/
+"SliderID1"="भयंकर देव कवच स्थान प्राप्त करें";
+/**/
+"SliderID2"="ऋषियों और कोरोक वन की 5 क्षमताओं का पता लगाएं";
+/**/
+"SliderID3"="मानचित्र पर सभी गुफाएँ और कुएँ";
+/**/
+"SliderID4"="इंटरैक्टिव मानचित्र पर सभी 152 तीर्थस्थल";
+/**/
+"SliderID5"="स्थानों के अनुसार सभी कवच ​​सेट एकत्र करें";
+
+/**/
+"Text0ID"="अपना कवच सेट चुनें";
+
+/**/
+"Text17ID"="वांछित क्षमता चुनें";
+
+/**/
+"Text18ID"="अमीबो क्षमता";
+
+/**/
+"Text19ID"="फ़्यूज़ क्षमता";
+
+/**/
+"Text20ID"="चढ़ने की क्षमता";
+
+/**/
+"Text21ID"="स्मरण करने की क्षमता";
+
+/**/
+"Text22ID"="कैमरा क्षमता";
+
+/**/
+
+"Text30ID"="कनेक्टिविटी समस्या";
+"Text31ID"="इंटरनेट कनेक्शन ऑफ़लाइन प्रतीत होता है ☹️";
+
+
+
+"continue" = "Continue";
+"textFirst" = "TEXT TEXT TEXT TEXT
+TEXT TEXT TEXT ";
+"textSecond" = "TEXT TEXT TEXT TEXT
+TEXT TEXT TEXT ";
+
+
+"view1Content1" = "TEXT TEXT";
+"view1Content2" = "TEXT TEXT";
+"view1Content3" = "TEXT TEXT";
+"view1Content4" = "TEXT TEXT";
+"view1Content5" = "TEXT TEXT";
+"view1Content6" = "TEXT TEXT";
+"view1Content7" = "TEXT TEXT";
+"view1Content8" = "TEXT TEXT";
+"view1Content9" = "TEXT TEXT";
+"view1Content10" = "TEXT TEXT";
+
+"view2Content1" = "TEXT TEXT";
+"view2Content2" = "TEXT TEXT";
+"view2Content3" = "TEXT TEXT";
+"view2Content4" = "TEXT TEXT";
+"view2Content5" = "TEXT TEXT";
+"view2Content6" = "TEXT TEXT";
+"view2Content7" = "TEXT TEXT";
+"view2Content8" = "TEXT TEXT";
+"view2Content9" = "TEXT TEXT";
+"view2Content10" = "TEXT TEXT";
+
+
+"slider_one" = "TEXT TEXT TEXT TEXT
+TEXT TEXT TEXT ";
+"slider_two" = "TEXT TEXT TEXT TEXT
+TEXT TEXT TEXT ";
+"slider_three" = "TEXT TEXT TEXT TEXT
+TEXT TEXT TEXT ";
+"slider_four" = "TEXT TEXT TEXT TEXT
+TEXT TEXT TEXT ";
+"slider_five" = "TEXT TEXT TEXT TEXT
+TEXT TEXT TEXT ";
+
+
+"restore" = "Restore";
+"price_label" = "Start 3-days for FREE \n Then 000000000 /week";
+"price_label_bold" = " $5.99";
+
+"agreement_full_text" = "* This trial automatically renews into a paid subscription and will continue to automatically renew until you cancel.* You need to be subscribed to use this app. No free content.* Subscription payments will be charged to your iTunes account at confirmation of your purchase.* Subscriptions will automatically renew and payment will be charged to your iTunes account unless auto-renew is turned off at least 24 hours prior to the end of the current period. The cost of the renewal depends on your Subscription Plan. Our standard Subscription Plans are:* 1-week Subscription (000000000).  For other currencies, the price corresponds to the same price tier on the App Store Pricing Matrix.* Subscription with a free trial period will automatically renew to a paid subscription. You can cancel or manage your free trial’s auto-renewal in your Account Settings after purchase. The cancellation will take effect 24-hours after the last day of the current subscription period and you will be downgraded to the free service.* Please note: any unused portion of a free trial period of 3 days(if offered) will be forfeited when you purchase a premium subscription during the free trial period.Please, for more information see our Privacy Policy and Terms of Use.";
+"terms_of_use" = "Terms of Use";
+"privacy_policy" = "Privacy Policy";
+
+"error_iap" = "Error";
+"inval_prod_id" = "Invalid product";
+"faledRestore" = "Faled to restore";
+"notPurchases" = "You not have purchases";
+
+"melonMods" = "MELON MODS";
+"emptyLabel" = "No saved works yet";
+
+"downloadLabel" = "Download";
+"shareLabel" = "Share";
+"startEditModeLabel" = "Start Edit Mode";
+"modDescription" = "Mod Description";
+"subsInfo" = "SUBSCRIPTION INFO";
+"settings" = "settings";
+"categoriesLabel" = "Categories";
+"loading" = "Loading";
+"Can’t save mod without name" = "Can’t save mod without name";
+
+"My_Works" = "My works";
+"Mods_" = "Mods";
+"Editor_" = "Editor";
+"Favorite_" = "Favorite";
+
+"MISC TEMPLATES" = "Misc templates";
+"LIVING TEMPLATES" = "Living templates";
+
+"SET ITEM SETTINGS" = "Misc templates";
+"SET COLLIDERS" = "Set colliders";
+"SELECT TEXTURE" = "Select texture";
+"SET PROPRTIES" = "Set properties";
+
+"search" = "Search";
+
+
+"success" = "Success";
+"success_completed" = "Action done!";
+
+"show_all" = "View all";
+
+"Subscription" = "Subscription";
+"watchVideo" = "Watch Video";
+
+"firstLabel_s" = "Hooray!";
+"descriptionTitle_s" = "You have received an exclusive offer for a subscription to Melon Playground!
+Our paid subscription will give you access to the full collection of tools and skins, which will help you create even more Blue scenes. ";
+"thirdLabel_s" = "Click the \"Subscribe\" button and start creating your masterpieces today!";
+"actionTitle_s" = "Subscribe!";
+
+"firstLabel_w" = "Welcome to Melon Playground.";
+"descriptionTitle_w" = "To start playing and enjoying this exciting platform, we invite you to watch our short video and get an Blue prize.";
+"thirdLabel_w" = "Click on the \"Watch now\" button and enjoy our game to the fullest!";
+"actionTitle_w" = "Watch now";
+
+"Enabled" = "Active";
+"Disabled" = "Disabled";
+"saveChange" = "Do you want to save changes?";
+"cancel" = "Cancel";
+
+"nothingToSave" = "Nothing to saved";
+
+"successDownloadFile" = "Downloading successful";
+"successDownloadFile2" = "File saved at `Files`";
+
+"wait" = "Waiting";
+
+"load_texture" = "LOAD TEXTURE:";
+
+"noName" = "Can't save mod without name";
+"noInternetConnection" = "No internet connection";
+
+
