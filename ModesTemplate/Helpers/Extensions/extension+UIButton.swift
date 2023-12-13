@@ -9,6 +9,7 @@ import UIKit
 
 
 extension UIButton {
+    
     convenience init(localizedStringKey: String,foregroundColor: UIColor,backgroundColor: UIColor, font: UIFont) {
         self.init(type: .custom)
         setAttributedTitle(NSAttributedString(
@@ -23,5 +24,12 @@ extension UIButton {
     func onTap(perform action: @escaping () -> Void) {
         addAction(UIAction { _ in action()}, for: .touchUpInside)
     }
+}
 
+class CustomButton: UIButton {
+    
+    func setImage(_ image: UIImage?, size: CGFloat = 28) {
+        let imageSi = isPad ? image?.resizeImageTo(size: CGSize(width: size, height: size)) : image
+        self.setImage(imageSi, for: .normal)
+    }
 }

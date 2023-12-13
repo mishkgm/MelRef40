@@ -11,121 +11,75 @@ import SnapKit
 
 final class SwitchCell<model: EditorCellModel>: EditorCell {
     
-    lazy var conteinerView: DeteilStackView = {
-       var view = DeteilStackView()
-        view.backgroundColor = .clear
+    lazy var titleLabel: UILabel = {
+       var label = UILabel()
+        label.font = UIFont(size: 18, type: .medium)
+        label.textAlignment = .center
+        label.textColor = .white
+        label.text = "Set file settings:"
+        return label
+    }()
+    
+    lazy var conteinerView: UIView = {
+       var view = UIView()
+        view.layer.cornerRadius = 12
+        view.layer.borderWidth = 1.5
+        view.layer.borderColor = AppConfig.Colors.cellBorderColor.cgColor
+        view.backgroundColor = #colorLiteral(red: 0.2714084983, green: 0.4273136854, blue: 0.3375319242, alpha: 1)
+        return view
+    }()
+    
+    lazy var conteinerStack: UIStackView = {
+       var view = UIStackView()
         view.spacing = 10
+        view.axis = .vertical
+        view.backgroundColor = .clear
+        view.distribution = .fillEqually
         return view
     }()
     
     override func configureView() {
         super.configureView()
         contentView.addSubview(conteinerView)
+        conteinerView.addSubview(titleLabel)
+        conteinerView.addSubview(conteinerStack)
     }
     
     override func makeConstraints() {
         conteinerView.snp.remakeConstraints { make in
-            make.top.bottom.equalToSuperview().inset(10)
-            make.trailing.leading.equalToSuperview().inset(20)
+            make.top.bottom.equalToSuperview().inset(12)
+            make.leading.trailing.equalToSuperview().inset(20)
+        }
+        titleLabel.snp.remakeConstraints { make in
+            make.trailing.leading.top.equalToSuperview().inset(12)
+        }
+        conteinerStack.snp.remakeConstraints { make in
+            make.top.equalTo(titleLabel.snp.bottom).offset(5)
+            make.bottom.trailing.leading.equalToSuperview().inset(12)
         }
         model.types(for: .switchCell).forEach { type in
-            let view = CustomSwitchView(type: type)
-            view.valueChanged = { [weak self] newValue in
+            let view = DeteilEditorButton(editType: type, isSelect: type.rawValue == "true")
+            view.changeValue = { [weak self] newValue in
                 self?.updateData(data: newValue.0, type: newValue.1)
             }
-            self.conteinerView.addView(view)
+            self.conteinerStack.addArrangedSubview(view)
         }
     }
     
     override func configure(object: RealmEditorDeteilModel) {
-        self.conteinerView.columnViews.forEach { view in
-            guard let view = view as? CustomSwitchView else { return }
-            switch view.type {
+        self.conteinerStack.arrangedSubviews.forEach { view in
+            guard let view = view as? DeteilEditorButton else { return }
+            switch view.editType {
             case .canBeTaken:
-                view.switchView.isOn = object.canBeTaken
+                view.setState(for: object.canBeTaken)
             case .canBurn:
-                view.switchView.isOn = object.canBurn
+                view.setState(for: object.canBurn)
             case .canFloat:
-                view.switchView.isOn = object.canFloat
+                view.setState(for: object.canFloat)
             case .canGlow:
-                view.switchView.isOn = object.canGlow
+                view.setState(for: object.canGlow)
             default: break
             }
         }
-    }
-}
-
-final class CustomSwitchView: BaseView {
-    typealias NewValue = (Bool, EditorDataType)
-    lazy var stackView: UIStackView = {
-        var stack = UIStackView()
-        stack.axis = .vertical
-        stack.spacing = isPad ? 30 : 10
-        stack.backgroundColor = AppConfig.Colors.deteilModsbuttonBackground
-        stack.distribution = .fillEqually
-        stack.layoutMargins = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
-        stack.isLayoutMarginsRelativeArrangement = true
-        return stack
-    }()
-    
-    lazy var titleLabel: UILabel = {
-        var label = UILabel()
-        label.textColor = .white
-        label.textAlignment = .center
-        label.font = UIFont(size: 16)
-        return label
-    }()
-    
-    lazy var switchViewConteiner: UIView = {
-       var view = UIView()
-        view.backgroundColor = .clear
-        return view
-    }()
-    
-    lazy var switchView: UISwitch = {
-        var view = UISwitch()
-         return view
-    }()
-    
-    var valueChanged: ((NewValue) -> Void)?
-    
-    private(set) var type: EditorDataType
-    
-    init(type: EditorDataType) {
-        self.type = type
-        super.init(frame: .zero)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-            self.stackView.setGradientBorder(width: 1, colors: [AppConfig.Colors.cellBorderColor, UIColor(hex: "#42535A")])
-        }
-    }
-    
-    override func configureView() {
-        addSubview(stackView)
-        stackView.addArrangedSubview(titleLabel)
-        stackView.addArrangedSubview(switchViewConteiner)
-        switchViewConteiner.addSubview(switchView)
-        switchView.addTarget(self, action: #selector(switchValueChanged(_:)), for: .valueChanged)
-        self.titleLabel.text = type.displayName
-    }
-    
-    override func makeConstraints() {
-        stackView.snp.remakeConstraints { make in
-            make.edges.equalToSuperview()
-        }
-        switchView.snp.remakeConstraints { make in
-            make.center.equalToSuperview()
-        }
-    }
-    
-    @objc func switchValueChanged(_ sender: UISwitch) {
-        valueChanged?(NewValue(sender.isOn, type))
     }
 }

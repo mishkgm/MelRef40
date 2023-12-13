@@ -13,24 +13,25 @@ final class DeteilView: BaseView {
     
     lazy var scrollView: UIScrollView = {
        var scrollView = UIScrollView()
-        scrollView.backgroundColor = .clear
         scrollView.isUserInteractionEnabled = true
         return scrollView
     }()
     
     lazy var conteinerView: UIView = {
        var view = UIView()
-        view.backgroundColor = .clear
+        view.layer.cornerRadius = 12
+        view.layer.borderWidth = 1.5
+        view.layer.borderColor = AppConfig.Colors.cellBorderColor.cgColor
+        view.backgroundColor = AppConfig.Colors.cellBackgroundColor
         return view
     }()
     
     lazy var imageView: UIImageView = {
        var view = UIImageView()
+        view.layer.cornerRadius = 12
+        view.layer.masksToBounds = true
         view.contentMode = .scaleAspectFit
-        view.contentMode = .scaleToFill
         view.backgroundColor = AppConfig.Colors.imagesBackgoundColor
-        view.layer.borderWidth = 1
-        view.layer.borderColor = AppConfig.Colors.cellBorderColor.cgColor
         return view
     }()
     
@@ -52,107 +53,85 @@ final class DeteilView: BaseView {
         return image
     }()
     
-    lazy var startEditButton: DetailButton = {
-        var button = DetailButton()
-        button.setButtonIcon(image: AppConfig.Icons.startEditIcon)
-        button.setLocalizedTitle(key: "start-edit-mod")
-        button.setBackgroundColor(color: AppConfig.Colors.startEditBackground)
-        button.setForegroundColor(color: AppConfig.Colors.startEditForeground)
-        button.setTitleFont(font: UIFont(size: 16, type: .regular))
-        return button
-    }()
-    
-    lazy var downloadButton: DetailButton = {
-        var button = DetailButton()
-        button.setButtonIcon(image: AppConfig.Icons.saveicon)
-        button.setLocalizedTitle(key: "download")
-        button.setBackgroundColor(color: AppConfig.Colors.deteilModsbuttonBackground)
-        button.setForegroundColor(color: AppConfig.Colors.titlesColor)
-        button.setTitleFont(font: UIFont(size: 16, type: .regular))
-        button.layer.borderWidth = 1
+    lazy var startEditButton: UIButton = {
+        var button = UIButton()
+        button.layer.cornerRadius = 12
+        button.layer.borderWidth = 1.5
         button.layer.borderColor = AppConfig.Colors.cellBorderColor.cgColor
+        button.setTitle("Edit", for: .normal)
+        button.titleLabel?.textAlignment = .center
+        button.backgroundColor = AppConfig.Colors.startEditBackground
+        button.setTitleColor(AppConfig.Colors.startEditForeground, for: .normal)
+        button.titleLabel?.font = UIFont(size: 24, type: .bold)
         return button
     }()
     
-    lazy var shareButton: DetailButton = {
-        var button = DetailButton()
-        button.setButtonIcon(image: AppConfig.Icons.shareIcon)
-        button.setLocalizedTitle(key: "share")
-        button.setBackgroundColor(color: AppConfig.Colors.deteilModsbuttonBackground)
-        button.setForegroundColor(color: AppConfig.Colors.titlesColor)
-        button.setTitleFont(font: UIFont(size: 16, type: .regular))
-        button.layer.borderWidth = 1
-        button.layer.borderColor = AppConfig.Colors.cellBorderColor.cgColor
+    lazy var favouriteButton: CustomButton = {
+        var button = CustomButton()
+        button.layer.cornerRadius = 12
+        button.setImage(AppConfig.Icons.favoritesEmpty, size: 40)
+        button.setTitle("Favorite", for: .normal)
+        button.titleLabel?.textAlignment = .center
+        button.backgroundColor = AppConfig.Colors.imagesBackgoundColor
+        button.setTitleColor(AppConfig.Colors.titlesColor, for: .normal)
+        button.titleLabel?.font = UIFont(size: isPad ? 24 : 14, type: .regular)
         return button
     }()
-    
+
     override func configureView() {
         super.configureView()
         addSubview(scrollView)
         scrollView.addSubview(conteinerView)
         conteinerView.addSubview(imageView)
         conteinerView.addSubview(modDescriptionView)
-        conteinerView.addSubview(buttonsConteiner)
+        conteinerView.addSubview(favouriteButton)
+        addSubview(buttonsConteiner)
         buttonsConteiner.addArrangedSubview(startEditButton)
-        buttonsConteiner.addArrangedSubview(downloadButton)
-        buttonsConteiner.addArrangedSubview(shareButton)
-        addSubview(lockIcon)
+//        buttonsConteiner.addArrangedSubview(downloadButton)
+//        buttonsConteiner.addArrangedSubview(shareButton)
     }
     
     override func makeConstraints() {
         super.makeConstraints()
         scrollView.snp.remakeConstraints { make in
             make.top.equalTo(bannerView.snp.bottom).offset(5)
-            make.trailing.leading.equalToSuperview().inset(isPad ? 40 : 0)
+            make.trailing.leading.equalToSuperview().inset(isPad ? 60 : 20)
             make.bottom.equalToSuperview()
         }
         conteinerView.snp.remakeConstraints { make in
             make.top.leading.trailing.equalToSuperview()
-            make.width.equalTo(snp.width).offset(isPad ? -80 : 0 )
-//            make.bottom.equalTo(buttonsConteiner.snp.bottom)
-            make.bottom.equalToSuperview()
+            make.width.equalTo(snp.width).offset(isPad ? -120 : -40)
+            make.bottom.equalToSuperview().offset(isPad ? -150 : -100)
         }
         imageView.snp.remakeConstraints { make in
-//            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(10)
-            make.top.equalToSuperview().offset(10)
-            make.trailing.leading.equalToSuperview().inset(20)
-            make.height.equalTo(screenSize.height / 7.2)
+            make.top.equalToSuperview().offset(12)
+            make.trailing.leading.equalToSuperview().inset(12)
+            make.height.equalTo(screenSize.height / 5)
         }
         modDescriptionView.snp.remakeConstraints { make in
             make.top.equalTo(imageView.snp.bottom).offset(12)
             make.leading.trailing.equalToSuperview().inset(20)
         }
+        favouriteButton.snp.remakeConstraints { make in
+            make.height.equalTo(buttonsConteiner.snp.height)
+            make.top.equalTo(modDescriptionView.snp.bottom).offset(12)
+            make.trailing.leading.bottom.equalToSuperview().inset(12)
+        }
         buttonsConteiner.snp.remakeConstraints { make in
-            make.top.equalTo(modDescriptionView.snp.bottom).offset(10)
-            make.trailing.leading.equalToSuperview().inset(20)
-            make.bottom.equalToSuperview().offset(-20)
-        }
-        startEditButton.snp.remakeConstraints { make in
-            make.height.equalTo(isPad ? 100 : 50)
-        }
-        lockIcon.snp.remakeConstraints { make in
-            make.trailing.equalTo(startEditButton.snp.trailing).inset(20)
-            make.centerY.equalTo(startEditButton.snp.centerY)
-            make.height.equalTo(startEditButton.snp.height).multipliedBy(0.6)
-            make.width.equalTo(lockIcon.snp.height)
+            make.trailing.leading.equalToSuperview().inset(isPad ? 60 : 20)
+            make.bottom.equalToSuperview().inset(20)
+            make.height.equalTo(isPad ? 115 : 56)
         }
     }
     
     func lockView(_ hidden: Bool) {
-        startEditButton.alpha = hidden ? 1 : 0.5
+//        startEditButton.alpha = hidden ? 1 : 0.5
         lockIcon.isHidden = hidden
     }
     
     func configureView(_ model: DeteilModel) {
         imageView.image = model.image
         modDescriptionView.configureTitles(with: model)
-    }
-    
-    func configureButtons(for isDonwloaded: Bool) {
-        downloadButton.setLocalizedTitle(key: isDonwloaded ? "downloaded" : "download")
-        downloadButton.isEnabled = !isDonwloaded
-        shareButton.isEnabled = isDonwloaded
-        shareButton.alpha = isDonwloaded ? 1.0 : 0.5
-        downloadButton.alpha = isDonwloaded ? 0.5 : 1.0
+        self.favouriteButton.setImage(model.isFavourite ? AppConfig.Icons.favoritesFill : AppConfig.Icons.favoritesEmpty, size: 40)
     }
 }

@@ -10,32 +10,46 @@ import UIKit
 import SnapKit
 
 protocol DropDownMenuDelegate: UIViewController {
-    func cellDidTap(index: Int)
+    func cellDidTap(text: String?)
 }
 
 final class DropDownMenu: UIView {
+    
+    lazy var scrollView: UIScrollView = {
+       var view = UIScrollView()
+        view.backgroundColor = AppConfig.Colors.cellBackgroundColor
+        view.layer.cornerRadius = 12
+        view.layer.borderWidth = 1.5
+        view.layer.borderColor = AppConfig.Colors.cellBorderColor.cgColor
+        view.isUserInteractionEnabled = true
+        return view
+    }()
     
     lazy var chevronImageView: UIImageView = {
        var image = UIImageView()
         image.contentMode = .scaleToFill
         image.image = AppConfig.Icons.categoryChevron
+        image.isHidden = true
         return image
     }()
     
     lazy var categoryCollection: UIStackView = {
         let view = UIStackView()
-        view.backgroundColor = .clear
         view.distribution = .fillEqually
         view.axis = .vertical
+        view.isUserInteractionEnabled = true
         return view
     }()
     
+    var isCentrallSetup: Bool
     weak var delegate: DropDownMenuDelegate?
-    private var items: [String] = []
+    var items: [String] = []
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        addSubview(categoryCollection)
+    init(isCentrallSetup: Bool) {
+        self.isCentrallSetup = isCentrallSetup
+        super.init(frame: .zero)
+        addSubview(scrollView)
+        scrollView.addSubview(categoryCollection)
         categoryCollection.addSubview(chevronImageView)
     }
     
@@ -45,9 +59,21 @@ final class DropDownMenu: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.categoryCollection.layoutSubviews()
+        self.scrollView.layoutSubviews()
+        var coof = 0
+        if items.count <= 4 {
+            coof = items.count
+        } else {
+            coof = 4
+        }
+        scrollView.snp.remakeConstraints { make in
+            make.top.trailing.leading.equalToSuperview()
+            make.height.lessThanOrEqualTo(isPad ? 70 * coof : 48 * coof)
+            make.height.greaterThanOrEqualTo(0)
+        }
         categoryCollection.snp.remakeConstraints { make in
             make.edges.equalToSuperview()
+            make.width.equalToSuperview()
         }
         chevronImageView.snp.remakeConstraints { make in
             make.centerY.equalTo(self.categoryCollection.subviews.first?.snp.centerY ?? 0)
@@ -56,17 +82,15 @@ final class DropDownMenu: UIView {
         }
     }
     
-    public func openСategoryPicker(items: [String]) {
+    public func openСategoryPicker(items: [String], isCurrent: String = "") {
         self.items = items
         categoryCollection.subviews.forEach { view in
-            if view.isMember(of: CategoriesViewCell.self) {
+            if view.isMember(of: DropDownCell.self) {
                 view.removeFromSuperview()
             }
         }
         for (index, model) in items.enumerated() {
-            let isLocked: Bool = index == 1 && !IAPManager_MWP.shared.productBought.contains(.unlockContentProduct)
-//            let cell = CategoriesViewCell(item: model, isLocked: isLocked)
-            let cell = UIView()
+            let cell = DropDownCell(title: model, isCentrallSetup: isCentrallSetup, isSelected: isCurrent == model)
             cell.tag = index
             addTapGesture(view: cell)
             categoryCollection.addArrangedSubview(cell)
@@ -95,7 +119,7 @@ final class DropDownMenu: UIView {
 
 private extension DropDownMenu {
     @objc func cellTapped(_ sender: UITapGestureRecognizer) {
-        self.delegate?.cellDidTap(index: sender.view?.tag ?? 0)
+        self.delegate?.cellDidTap(text: items[sender.view?.tag ?? 0])
     }
     
     func addTapGesture(view: UIView) {

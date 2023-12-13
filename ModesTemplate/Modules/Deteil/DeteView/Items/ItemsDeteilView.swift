@@ -12,81 +12,82 @@ import SnapKit
 final class ItemsDeteilView: BaseView {
     
     lazy var scrollView: UIScrollView = {
-       var view = UIScrollView()
-        view.backgroundColor = .clear
-        return view
+       var scrollView = UIScrollView()
+        scrollView.isUserInteractionEnabled = true
+        return scrollView
     }()
     
     lazy var conteinerView: UIView = {
        var view = UIView()
-        view.backgroundColor = .clear
+        view.layer.cornerRadius = 12
+        view.layer.borderWidth = 1.5
+        view.layer.borderColor = AppConfig.Colors.cellBorderColor.cgColor
+        view.backgroundColor = AppConfig.Colors.cellBackgroundColor
         return view
     }()
     
     lazy var imageView: UIImageView = {
        var view = UIImageView()
+        view.layer.cornerRadius = 12
+        view.layer.masksToBounds = true
         view.contentMode = .scaleAspectFit
         view.backgroundColor = AppConfig.Colors.imagesBackgoundColor
         return view
     }()
     
-    lazy var titleLabel: UILabel = {
-       var label = UILabel()
-        label.textColor = .white
-        label.font = UIFont(size: 24)
-        label.numberOfLines = 0
-        label.textAlignment = .center
-        return label
-    }()
-    
-    lazy var descriptionLabel: UILabel = {
-       var label = UILabel()
-        label.textColor = UIColor(hex: "#BCC5C9")
-        label.font = UIFont(size: 16)
-        label.numberOfLines = 0
-        label.textAlignment = .center
-        return label
-    }()
+    lazy var modDescriptionView = ModDescriptionView()
     
     lazy var buttonsConteiner: UIStackView = {
        var stack = UIStackView()
-        stack.axis = .horizontal
+        stack.axis = .vertical
         stack.spacing = 12
-        stack.distribution = .fillProportionally
-        stack.layoutMargins = UIEdgeInsets(top: 12, left: 20, bottom: 30, right: 20)
-        stack.isLayoutMarginsRelativeArrangement = true
-        stack.backgroundColor = #colorLiteral(red: 0.1403699815, green: 0.1455616951, blue: 0.1575081646, alpha: 1)
+        stack.distribution = .fillEqually
         return stack
     }()
     
-    lazy var favouriteButton: UIButton = {
-        var button = UIButton()
-        button.setImage(AppConfig.Icons.favoritesEmpty, for: .normal)
-        button.backgroundColor = .white
-        button.setTitleColor(AppConfig.Colors.titlesColor, for: .normal)
-        button.tintColor = .black
-        return button
+    lazy var lockIcon: UIImageView = {
+        var image = UIImageView()
+        image.contentMode = .scaleAspectFit
+        image.image = AppConfig.Icons.lockIcon
+        image.isHidden = true
+        return image
     }()
     
     lazy var downloadButton: UIButton = {
         var button = UIButton()
-        button.setTitle(localizedString(forKey: "download"), for: .normal)
-        button.backgroundColor = AppConfig.Colors.startEditBackground
-        button.setTitleColor(.black, for: .normal)
-        button.titleLabel?.font = UIFont(size: 18, type: .regular)
+        button.layer.cornerRadius = 12
+        button.layer.borderWidth = 1.5
+        button.layer.borderColor = AppConfig.Colors.cellBorderColor.cgColor
+        button.setTitle("Download", for: .normal)
         button.titleLabel?.textAlignment = .center
-
+        button.backgroundColor = AppConfig.Colors.startEditBackground
+        button.setTitleColor(AppConfig.Colors.startEditForeground, for: .normal)
+        button.titleLabel?.font = UIFont(size: 24, type: .bold)
         return button
     }()
     
-    lazy var shareButton: UIButton = {
+    lazy var exportButton: UIButton = {
         var button = UIButton()
-        button.setTitle(localizedString(forKey: "export"), for: .normal)
-        button.backgroundColor = AppConfig.Colors.startEditBackground
-        button.setTitleColor(.black, for: .normal)
-        button.titleLabel?.font = UIFont(size: 18, type: .regular)
+        button.layer.cornerRadius = 12
+        button.layer.borderWidth = 1.5
+        button.layer.borderColor = AppConfig.Colors.cellBorderColor.cgColor
+        button.setTitle("Export", for: .normal)
         button.titleLabel?.textAlignment = .center
-        button.isHidden = true
+        button.backgroundColor = AppConfig.Colors.startEditBackground
+        button.setTitleColor(AppConfig.Colors.startEditForeground, for: .normal)
+        button.titleLabel?.font = UIFont(size: 24, type: .bold)
+        return button
+    }()
+    
+    lazy var favouriteButton: CustomButton = {
+        var button = CustomButton()
+        button.layer.cornerRadius = 12
+        button.setImage(AppConfig.Icons.favoritesEmpty, size: 40)
+        button.setTitle("Favorite", for: .normal)
+        button.titleLabel?.textAlignment = .center
+        button.backgroundColor = AppConfig.Colors.imagesBackgoundColor
+        button.setTitleColor(AppConfig.Colors.titlesColor, for: .normal)
+        button.titleLabel?.font = UIFont(size: 14, type: .regular)
         return button
     }()
 
@@ -95,71 +96,55 @@ final class ItemsDeteilView: BaseView {
         addSubview(scrollView)
         scrollView.addSubview(conteinerView)
         conteinerView.addSubview(imageView)
-        conteinerView.addSubview(titleLabel)
-        conteinerView.addSubview(descriptionLabel)
+        conteinerView.addSubview(modDescriptionView)
+        conteinerView.addSubview(favouriteButton)
         addSubview(buttonsConteiner)
         buttonsConteiner.addArrangedSubview(downloadButton)
-        buttonsConteiner.addArrangedSubview(shareButton)
-        buttonsConteiner.addArrangedSubview(favouriteButton)
+        buttonsConteiner.addArrangedSubview(exportButton)
     }
     
     override func makeConstraints() {
         super.makeConstraints()
         scrollView.snp.remakeConstraints { make in
-            make.top.equalTo(bannerView.snp.bottom)
-            make.trailing.leading.equalToSuperview().inset(isPad ? 40 : 0)
-            make.bottom.equalTo(buttonsConteiner.snp.top)
-        }
-        conteinerView.snp.remakeConstraints { make in
-            make.top.bottom.equalToSuperview()
-            make.width.equalTo(snp.width).offset(isPad ? -80 : 0)
-            make.centerX.equalToSuperview()
-        }
-        imageView.snp.remakeConstraints { make in
-            make.top.equalToSuperview().offset(10)
-            make.trailing.leading.equalToSuperview().inset(20)
-            make.height.equalTo(screenSize.height / 2.4)
-        }
-        titleLabel.snp.remakeConstraints { make in
-            make.top.equalTo(imageView.snp.bottom).offset(10)
-            make.trailing.leading.equalToSuperview().inset(20)
-        }
-        descriptionLabel.snp.remakeConstraints { make in
-            make.top.equalTo(titleLabel.snp.bottom).offset(10)
-            make.trailing.leading.equalToSuperview().inset(20)
-            make.bottom.equalToSuperview().offset(-10)
-        }
-        buttonsConteiner.snp.remakeConstraints { make in
-            make.trailing.leading.equalToSuperview().inset(0)
-            make.height.equalTo(screenSize.height / 7)
+            make.top.equalTo(bannerView.snp.bottom).offset(5)
+            make.trailing.leading.equalToSuperview().inset(isPad ? 60 : 20)
             make.bottom.equalToSuperview()
         }
+        conteinerView.snp.remakeConstraints { make in
+            make.top.leading.trailing.equalToSuperview()
+            make.width.equalTo(snp.width).offset(isPad ? -120 : -40)
+            make.bottom.equalToSuperview().offset(isPad ? -240 : -100)
+        }
+        imageView.snp.remakeConstraints { make in
+            make.top.equalToSuperview().offset(12)
+            make.trailing.leading.equalToSuperview().inset(12)
+            make.height.equalTo(screenSize.height / 5)
+        }
+        modDescriptionView.snp.remakeConstraints { make in
+            make.top.equalTo(imageView.snp.bottom).offset(12)
+            make.leading.trailing.equalToSuperview().inset(20)
+        }
         favouriteButton.snp.remakeConstraints { make in
-            make.width.height.equalTo(isPad ? 100 : 44)
+            make.height.equalTo(buttonsConteiner.snp.height)
+            make.top.equalTo(modDescriptionView.snp.bottom).offset(12)
+            make.trailing.leading.bottom.equalToSuperview().inset(12)
+        }
+        buttonsConteiner.snp.remakeConstraints { make in
+            make.trailing.leading.equalToSuperview().inset(isPad ? 60 : 20)
+            make.bottom.equalToSuperview().inset(20)
+            make.height.equalTo(isPad ? 115 : 56)
         }
     }
     
     func configureView(_ model: DeteilModel) {
         imageView.image = model.image
-        titleLabel.text = model.title
-        descriptionLabel.text = model.description
-        self.configForFavourite(isFavourite: model.isFavourite)
+        modDescriptionView.configureTitles(with: model)
+        self.favouriteButton.setImage(model.isFavourite ? AppConfig.Icons.favoritesFill : AppConfig.Icons.favoritesEmpty, size: 40)
     }
     
     func configureButtons(for isDonwloaded: Bool) {
-        self.downloadButton.isHidden = isDonwloaded
-        self.shareButton.isHidden = !isDonwloaded
-        self.buttonsConteiner.layoutSubviews()
-    }
-    
-    private func configForFavourite(isFavourite: Bool) {
-        switch isFavourite {
-        case true:
-            favouriteButton.setImage(AppConfig.Icons.favoritesFill, for: .normal)
-            favouriteButton.tintColor = AppConfig.Colors.startEditBackground
-        case false:
-            favouriteButton.setImage(AppConfig.Icons.favoritesEmpty, for: .normal)
-            favouriteButton.tintColor = .black
-        }
+        downloadButton.isHidden = isDonwloaded
+        exportButton.isHidden = !isDonwloaded
+        buttonsConteiner.layoutIfNeeded()
     }
 }

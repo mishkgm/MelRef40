@@ -10,42 +10,52 @@ import Foundation
 // MARK: - MainScrean mods
 struct ModsJsonKeys {
     
-    static let main = "w-kk25du9"
-    static let title = "mri4"
-    static let description = "jx3"
-    static let imagePath = "h7__vma"
-    static let downloadPath = "btt"
+    static let main = "3i9T6NytZZ"
+    static let title = "0VIL6gXvEN"
+    static let description = "J6WgZRZNN4"
+    static let imagePath = "lGDJwiFnw5"
+    static let downloadPath = "nGk9GhUdfo"
 }
 
 // MARK: - MainScrean categories
 struct CategoriesJsonKeys {
     
-    static let main = "bnge4_list"
-    static let title = "bnge4w2"
-    static let imagePath = "bnge4o6"
+    static let main = "7rdpLfyrK5"
+    static let title = "9E1ka2Zcf7"
+    static let imagePath = "tqmG7AP20d"
 }
 
 // MARK: - Editor items
 struct EditorJsonKeys {
-    static let main = "moiv9_list"
-    static let imagePath = "moiv9n8"
+    
+    static let main = "Y4yJa8l7ua"
+    static let imagePath = "zIeyVu9f4Z"
 }
 
 // MARK: - Additional content screans
 struct ItemsJsonKeys {
     
-    static let main = "ghtiu-ghu__list"
-    static let title = "gtu67_ghi"
-    static let description = "gtu42_ghu"
-    static let imagePath = "hyg8-kou_n6j"
-    static let downloadPath = "ji234ghfd"
+    static let main = "5NjXv3xwLv"
+    static let title = "Zg7JtAHHwu"
+    static let description = "fnfyY5aH6O"
+    static let imagePath = "mgJgX0jadz"
+    static let downloadPath = "DIvQRC137V"
 }
 
 struct SkinsJsonKeys {
     
-    static let main = "ghtiu-ghu__list"
-    static let title = "ghtiu_gh3"
-    static let description = "ghtiu_gh1"
-    static let imagePath = "ghtiu-ghu_f2"
+    static let main = "kCpTCDFhPu"
+    static let title = "SbVdEW7zBK"
+    static let description = "5xwTZsPtOi"
+    static let imagePath = "eG8QUqqxn4"
     static let downloadPath = "Hud6t23g"
+}
+
+struct MapsJsonKeys {
+    
+    static let main = "NjwsYfeouD"
+    static let title = "vKmwf86ozr"
+    static let description = "puzu68eEaB"
+    static let imagePath = "eiPEkF5nJI"
+    static let downloadPath = "YQF5SEATfE"
 }

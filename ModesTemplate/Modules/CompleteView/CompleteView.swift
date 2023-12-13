@@ -36,13 +36,17 @@ class CompleteView {
                                                           width: screenSize.width - 160, height: 50))
 
     init() {
-        completeTextLabel.backgroundColor = UIColor(hex: "#3D3F44")
-        completeTextLabel.font = UIFont(size: 24, type: .regular)
+        completeTextLabel.backgroundColor = #colorLiteral(red: 0.2714084983, green: 0.4273136854, blue: 0.3375319242, alpha: 1)
+        completeTextLabel.font = UIFont(size: 20, type: .regular)
+        completeTextLabel.layer.masksToBounds = true
+        completeTextLabel.layer.cornerRadius = 12
+        completeTextLabel.layer.borderWidth = 1.5
+        completeTextLabel.layer.borderColor = UIColor(hex: "#FAFEFB").withAlphaComponent(0.5).cgColor
         completeTextLabel.textAlignment = .center
         completeTextLabel.textColor = AppConfig.Colors.titlesColor
-        container.backgroundColor = UIColor.black.withAlphaComponent(0.3)
+        container.backgroundColor = UIColor.black.withAlphaComponent(0.7)
         
-        blurEffect.alpha = 0.8
+        blurEffect.alpha = 0
         blurEffect.frame = container.bounds
         blurEffect.autoresizingMask = [.flexibleWidth, .flexibleHeight]
 
@@ -55,7 +59,7 @@ class CompleteView {
         setupText(text: completeStyle)
         container.frame = CGRect.init(x: 0, y: 0, width: screenSize.width, height: screenSize.height)
         if !UIAccessibility.isReduceTransparencyEnabled {
-            container.backgroundColor = UIColor.clear
+            container.backgroundColor = UIColor.black.withAlphaComponent(0.7)
             container.addSubview(blurEffect)
             container.addSubview(completeTextLabel)
         } else {

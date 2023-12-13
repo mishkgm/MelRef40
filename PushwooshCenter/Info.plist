@@ -9,9 +9,9 @@
 		<key>NSExtensionPrincipalClass</key>
 		<string>$(PRODUCT_MODULE_NAME).NotificationService</string>
 	</dict>
-	<key>Pushwoosh_APPID</key>
-	<string>56F9A-A546D</string>
 	<key>PW_APP_GROUPS_NAME</key>
 	<string>group.com.noname.digital.development</string>
+	<key>Pushwoosh_APPID</key>
+	<string>429D4-B25E4</string>
 </dict>
 </plist>

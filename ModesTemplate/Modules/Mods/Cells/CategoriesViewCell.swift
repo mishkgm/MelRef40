@@ -19,7 +19,7 @@ final class CategoriesViewCell: BaseCollectionViewCell {
     
     private lazy var titleLabel: UILabel = {
         var label = UILabel()
-        label.textAlignment = .left
+        label.textAlignment = .center
         label.font = UIFont(size: 18, type: .regular)
         label.textColor = .white
         return label
@@ -50,7 +50,7 @@ final class CategoriesViewCell: BaseCollectionViewCell {
             make.edges.equalToSuperview()
         }
         titleLabel.snp.remakeConstraints { make in
-            make.leading.equalToSuperview().inset(20)
+            make.trailing.leading.equalToSuperview().inset(5)
             make.top.bottom.equalToSuperview().inset(16)
         }
         selectView.snp.remakeConstraints { make in
@@ -68,7 +68,14 @@ final class CategoriesViewCell: BaseCollectionViewCell {
         guard let item = item else { return }
         self.selectView.isHidden = !isSelected
         self.titleLabel.text = item
-        self.lockIcon.isHidden = !isLoked
-        self.titleLabel.textColor = isLoked ? UIColor(hex: "#989898") : .white
+        self.lockIcon.isHidden = true
+        self.titleLabel.textColor = .white
+        if isLoked {
+            let text = NSAttributedString(string: self.titleLabel.text ?? "")
+            let image = NSAttributedString(attachment: NSTextAttachment(image: AppConfig.Icons.crown!))
+            let fullText = NSMutableAttributedString(attributedString: text)
+            fullText.append(image)
+            self.titleLabel.attributedText = fullText
+        }
     }
 }

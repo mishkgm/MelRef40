@@ -22,7 +22,7 @@ final class ModsView: BaseView {
        var label = UILabel()
         label.textColor = .white
         label.textAlignment = .center
-        label.text = "No found results"
+        label.text = "There’s nothing here yet"
         label.font = UIFont(size: 20)
         return label
     }()
@@ -33,15 +33,30 @@ final class ModsView: BaseView {
         searchBar.layer.cornerRadius = 10
         searchBar.layer.masksToBounds = true
         searchBar.barTintColor = UIColor(hex: "#989898").withAlphaComponent(0.8)
-        searchBar.isHidden = true
+        searchBar.searchTextField.textColor = .white
         searchBar.showsCancelButton = false
         return searchBar
     }()
     
+    lazy var sigestList: DropDownMenu = {
+        var view = DropDownMenu(isCentrallSetup: false)
+        return view
+    }()
+    
+    lazy var filterList: FilterMenu = {
+        var filter = FilterMenu()
+        filter.isHidden = true
+        return filter
+    }()
+    
     lazy var closeButton: UIButton = {
        var button = UIButton()
+        button.layer.cornerRadius = 12
         button.setImage(AppConfig.Icons.crossButton, for: .normal)
         button.tintColor = UIColor(hex: "#989898").withAlphaComponent(0.8)
+        button.backgroundColor = AppConfig.Colors.cellBackgroundColor
+        button.layer.borderWidth = 1.5
+        button.layer.borderColor = AppConfig.Colors.cellBorderColor.cgColor
         return button
     }()
     
@@ -57,6 +72,8 @@ final class ModsView: BaseView {
         layout.scrollDirection = .horizontal
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
         view.backgroundColor = .clear
+        view.showsVerticalScrollIndicator = false
+        view.showsHorizontalScrollIndicator = false
         view.register(CategoriesViewCell.self)
         return view
     }()
@@ -72,56 +89,112 @@ final class ModsView: BaseView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-//        categoryCollection.layer.sublayers?.removeAll(where: { $0.isKind(of: CAGradientLayer.self )})
-//        categoryCollection.setGradientBorder(width: 1, colors: [AppConfig.Colors.cellBorderColor, UIColor(hex: "#42535A")])
-//        categoryCollection.layoutIfNeeded()
+        var coof = 0
+        if sigestList.items.count <= 4 {
+            coof = sigestList.items.count
+        } else {
+            coof = 4
+        }
+        sigestList.snp.remakeConstraints { make in
+            make.top.equalTo(searchBar.snp.bottom).offset(5)
+            make.leading.trailing.equalToSuperview().inset(isPad ? 60 : 20)
+            make.height.equalTo(isPad ? coof * 70 : coof * 48)
+        }
     }
     
     override func configureView() {
         super.configureView()
         addSubview(searchBarConteiner)
-        searchBarConteiner.addSubview(noFoundLabel)
+        addSubview(noFoundLabel)
         addSubview(categoryCollection)
         addSubview(modsCollection)
         addSubview(searchBar)
-        searchBar.addSubview(closeButton)
+        addSubview(searchBar)
+        addSubview(closeButton)
+        addSubview(sigestList)
+        addSubview(filterList)
         configureSearchBar()
+        self.sigestList.isHidden = true
+        self.searchBar.isHidden = true
+        self.closeButton.isHidden = true
     }
     
     override func makeConstraints() {
         super.makeConstraints()
         searchBarConteiner.snp.remakeConstraints { make in
-            make.top.equalTo(self.safeAreaLayoutGuide.snp.top).offset(0)
+            make.top.equalToSuperview().offset(0)
             make.leading.trailing.equalToSuperview()
+//            make.trailing.equalTo(closeButton.snp.leading).inset(12)
             make.height.equalToSuperview()
         }
         noFoundLabel.snp.remakeConstraints { make in
-            make.edges.equalToSuperview()
+            make.center.equalToSuperview()
+        }
+        filterList.snp.remakeConstraints { make in
+            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(-5)
+            make.trailing.equalToSuperview().inset(20)
+            make.width.equalToSuperview().multipliedBy(0.33)
         }
         categoryCollection.snp.remakeConstraints { make in
-            make.top.equalTo(bannerView.snp.bottom).offset(20)
+            make.top.equalTo(bannerView.snp.bottom).offset(10)
             make.trailing.leading.equalToSuperview()
-            make.height.equalToSuperview().multipliedBy(0.15)
+            make.height.equalTo(isPad ? 100 : 60)
         }
         modsCollection.snp.remakeConstraints { make in
-            make.top.equalTo(bannerView.snp.bottom).offset(isPad ? 110 : 90)
+            make.top.equalTo(categoryCollection.snp.bottom).offset(15)
             make.trailing.leading.equalToSuperview().inset(isPad ? 60 : 20)
             make.bottom.equalToSuperview()
         }
+        sigestList.snp.remakeConstraints { make in
+            make.top.equalTo(searchBar.snp.bottom).offset(5)
+            make.leading.trailing.equalToSuperview().inset(isPad ? 60 : 20)
+//            make.height.equalTo(300)
+        }
+        self.searchBar.snp.remakeConstraints { make in
+            make.top.equalTo(snp.top).offset(45)
+            make.leading.trailing.equalToSuperview().inset(isPad ? 50 : 10)
+        }
+    }
+    
+    func filterShow() {
+        self.filterList.isHidden = false
+    }
+    
+    func filterHide() {
+        self.filterList.isHidden = true
     }
     
     func searchSetup() {
-        self.categoryCollection.isHidden = true
+        self.sigestList.isHidden = false
         self.searchBar.isHidden = false
-        self.makeConstraintsForSearch()
+        bannerView.snp.remakeConstraints { make in
+            make.height.equalTo(0)
+        }
+        categoryCollection.snp.remakeConstraints { make in
+            make.top.equalTo(searchBar.snp.bottom).offset(10)
+            make.trailing.leading.equalToSuperview()
+            make.height.equalTo(isPad ? 100 : 60)
+        }
     }
     
     func hideSearch() {
         self.searchBar.text = nil
+        self.sigestList.isHidden = true
         self.searchBar.isHidden = true
-        self.categoryCollection.isHidden = false
+        self.closeButton.isHidden = true
+        self.sigestList.categoryCollection.arrangedSubviews.forEach({ $0.removeFromSuperview() })
         self.endEditing(true)
         self.makeConstraints()
+        sigestList.items.removeAll()
+        sigestList.snp.remakeConstraints { make in
+            make.top.equalTo(searchBar.snp.bottom).offset(5)
+            make.leading.trailing.equalToSuperview().inset(isPad ? 60 : 20)
+            make.height.equalTo(0)
+        }
+    }
+    
+    func showCloseButton() {
+        self.makeConstraintsForSearch()
     }
     
     func favouriteViewSetup() {
@@ -132,47 +205,59 @@ final class ModsView: BaseView {
             make.bottom.equalToSuperview()
         }
     }
+    
+    func makeNewPlacehorlder(text: String) {
+        if let searchField = searchBar.value(forKey: "searchField") as? UITextField {
+            var placeholderAttributes = [NSAttributedString.Key: AnyObject]()
+            placeholderAttributes[.foregroundColor] = UIColor(hex: "#989898").withAlphaComponent(0.8) // Укажите нужный цвет здесь
+            placeholderAttributes[.font] = UIFont(size: 16)
+            
+            let attributedPlaceholder = NSAttributedString(string: text, attributes: placeholderAttributes)
+            searchField.attributedPlaceholder = attributedPlaceholder
+        }
+    }
 }
 
 private extension ModsView {
     func makeConstraintsForSearch() {
+        self.closeButton.isHidden = false
         self.searchBar.snp.remakeConstraints { make in
-            make.top.equalTo(self.bannerView.snp.bottom).offset(5)
-            make.leading.trailing.equalToSuperview().inset(isPad ? 50 : 10)
-        }
-        self.modsCollection.snp.remakeConstraints { make in
-            make.top.equalTo(self.searchBar.snp.bottom).offset(5)
-            make.trailing.leading.equalToSuperview().inset(isPad ? 60 : 20)
-            make.bottom.equalToSuperview()
+            make.top.equalTo(snp.top).offset(45)
+            make.leading.equalToSuperview().inset(isPad ? 50 : 10)
+            make.trailing.equalTo(closeButton.snp.leading).offset(-5)
         }
         self.closeButton.snp.remakeConstraints { make in
-            make.centerY.equalToSuperview()
-            make.width.height.equalTo(24)
-            make.trailing.equalToSuperview().offset(-20)
+            make.centerY.equalTo(searchBar.snp.centerY)
+            make.trailing.equalToSuperview().inset(isPad ? 50 : 10)
+            make.height.equalTo(36)
+            make.width.equalTo(closeButton.snp.height)
         }
     }
     
     func configureSearchBar() {
         
+        makeNewPlacehorlder(text: "Search")
         if let searchField = searchBar.value(forKey: "searchField") as? UITextField {
             
-            var placeholderAttributes = [NSAttributedString.Key: AnyObject]()
-            placeholderAttributes[.foregroundColor] = UIColor(hex: "#989898").withAlphaComponent(0.8) // Укажите нужный цвет здесь
-            placeholderAttributes[.font] = UIFont(size: 16)
-            
-            let attributedPlaceholder = NSAttributedString(string: "Search", attributes: placeholderAttributes)
-            searchField.attributedPlaceholder = attributedPlaceholder
-            
+            searchField.tintColor = .white
             // Замените "searchImage" на имя вашего изображения для значка "Поиск"
             if let searchImage = UIImage(named: "search") {
                 searchField.leftView = UIImageView(image: searchImage)
-                searchField.leftView?.tintColor = UIColor(hex: "#989898").withAlphaComponent(0.8)
+                searchField.leftView?.tintColor = .white
             }
+            
+            if let clearButton = searchField.value(forKeyPath: "_clearButton") as? UIButton {
+                clearButton.setImage(AppConfig.Icons.crossButton, for: .normal)
+            } // Показывать кнопку только при редактировании текста
+            
         }
         searchBar.backgroundImage = UIImage() // Удаляет задний фон для UISearchBar
         if let searchField = searchBar.value(forKey: "searchField") as? UITextField {
             searchField.background = UIImage() // Удаляет задний фон для UITextField
-            searchField.backgroundColor = .clear
+            searchField.backgroundColor = UIColor(hex: "#456D56")
+            searchField.layer.cornerRadius = 12
+            searchField.layer.borderWidth = 1.5
+            searchField.layer.borderColor = AppConfig.Colors.cellBorderColor.cgColor
         }
     }
 }

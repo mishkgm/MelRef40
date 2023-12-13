@@ -11,11 +11,11 @@ import UIKit
 // MARK: - MainFLow
 enum ControllersType: Int, CaseIterable {
     case mods
-    case editor
+    case maps
     case skins
+    case editor
+    case weapons
     case myWorks
-    case favourite
-    case items
     case settings
     
     var viewController: BaseViewController {
@@ -24,12 +24,12 @@ enum ControllersType: Int, CaseIterable {
             return ModsViewController(controllerType: self)
         case .skins:
             return ItemsViewController(controllerType: self)
-        case .items:
+        case .maps:
             return ItemsViewController(controllerType: self)
         case .editor:
             return EditorViewController(controllerType: self)
-        case .favourite:
-            return FavouritesViewController(controllerType: self)
+        case .weapons:
+            return ItemsViewController(controllerType: self)
         case .myWorks:
             return MyWorksViewController(controllerType: self)
         case .settings:
@@ -43,12 +43,12 @@ enum ControllersType: Int, CaseIterable {
             return localizedString(forKey: "mods")
         case .skins:
             return localizedString(forKey: "skins")
-        case .items:
-            return localizedString(forKey: "items")
+        case .maps:
+            return "Maps"
         case .editor:
             return localizedString(forKey: "editor")
-        case .favourite:
-            return localizedString(forKey: "favourite")
+        case .weapons:
+            return "Weapons"
         case .myWorks:
             return localizedString(forKey: "myWorks")
         case .settings:
@@ -72,25 +72,40 @@ final class MainFlowCoordinator: BaseFlowProtocol {
         self.viewController = mainController
         return viewController
     }
+    
+    public func launchSub() -> PremiumMainController_MWP {
+        "close_to_die".forEach({ $0.isUppercase ? () : () });
+        let sub = PremiumMainController_MWP()
+        sub.delegate = self
+        return sub
+    }
 }
 
 // MARK: - Root
 extension MainFlowCoordinator: RootViewModelDelegate, BaseViewControllerDelegate, MenuViewControllerDelegate {
-    func openSub(style: PremiumMainController_MWPStyle) {
-        let vc = PremiumMainController_MWP()
-        vc.productBuy = style
-        vc.delegate = self
-        vc.modalPresentationStyle = .overFullScreen
-        self.viewController?.present(vc, animated: true)
+    func navigateToController(filter: FilterMods) {
+        self.didSelectIndex(filter.navigateIndex)
     }
     
-    func showDeteilEditor(objct: EditorDeteilModel) {
-        let vc = DeteilEditorViewController(objct: RealmEditorDeteilModel(editorDeteilModel: objct))
+    func openSub(style: PremiumMainController_MWPStyle) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            let vc = PremiumMainController_MWP()
+            vc.productBuy = style
+            vc.delegate = self
+            vc.modalPresentationStyle = .overFullScreen
+            self.viewController?.present(vc, animated: true)
+        }
+    }
+    
+    func showDeteilEditor(objct: EditorDeteilModel, title: String = "Editor") {
+        let vc = DeteilEditorViewController(objct: RealmEditorDeteilModel(editorDeteilModel: objct), title: title)
+        vc.flowDelegate = self
         self.viewController?.pushViewController(vc, animated: true)
     }
     
     func showDeteilEditor(imageData: Data, title: String) {
         let vc = DeteilEditorViewController(imageData: imageData, title: title)
+        vc.flowDelegate = self
         self.viewController?.pushViewController(vc, animated: true)
     }
     
@@ -113,10 +128,14 @@ extension MainFlowCoordinator: RootViewModelDelegate, BaseViewControllerDelegate
     func didSelectIndex(_ index: Int) {
         if index == ControllersType.editor.rawValue && !IAPManager_MWP.shared.productBought.contains(.unlockFuncProduct) {
             self.viewController?.presentedViewController?.dismiss(animated: true)
-            openSub(style: .unlockFuncProduct)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                self.openSub(style: .unlockFuncProduct)
+            }
         } else if index == ControllersType.skins.rawValue && !IAPManager_MWP.shared.productBought.contains(.unlockOther) {
             self.viewController?.presentedViewController?.dismiss(animated: true)
-            openSub(style: .unlockOther)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                self.openSub(style: .unlockOther)
+            }
         } else {
             self.currentController = ControllersType(rawValue: index) ?? .mods
             self.viewController?.presentedViewController?.dismiss(animated: true)
@@ -135,8 +154,16 @@ private extension MainFlowCoordinator {
 
 // MARK: - Sub
 extension MainFlowCoordinator: PremiumMainController_MWPDelegate {
+    func otherBought() {
+        self.didSelectIndex(ControllersType.skins.rawValue)
+    }
+    
     func openApp_MWP() {
-        self.viewController = launchViewController()
+        "close_to_die".forEach({ $0.isUppercase ? () : () });
+        DispatchQueue.main.async {
+            self.viewController = self.launchViewController()
+            UIApplication.shared.setRootVC_MWP(self.viewController ?? UIViewController())
+        }
     }
     
     func funcBought() {

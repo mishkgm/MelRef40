@@ -34,7 +34,7 @@ enum EditorCellType: String, EditorCellModel {
         case .coordinatesX:
             return CoordinateFieldCellX<Self>.self
         case .coordinatesW:
-            return CoordinateFieldCellW<Self>.self
+            return CoordinateFieldCellX<Self>.self
         case .slider:
             return SliderViewCell<Self>.self
         case .switchCell:
@@ -47,21 +47,20 @@ enum EditorCellType: String, EditorCellModel {
     var heightForRow: CGFloat {
         switch self {
         case .name:
-            return 75
+            return 60
         case .icon:
-            return 240
+            return 200
         case .fields:
-            return 170
+            return 200
         case .coordinatesX:
-            return 60
-        case .coordinatesW:
-            return 60
+            return 240
         case .slider:
-            return 120
+            return 200
         case .switchCell:
-            return 400
+            return 240
         case .titalCell:
             return 70
+        default: return 0
         }
     }
     
@@ -74,13 +73,13 @@ enum EditorCellType: String, EditorCellModel {
         case .fields:
             return [.type, .category]
         case .coordinatesX:
-            return [.xValue, .yValue]
+            return [.yValue, .heightValue]
         case .coordinatesW:
-            return [.widthValue, .heightValue]
+            return [.xValue, .widthValue]
         case .slider:
             return [.pixelValue]
         case .switchCell:
-            return [.canBurn, .canBeTaken, .canFloat, .canGlow]
+            return [.canBeTaken, .canGlow, .canBurn, .canFloat]
         case .titalCell:
             return []
         }

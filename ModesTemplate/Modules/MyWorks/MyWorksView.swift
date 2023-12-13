@@ -31,13 +31,14 @@ class MyWorksView: BaseView {
        var image = UIImageView()
         image.image = AppConfig.Icons.myWorks
         image.contentMode = .scaleAspectFit
+        image.isHidden = true
         return image
     }()
     
     lazy var noSaveModsLabel: UILabel = {
        var label = UILabel()
         label.font = UIFont(size: 20)
-        label.text = "No saved works yet"
+        label.text = "It’s empty here yet"
         label.textColor = .white
         label.textAlignment = .center
         return label
@@ -65,12 +66,13 @@ class MyWorksView: BaseView {
         }
         noSavedModsImage.snp.remakeConstraints { make in
             make.top.trailing.leading.equalToSuperview().inset(20)
-            make.height.equalToSuperview().multipliedBy(0.8)
+            make.height.equalToSuperview().multipliedBy(0.5)
         }
         noSaveModsLabel.snp.remakeConstraints { make in
-            make.top.equalTo(noSavedModsImage.snp.bottom).offset(5)
-            make.trailing.leading.equalToSuperview().inset(20)
-            make.bottom.equalToSuperview().offset(-5)
+//            make.top.equalTo(noSavedModsImage.snp.bottom).offset(5)
+//            make.trailing.leading.equalToSuperview().inset(20)
+            make.center.equalToSuperview()
+//            make.bottom.equalToSuperview().offset(-5)
         }
     }
 }

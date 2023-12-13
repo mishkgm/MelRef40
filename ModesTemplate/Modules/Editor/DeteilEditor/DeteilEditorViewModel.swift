@@ -41,13 +41,13 @@ enum EditorDataType: String {
         case .iconData:
             return "Icon"
         case .xValue:
-            return " X: "
+            return "X: "
         case .yValue:
-            return " Y: "
+            return "Y: "
         case .heightValue:
-            return "H: "
+            return "  H: "
         case .widthValue:
-            return "W: "
+            return "  W: "
         case .pixelValue:
             return " Pixel Per Unit".uppercased()
         case .canBeTaken:

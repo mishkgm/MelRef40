@@ -17,6 +17,7 @@ enum ContentType: String {
     case editor = "Editor"
     case items = "Items"
     case skins = "Skins"
+    case maps = "Maps"
     
     // paths to json file
     var downloadPath: String {
@@ -26,6 +27,7 @@ enum ContentType: String {
         case .editor: return "/mod_editor/mod_editor.json"
         case .items: return "/Items/Modified_Items.json"
         case .skins: return "/Skins/Modified_Skins.json"
+        case .maps: return "/Maps/Modified_Items.json"
         }
     }
     
@@ -37,6 +39,8 @@ enum ContentType: String {
             return "Items"
         case .skins:
             return "Skins"
+        case .maps:
+            return "Maps"
         default: return ""
         }
     }
@@ -217,6 +221,8 @@ private extension DropBoxClient {
             try featchItems(json: response)
         case .skins:
             try featchSkins(json: response)
+        case .maps:
+            try featchMaps(json: response)
         }
     }
     
@@ -281,7 +287,22 @@ private extension DropBoxClient {
                   let downloadPath = objct[ItemsJsonKeys.downloadPath] else {
                 throw DropError.parseError(type: .items)
             }
-            self.realm.create(RealmItemsModel(title: title, description: description, imagePath: imagePath, type: ItemsType.items.rawValue, downloadPath: downloadPath))
+            self.realm.create(RealmItemsModel(title: title, description: description, imagePath: imagePath, type: "Items", downloadPath: downloadPath))
+        }
+    }
+    
+    func featchMaps(json: [String: Any]) throws {
+        guard let structJson = json[MapsJsonKeys.main] as? [[String: String]] else {
+            throw DropError.parseError(type: .maps)
+        }
+        try structJson.forEach { objct in
+            guard let title = objct[MapsJsonKeys.title],
+                  let description = objct[MapsJsonKeys.description],
+                  let imagePath = objct[MapsJsonKeys.imagePath],
+                  let downloadPath = objct[MapsJsonKeys.downloadPath] else {
+                throw DropError.parseError(type: .maps)
+            }
+            self.realm.create(RealmItemsModel(title: title, description: description, imagePath: imagePath, type: ItemsType.maps.rawValue, downloadPath: downloadPath))
         }
     }
     

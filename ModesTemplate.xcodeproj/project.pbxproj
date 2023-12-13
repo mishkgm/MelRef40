@@ -16,7 +16,12 @@
 		7AC4C4E02B172B79000A2693 /* DeleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC4C4DF2B172B79000A2693 /* DeleteViewController.swift */; };
 		7AC4C4E22B172CDC000A2693 /* DeleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC4C4E12B172CDC000A2693 /* DeleteView.swift */; };
 		7AC4C4E42B173609000A2693 /* extension+UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC4C4E32B173609000A2693 /* extension+UIButton.swift */; };
+		DE0804EF2B2B37A80058BD18 /* Inter-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE9488882B21EAD6009210E4 /* Inter-Medium.ttf */; };
+		DE0804F02B2B37AB0058BD18 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE9488862B21EAD0009210E4 /* Inter-Regular.ttf */; };
+		DE0804F12B2B37AE0058BD18 /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE9488842B21EACA009210E4 /* Inter-Bold.ttf */; };
+		DE0804F22B2B37B00058BD18 /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE94888A2B21EADD009210E4 /* Inter-SemiBold.ttf */; };
 		DE0ECDB12B18D8AD0024406C /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DE0ECDB02B18D8AD0024406C /* IQKeyboardManagerSwift */; };
+		DE135CC72B3D63AE00E70D9F /* DropDownFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE135CC62B3D63AE00E70D9F /* DropDownFilter.swift */; };
 		DE1426452B13D3F20096CE34 /* KeysForStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1426442B13D3F20096CE34 /* KeysForStructs.swift */; };
 		DE1426482B13DA690096CE34 /* ModsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1426472B13DA690096CE34 /* ModsViewController.swift */; };
 		DE14264A2B13DA730096CE34 /* ModsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1426492B13DA730096CE34 /* ModsModel.swift */; };
@@ -91,7 +96,6 @@
 		DE808C292B20601700810B08 /* extension+UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE808C282B20601700810B08 /* extension+UIStackView.swift */; };
 		DE9233322B17609200043B09 /* DeteilModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9233312B17609200043B09 /* DeteilModel.swift */; };
 		DE9233342B177D6200043B09 /* FavouriteSelectorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9233332B177D6200043B09 /* FavouriteSelectorCell.swift */; };
-		DE9488742B21DA5F009210E4 /* CoordinateFieldCellW.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9488732B21DA5F009210E4 /* CoordinateFieldCellW.swift */; };
 		DEA822692B1DE0410061A828 /* ItemsDeteilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA822682B1DE0410061A828 /* ItemsDeteilView.swift */; };
 		DEB1DCB72B14C36000A98A97 /* ModsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB1DCB62B14C36000A98A97 /* ModsCollectionViewCell.swift */; };
 		DEB1DCBA2B14C80500A98A97 /* PromiseKit in Frameworks */ = {isa = PBXBuildFile; productRef = DEB1DCB92B14C80500A98A97 /* PromiseKit */; };
@@ -100,10 +104,11 @@
 		DEBD87C72B1D34930055AF30 /* IconUploadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD87C62B1D34930055AF30 /* IconUploadCell.swift */; };
 		DEBD87C92B1D35790055AF30 /* FieldsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD87C82B1D35790055AF30 /* FieldsCell.swift */; };
 		DEBD87CE2B1D389A0055AF30 /* EditorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD87CD2B1D389A0055AF30 /* EditorCell.swift */; };
-		DEBD87D02B1D3E3B0055AF30 /* CoordinateFieldCellX.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD87CF2B1D3E3B0055AF30 /* CoordinateFieldCellX.swift */; };
+		DEBD87D02B1D3E3B0055AF30 /* CoordinateFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD87CF2B1D3E3B0055AF30 /* CoordinateFieldCell.swift */; };
 		DEBD87D32B1D4A520055AF30 /* SliderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD87D22B1D4A520055AF30 /* SliderViewCell.swift */; };
 		DEBD87D62B1D4C3D0055AF30 /* SwitchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD87D52B1D4C3D0055AF30 /* SwitchCell.swift */; };
 		DEBD87D82B1D4DA80055AF30 /* DeteilStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD87D72B1D4DA80055AF30 /* DeteilStackView.swift */; };
+		DED47D8E2B2BB7A600926846 /* DropDownCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED47D8D2B2BB7A600926846 /* DropDownCell.swift */; };
 		DEEA02322B29805C000E51D3 /* Goldman-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DEEA02312B29805C000E51D3 /* Goldman-Bold.ttf */; };
 		DEEA02342B298062000E51D3 /* Goldman-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DEEA02332B298062000E51D3 /* Goldman-Regular.ttf */; };
 		DEEA02352B298D6B000E51D3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DEEA02372B298D6B000E51D3 /* Localizable.strings */; };
@@ -175,6 +180,7 @@
 		7AC4C4DF2B172B79000A2693 /* DeleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteViewController.swift; sourceTree = "<group>"; };
 		7AC4C4E12B172CDC000A2693 /* DeleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteView.swift; sourceTree = "<group>"; };
 		7AC4C4E32B173609000A2693 /* extension+UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "extension+UIButton.swift"; sourceTree = "<group>"; };
+		DE135CC62B3D63AE00E70D9F /* DropDownFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownFilter.swift; sourceTree = "<group>"; };
 		DE1426442B13D3F20096CE34 /* KeysForStructs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeysForStructs.swift; sourceTree = "<group>"; };
 		DE1426472B13DA690096CE34 /* ModsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModsViewController.swift; sourceTree = "<group>"; };
 		DE1426492B13DA730096CE34 /* ModsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModsModel.swift; sourceTree = "<group>"; };
@@ -245,7 +251,6 @@
 		DE808C282B20601700810B08 /* extension+UIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "extension+UIStackView.swift"; sourceTree = "<group>"; };
 		DE9233312B17609200043B09 /* DeteilModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeteilModel.swift; sourceTree = "<group>"; };
 		DE9233332B177D6200043B09 /* FavouriteSelectorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteSelectorCell.swift; sourceTree = "<group>"; };
-		DE9488732B21DA5F009210E4 /* CoordinateFieldCellW.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateFieldCellW.swift; sourceTree = "<group>"; };
 		DE9488842B21EACA009210E4 /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.ttf"; sourceTree = "<group>"; };
 		DE9488862B21EAD0009210E4 /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.ttf"; sourceTree = "<group>"; };
 		DE9488882B21EAD6009210E4 /* Inter-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Medium.ttf"; sourceTree = "<group>"; };
@@ -257,10 +262,11 @@
 		DEBD87C62B1D34930055AF30 /* IconUploadCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconUploadCell.swift; sourceTree = "<group>"; };
 		DEBD87C82B1D35790055AF30 /* FieldsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldsCell.swift; sourceTree = "<group>"; };
 		DEBD87CD2B1D389A0055AF30 /* EditorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorCell.swift; sourceTree = "<group>"; };
-		DEBD87CF2B1D3E3B0055AF30 /* CoordinateFieldCellX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateFieldCellX.swift; sourceTree = "<group>"; };
+		DEBD87CF2B1D3E3B0055AF30 /* CoordinateFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateFieldCell.swift; sourceTree = "<group>"; };
 		DEBD87D22B1D4A520055AF30 /* SliderViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderViewCell.swift; sourceTree = "<group>"; };
 		DEBD87D52B1D4C3D0055AF30 /* SwitchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchCell.swift; sourceTree = "<group>"; };
 		DEBD87D72B1D4DA80055AF30 /* DeteilStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeteilStackView.swift; sourceTree = "<group>"; };
+		DED47D8D2B2BB7A600926846 /* DropDownCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownCell.swift; sourceTree = "<group>"; };
 		DEEA02312B29805C000E51D3 /* Goldman-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Goldman-Bold.ttf"; sourceTree = "<group>"; };
 		DEEA02332B298062000E51D3 /* Goldman-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Goldman-Regular.ttf"; sourceTree = "<group>"; };
 		DEEA02362B298D6B000E51D3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -488,6 +494,7 @@
 			children = (
 				DEB1DCB62B14C36000A98A97 /* ModsCollectionViewCell.swift */,
 				DEB1DCBB2B14E05000A98A97 /* CategoriesViewCell.swift */,
+				DED47D8D2B2BB7A600926846 /* DropDownCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -706,6 +713,7 @@
 				DE5962B82B1827CB00A486B0 /* DeteilEditorButton.swift */,
 				DEBD87D72B1D4DA80055AF30 /* DeteilStackView.swift */,
 				DEFABEB32B1CED640051ACB7 /* BannerView.swift */,
+				DE135CC62B3D63AE00E70D9F /* DropDownFilter.swift */,
 			);
 			path = CommonViews;
 			sourceTree = "<group>";
@@ -751,8 +759,7 @@
 		DEBD87CB2B1D35850055AF30 /* SecondView */ = {
 			isa = PBXGroup;
 			children = (
-				DEBD87CF2B1D3E3B0055AF30 /* CoordinateFieldCellX.swift */,
-				DE9488732B21DA5F009210E4 /* CoordinateFieldCellW.swift */,
+				DEBD87CF2B1D3E3B0055AF30 /* CoordinateFieldCell.swift */,
 			);
 			path = SecondView;
 			sourceTree = "<group>";
@@ -1075,10 +1082,14 @@
 				DEEA02322B29805C000E51D3 /* Goldman-Bold.ttf in Resources */,
 				DEFABE8F2B1CEA6D0051ACB7 /* phone.mp4 in Resources */,
 				DEFABEC82B1CF6890051ACB7 /* storekitconfig.storekit in Resources */,
+				DE0804F12B2B37AE0058BD18 /* Inter-Bold.ttf in Resources */,
 				DEFABE902B1CEA6D0051ACB7 /* pad.mp4 in Resources */,
+				DE0804F02B2B37AB0058BD18 /* Inter-Regular.ttf in Resources */,
 				DEEA02352B298D6B000E51D3 /* Localizable.strings in Resources */,
 				DEFABE932B1CEA6D0051ACB7 /* SFProText-Bold.ttf in Resources */,
+				DE0804F22B2B37B00058BD18 /* Inter-SemiBold.ttf in Resources */,
 				DEFABE8D2B1CEA6D0051ACB7 /* Media.xcassets in Resources */,
+				DE0804EF2B2B37A80058BD18 /* Inter-Medium.ttf in Resources */,
 				DEFABE962B1CEA6D0051ACB7 /* TransactionView_MWP.xib in Resources */,
 				DEFABEA22B1CEA6D0051ACB7 /* ReusableView_MWP.xib in Resources */,
 				DEFABEA32B1CEA6D0051ACB7 /* sub.ttf in Resources */,
@@ -1105,7 +1116,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE9488742B21DA5F009210E4 /* CoordinateFieldCellW.swift in Sources */,
 				DEBD87CE2B1D389A0055AF30 /* EditorCell.swift in Sources */,
 				DEFABE972B1CEA6D0051ACB7 /* TransactionView_MWP.swift in Sources */,
 				DE5962A72B18010800A486B0 /* DeteilEditorViewModel.swift in Sources */,
@@ -1148,6 +1158,7 @@
 				7A24CB5C2B176C6100F725C1 /* DetailButton.swift in Sources */,
 				DE2AE92B2B21140800FD7120 /* DropDownMenu.swift in Sources */,
 				DE48258F2B155FAD00F5D007 /* ModDeteilView.swift in Sources */,
+				DE135CC72B3D63AE00E70D9F /* DropDownFilter.swift in Sources */,
 				DEFABE9C2B1CEA6D0051ACB7 /* Player_MWP.swift in Sources */,
 				DE5962A12B1800DC00A486B0 /* DeteilEditorViewController.swift in Sources */,
 				DEFABE9B2B1CEA6D0051ACB7 /* AnimatedButton_MWP.swift in Sources */,
@@ -1172,7 +1183,7 @@
 				DE592E1C2B0FABF100BE64CC /* BaseView.swift in Sources */,
 				DEFABE8A2B1CEA6D0051ACB7 /* extensions-freeform_MWP.swift in Sources */,
 				DE4825882B15453B00F5D007 /* RootViewModel.swift in Sources */,
-				DEBD87D02B1D3E3B0055AF30 /* CoordinateFieldCellX.swift in Sources */,
+				DEBD87D02B1D3E3B0055AF30 /* CoordinateFieldCell.swift in Sources */,
 				DE14267D2B140BC90096CE34 /* FavouritesViewController.swift in Sources */,
 				DE1426772B13FD930096CE34 /* SettingViewCell.swift in Sources */,
 				DEFABEB42B1CED640051ACB7 /* BannerView.swift in Sources */,
@@ -1195,6 +1206,7 @@
 				7A24CB5A2B1765B300F725C1 /* ModDescriptionView.swift in Sources */,
 				DE592E052B0FA06300BE64CC /* DropBoxCore.swift in Sources */,
 				DE592E082B0FA0EF00BE64CC /* DropBoxKeys.swift in Sources */,
+				DED47D8E2B2BB7A600926846 /* DropDownCell.swift in Sources */,
 				DE59629C2B18001900A486B0 /* EditroViewModel.swift in Sources */,
 				DE1426482B13DA690096CE34 /* ModsViewController.swift in Sources */,
 				DEA822692B1DE0410061A828 /* ItemsDeteilView.swift in Sources */,
@@ -1386,6 +1398,7 @@
 				DEVELOPMENT_TEAM = WSL2HKX9YP;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ModesTemplate/Info.plist;
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = templatetemplatetemplatetemplatetemplate;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -1415,6 +1428,7 @@
 				DEVELOPMENT_TEAM = WSL2HKX9YP;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ModesTemplate/Info.plist;
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = templatetemplatetemplatetemplatetemplate;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -1451,7 +1465,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.noname.digital.development.notification;
+				PRODUCT_BUNDLE_IDENTIFIER = com.noname.digital.development.notificat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -1480,7 +1494,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.noname.digital.development.notification;
+				PRODUCT_BUNDLE_IDENTIFIER = com.noname.digital.development.notificat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;

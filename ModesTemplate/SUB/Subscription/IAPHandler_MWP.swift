@@ -17,7 +17,7 @@ class IAPManager_MWP: NSObject, SKPaymentTransactionObserver, SKProductsRequestD
     
     public var localizablePrice = "$4.99"
     public var productBuy : PremiumMainController_MWPStyle = .mainProduct
-    public var productBought: [PremiumMainController_MWPStyle] = [.unlockContentProduct,.unlockFuncProduct,.unlockOther]
+    public var productBought: [PremiumMainController_MWPStyle] = []
     
     private var inMain: SKProduct?
     private var inUnlockContent: SKProduct?

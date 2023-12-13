@@ -13,16 +13,18 @@ final class MyWorksViewCell: BaseCollectionViewCell {
     
     lazy var imageView: UIImageView = {
        var image = UIImageView()
+        image.layer.cornerRadius = 12
+        image.contentMode = .scaleAspectFit
         image.backgroundColor = AppConfig.Colors.imagesBackgoundColor
         return image
     }()
     
     lazy var titleLabel: UILabel = {
        var label = UILabel()
-        label.font = UIFont(size: 14, type: .bold)
+        label.font = UIFont(size: 16, type: .regular)
         label.textColor = AppConfig.Colors.titlesColor
         label.numberOfLines = 2
-        label.textAlignment = .left
+        label.textAlignment = .center
         return label
     }()
     
@@ -30,21 +32,34 @@ final class MyWorksViewCell: BaseCollectionViewCell {
        var label = UILabel()
         label.font = UIFont(size: 14, type: .regular)
         label.textColor = UIColor(hex: "#BCC5C9")
+        label.textAlignment = .center
         label.text = "Create: 13 Oct,2023\nTime: 20:54"
         label.numberOfLines = 2
         label.adjustsFontSizeToFitWidth = true
         return label
     }()
     
+    lazy var buttonsStack: UIStackView = {
+       var stack = UIStackView()
+        stack.axis = .horizontal
+        stack.spacing = 12
+        stack.distribution = .fillEqually
+        return stack
+    }()
+    
     lazy var editButton: UIButton = {
        var button = UIButton()
-        button.setBackgroundImage(AppConfig.Icons.editIcon, for: .normal)
+        button.layer.cornerRadius = 12
+        button.backgroundColor = #colorLiteral(red: 0.4048410654, green: 0.6089814305, blue: 0.4934465885, alpha: 1)
+        button.setImage(AppConfig.Icons.editIcon, for: .normal)
         return button
     }()
     
     lazy var deleteButton: UIButton = {
        var button = UIButton()
-        button.setBackgroundImage(AppConfig.Icons.binIcon, for: .normal)
+        button.layer.cornerRadius = 12
+        button.backgroundColor = #colorLiteral(red: 0.79918468, green: 0.0995830074, blue: 0.0975901261, alpha: 1)
+        button.setImage(AppConfig.Icons.binIcon, for: .normal)
         return button
     }()
     
@@ -56,38 +71,30 @@ final class MyWorksViewCell: BaseCollectionViewCell {
         addSubview(imageView)
         addSubview(titleLabel)
         addSubview(timeLabel)
-        addSubview(editButton)
-        addSubview(deleteButton)
+        addSubview(buttonsStack)
+        buttonsStack.addArrangedSubview(deleteButton)
+        buttonsStack.addArrangedSubview(editButton)
         deleteButton.addTarget(self, action: #selector(deleteMod), for: .touchUpInside)
         editButton.addTarget(self, action: #selector(editMod), for: .touchUpInside)
     }
     
     override func makeConstraints() {
         imageView.snp.remakeConstraints { make in
-            make.trailing.equalToSuperview().inset(20)
-            make.top.bottom.equalToSuperview().inset(16)
-            make.width.equalToSuperview().multipliedBy(0.45)
+            make.leading.trailing.top.equalToSuperview().inset(12)
+            make.height.equalToSuperview().multipliedBy(0.37)
         }
         titleLabel.snp.remakeConstraints { make in
-            make.top.equalToSuperview().inset(16)
-            make.leading.equalToSuperview().offset(20)
-            make.trailing.equalTo(imageView.snp.leading).offset(-5)
+            make.top.equalTo(imageView.snp.bottom).offset(12)
+            make.leading.trailing.equalToSuperview().inset(12)
         }
         timeLabel.snp.remakeConstraints { make in
             make.top.equalTo(titleLabel.snp.bottom).offset(5)
-            make.leading.equalToSuperview().offset(20)
-            make.trailing.equalTo(titleLabel.snp.trailing)
+            make.leading.trailing.equalToSuperview().inset(12)
         }
-        editButton.snp.remakeConstraints { make in
-            make.leading.equalToSuperview().offset(20)
+        buttonsStack.snp.remakeConstraints { make in
             make.top.equalTo(timeLabel.snp.bottom).offset(10)
-            make.height.width.equalTo(isPad ? 36 : 24)
-            make.bottom.equalToSuperview().offset(-16)
-        }
-        deleteButton.snp.remakeConstraints { make in
-            make.leading.equalTo(editButton.snp.trailing).offset(24)
-            make.centerY.equalTo(editButton.snp.centerY)
-            make.height.width.equalTo(isPad ? 36 : 24)
+            make.height.equalTo(isPad ? 48 : 32)
+            make.trailing.leading.bottom.equalToSuperview().inset(12)
         }
     }
     

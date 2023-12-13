@@ -11,22 +11,27 @@ import SnapKit
 
 final class SkinsCollectionViewCell: BaseCollectionViewCell {
     
-   lazy var saveButton: UIButton = {
-        var button = UIButton(type: .system)
-        button.setImage(AppConfig.Icons.saveicon, for: .normal)
-       button.tintColor = .white
+    lazy var saveButton: CustomButton = {
+        var button = CustomButton()
+        button.layer.cornerRadius = 12
+        button.tintColor = .white
+        button.setImage(AppConfig.Icons.saveicon)
+        button.backgroundColor = AppConfig.Colors.imagesBackgoundColor
         return button
     }()
     
-    lazy var favouriteButton: UIButton = {
-        var button = UIButton(type: .system)
+    lazy var favouriteButton: CustomButton = {
+        var button = CustomButton()
+        button.layer.cornerRadius = 12
         button.tintColor = .white
-        button.setImage(AppConfig.Icons.favoritesEmpty, for: .normal)
+        button.setImage(AppConfig.Icons.favoritesEmpty)
+        button.backgroundColor = AppConfig.Colors.imagesBackgoundColor
         return button
     }()
     
     lazy var imageView: UIImageView = {
        var view = UIImageView()
+        view.layer.cornerRadius = 12
         view.contentMode = .scaleAspectFit
         view.backgroundColor = AppConfig.Colors.imagesBackgoundColor
         return view
@@ -34,9 +39,9 @@ final class SkinsCollectionViewCell: BaseCollectionViewCell {
     
     lazy var titleLabel: UILabel = {
         var label = UILabel()
-        label.numberOfLines = 2
+        label.numberOfLines = 1
         label.textAlignment = .center
-        label.font = UIFont(size: 14, type: .bold)
+        label.font = UIFont(size: 16, type: .regular)
         label.textColor = AppConfig.Colors.titlesColor
         return label
     }()
@@ -46,8 +51,7 @@ final class SkinsCollectionViewCell: BaseCollectionViewCell {
         label.textAlignment = .left
         label.font = UIFont(size: 14, type: .regular)
         label.textColor = AppConfig.Colors.descriptionsColor
-        label.numberOfLines = 2
-        label.isHidden = true
+        label.numberOfLines = 1
         return label
     }()
     
@@ -68,14 +72,17 @@ final class SkinsCollectionViewCell: BaseCollectionViewCell {
     
     override func makeConstraints() {
         imageView.snp.remakeConstraints { make in
-            make.top.bottom.equalToSuperview().inset(16)
-            make.trailing.equalToSuperview().inset(20)
-            make.width.equalTo(bounds.width / 2)
+            make.top.equalToSuperview().inset(12)
+            make.leading.trailing.equalToSuperview().inset(12)
+            make.height.equalToSuperview().multipliedBy(0.38)
         }
         titleLabel.snp.remakeConstraints { make in
-            make.top.equalToSuperview().offset(16)
-            make.leading.equalToSuperview().offset(20)
-            make.trailing.equalTo(imageView.snp.leading).offset(-5)
+            make.top.equalTo(imageView.snp.bottom).offset(12)
+            make.trailing.leading.equalToSuperview().inset(12)
+        }
+        descriptionLabel.snp.remakeConstraints { make in
+            make.top.equalTo(titleLabel.snp.bottom).offset(4)
+            make.trailing.leading.equalToSuperview().inset(12)
         }
         
         let buttonStackView = UIStackView()
@@ -83,15 +90,16 @@ final class SkinsCollectionViewCell: BaseCollectionViewCell {
         buttonStackView.distribution = .fillEqually
         buttonStackView.addArrangedSubview(favouriteButton)
         buttonStackView.addArrangedSubview(saveButton)
+        buttonStackView.spacing = 8
         
         addSubview(buttonStackView)
 
         buttonStackView.snp.remakeConstraints { make in
-            make.leading.equalToSuperview().offset(16)
+            make.top.equalTo(descriptionLabel.snp.bottom).offset(12)
+            make.leading.bottom.trailing.equalToSuperview().inset(12)
             make.size.equalTo(isPad
                             ? CGSize(width: 80 * 1.8, height: 28 * 1.8)
                             : CGSize(width: 80, height: 28))
-            make.bottom.equalToSuperview().offset(-16)
         }
     }
     
@@ -103,7 +111,7 @@ final class SkinsCollectionViewCell: BaseCollectionViewCell {
         descriptionLabel.text = item.description
         isFavourite = item.isFavourite
         favouriteButton.tintColor = item.isFavourite ? AppConfig.Colors.buttonsColors : .white
-        favouriteButton.setImage(item.isFavourite ? AppConfig.Icons.favoritesFill : AppConfig.Icons.favoritesEmpty, for: .normal)
+        favouriteButton.setImage(item.isFavourite ? AppConfig.Icons.favoritesFill : AppConfig.Icons.favoritesEmpty)
     }
     
     @objc func saveButtonTapped() {
@@ -116,14 +124,6 @@ final class SkinsCollectionViewCell: BaseCollectionViewCell {
     }
     
     func togleFavouriteStatus() {
-//        switch isFavourite {
-//        case true:
-//            self.favouriteButton.tintColor = AppConfig.Colors.buttonsColors
-//            self.favouriteButton.setImage(AppConfig.Icons.favoritesFill, for: .normal)
-//        case false:
-//            self.favouriteButton.tintColor = .white
-//            self.favouriteButton.setImage(AppConfig.Icons.favoritesEmpty, for: .normal)
-//        }
         self.favouriteComplition?(favouriteButton.tag)
     }
 }

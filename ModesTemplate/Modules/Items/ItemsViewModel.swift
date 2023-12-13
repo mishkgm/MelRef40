@@ -22,6 +22,7 @@ final class ItemsViewModel: BaseViewModel {
         firstly {
             self.downloadImage(imagePath: "/\(contentType.folderName)/\(objct.imagePath)", object: objct, imageView: imageView)
         }.done { data in
+            guard self.model.count > index else { return }
             self.model[index].imageData = data
         }.catch { error in
             print("\(error)")

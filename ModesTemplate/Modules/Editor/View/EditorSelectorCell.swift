@@ -17,18 +17,18 @@ fileprivate enum EditorSelectorCellStyle: RawRepresentable {
     var color: UIColor {
         switch self {
         case .selected:
-            return UIColor(hex: "#F0D045")
+            return .clear
         case .deselected:
-            return UIColor(hex: "#242528")
+            return .clear
         }
     }
     
     var textColor: UIColor {
         switch self {
         case .selected:
-            return UIColor(hex: "#242528")
+            return .white
         case .deselected:
-            return UIColor(hex: "#BCC5C9")
+            return UIColor(hex: "#EBEEEC")
         }
     }
     
@@ -56,31 +56,32 @@ final class EditorSelectorCell: BaseCollectionViewCell {
         return image
     }()
     
+    lazy var selectedView: UIView = {
+       var view = UIView()
+        view.backgroundColor = .white
+        return view
+    }()
+    
     override func configureView() {
-        addSubview(imageView)
+        backgroundColor = .clear
         addSubview(titleLabel)
+        addSubview(selectedView)
     }
     
     override func makeConstraints() {
-        imageView.snp.remakeConstraints { make in
-            make.top.equalToSuperview().offset(5)
-            make.height.equalToSuperview().multipliedBy(0.5)
-            make.width.equalTo(imageView.snp.height)
-            make.centerX.equalToSuperview()
-        }
         titleLabel.snp.remakeConstraints { make in
-            make.top.equalTo(imageView.snp.bottom).offset(5)
-            make.centerX.equalToSuperview()
-            make.bottom.equalToSuperview().inset(5)
+            make.edges.equalToSuperview()
+        }
+        selectedView.snp.remakeConstraints { make in
+            make.height.equalTo(1.5)
+            make.trailing.leading.bottom.equalToSuperview()
         }
     }
     
     func configureCell(type: EditorContentType, isSelected: Bool) {
         let selectedType = EditorSelectorCellStyle(rawValue: isSelected)
         titleLabel.textColor = selectedType?.textColor
-        imageView.tintColor = selectedType?.textColor
-        self.backgroundColor = selectedType?.color
         self.titleLabel.text = type.rawValue
-        self.imageView.image = type.image
+        self.selectedView.isHidden = !isSelected
     }
 }

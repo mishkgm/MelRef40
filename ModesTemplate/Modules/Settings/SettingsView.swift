@@ -19,11 +19,6 @@ final class SettingsView: BaseView {
         return view
     }()
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        self.tableView.setGradientBorder(width: 1, colors: [AppConfig.Colors.cellBorderColor, UIColor(hex: "#42535A")])
-    }
-    
     override func configureView() {
         super.configureView()
         addSubview(tableView)
@@ -34,7 +29,7 @@ final class SettingsView: BaseView {
         tableView.snp.remakeConstraints { make in
             make.top.equalTo(bannerView.snp.bottom).offset(10)
             make.trailing.leading.equalToSuperview().inset(isPad ? 60 : 20)
-            make.height.equalTo(isPad ? 200 : 120)
+            make.bottom.equalToSuperview()
         }
     }
 }

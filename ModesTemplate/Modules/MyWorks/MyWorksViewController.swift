@@ -54,7 +54,7 @@ extension MyWorksViewController: UICollectionViewDelegate, UICollectionViewDataS
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MyWorksViewCell.cellIdentifier(), for: indexPath) as? MyWorksViewCell else { return UICollectionViewCell() }
-        cell.configureCell(title: viewModel.model[indexPath.row].name, imageData: viewModel.model[indexPath.row].imageData, createdDate: viewModel.model[indexPath.row].createdDate)
+        cell.configureCell(title: viewModel.model[indexPath.row].name, imageData: viewModel.model[indexPath.row].iconData, createdDate: viewModel.model[indexPath.row].createdDate)
         cell.deleteButton.tag = indexPath.row
         cell.editButton.tag = indexPath.row
         cell.deleteConplition = { [weak self] index in
@@ -67,7 +67,9 @@ extension MyWorksViewController: UICollectionViewDelegate, UICollectionViewDataS
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width - 40, height: collectionView.frame.height / 5)
+        return isPad ? CGSize(width: screenSize.width/3 - 45, height: screenSize.height / 4) :
+        CGSize(width: screenSize.width / 2 - 25, height: screenSize.height / 3.3)
+
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
@@ -77,7 +79,8 @@ extension MyWorksViewController: UICollectionViewDelegate, UICollectionViewDataS
 
 private extension MyWorksViewController {
     func showDeleteAlert(index: Int) {
-        let alert = CustomAlertViewController(alertStyle: .myWorksDelete)
+        let alert = CustomAlertViewController(alertStyle: .myWorksDelete(modName: viewModel.model[index].name))
+        alert.customAlertView.deleteButton.setTitle("Delete", for: .normal)
         alert.modalPresentationStyle = .overCurrentContext
         alert.deleteHandler = { [weak self] in
             self?.viewModel.deleteMod(index: index)
@@ -86,6 +89,6 @@ private extension MyWorksViewController {
     }
     
     func showDetailEditor(index: Int) {
-        flowDelegate?.showDeteilEditor(objct: viewModel.model[index])
+        flowDelegate?.showDeteilEditor(objct: viewModel.model[index], title: "My work")
     }
 }

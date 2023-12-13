@@ -9,8 +9,8 @@ import Foundation
 import UIKit
 
 enum EditorContentType: String, CaseIterable {
-    case miscTemplate = "Misc Template"
-    case living = "Living Template"
+    case miscTemplate = "Misc templates"
+    case living = "Living templates"
     
     var image: UIImage? {
         switch self {
@@ -30,6 +30,7 @@ final class EditorViewController: BaseViewController {
         view.collectionView.dataSource = self
         view.selectorView.dataSource = self
         view.selectorView.delegate = self
+        view.bannerView.subDelegate = self
         return view
     }()
     
@@ -102,7 +103,7 @@ extension EditorViewController: UICollectionViewDataSource, UICollectionViewDele
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         switch collectionView == mainView.collectionView {
         case true:
-            return isPad ? CGSize(width: collectionView.frame.width - 120, height: collectionView.frame.height / 5.5) : CGSize(width: collectionView.frame.width - 40, height: collectionView.frame.height / 5.5)
+            return isPad ? CGSize(width: collectionView.frame.width - 120, height: collectionView.frame.height / 3.8) : CGSize(width: collectionView.frame.width - 40, height: collectionView.frame.height / 3.8)
         case false:
             return isPad ? CGSize(width: collectionView.frame.width/2 - 10, height:  collectionView.frame.height - 10) : CGSize(width: collectionView.frame.width/2 - 10, height: collectionView.frame.height - 10)
         }

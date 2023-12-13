@@ -17,7 +17,7 @@
 "setting" = "Settings";
 
 "cancel-action" = "Cancel";
-"delete-action" = "Delete";
+"delete-action" = "Remove";
 
 "start-edit-mod" = "Start edit mod";
 "download" = "Download";
@@ -26,7 +26,7 @@
 "export" = "Export";
 
 "complete-saved" = "Saved";
-"complete-downloaded" = "Downloaded";
+"complete-downloaded" = "Saved";
 "favourite" = "Favorite";
 "" = "";
 "" = "";

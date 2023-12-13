@@ -19,9 +19,9 @@ enum CurrentState: Equatable {
 final class ModsViewModel: BaseViewModel {
     
     // Private
-    private(set) var currentState: CurrentState = .common {
+    var currentState: CurrentState = .common {
         didSet {
-            self.delegate?.reloadData()
+            //            self.delegate?.reloadData()
         }
     }
     private(set) var categoryModel: [CategoriesModel] = []
@@ -51,30 +51,62 @@ final class ModsViewModel: BaseViewModel {
         case .common: return modsModel.filter({ $0.category == currentCategory?.title })
         case .favourite:
             
-            guard !modsModel.filter({ $0.isFavourite }).isEmpty else {
+            guard !modsModel.filter({ $0.isFavourite && $0.category == currentCategory?.title }).isEmpty else {
                 delegate?.isEmtyCollection(true)
                 return []
             }
             delegate?.isEmtyCollection(false)
-            return modsModel.filter({ $0.isFavourite })
+            return modsModel.filter({ $0.isFavourite && $0.category == currentCategory?.title })
             
         case .search(let text):
-            return modsModel.filter( { $0.title.replacingOccurrences(of: " ", with: "").lowercased().contains(text.lowercased())} )
+            return modsModel.filter( { $0.title.replacingOccurrences(of: " ", with: "").lowercased().contains(text.lowercased()) && $0.category == currentCategory?.title } )
         case .all:
             return modsModel
         }
     }
     
+    func getModelFor(state: CurrentState) -> [ModsModel] {
+        if currentState == .common || currentState == .favourite || currentState == .all {
+            switch state {
+            case .common: return modsModel.filter({ $0.category == currentCategory?.title })
+            case .favourite:
+                
+                guard !modsModel.filter({ $0.isFavourite && $0.category == currentCategory?.title }).isEmpty else {
+                    delegate?.isEmtyCollection(true)
+                    return []
+                }
+                delegate?.isEmtyCollection(false)
+                return modsModel.filter({ $0.isFavourite && $0.category == currentCategory?.title })
+                
+            case .search(let text):
+                return modsModel.filter( { $0.title.replacingOccurrences(of: " ", with: "").lowercased().contains(text.lowercased()) && $0.category == currentCategory?.title } )
+            case .all:
+                return modsModel
+            }
+        } else {
+            switch state {
+            case .search(let text):
+                return modsModel.filter( { $0.title.replacingOccurrences(of: " ", with: "").lowercased().contains(text.lowercased()) && $0.category == currentCategory?.title } )
+            default:
+                return modsModel.filter({ $0.category == currentCategory?.title })
+            }
+        }
+    }
+    
     func selectCategory(category: CategoriesModel) {
         self.currentCategory = category
+        self.setCurrentState(state: currentState)
     }
     
     func setCurrentState(state: CurrentState) {
         self.currentState = state
+        if currentState == .all || currentState == .common || currentState == .favourite {
+            self.delegate?.reloadData()
+        }
     }
     
     func togleFavouriteStatus(for index: Int) {
-        let itemKey = self.currentModel()[index].realmKey
+        let itemKey = self.getModelFor(state: currentState)[index].realmKey
         guard let itemIndex = modsModel.firstIndex(where: { $0.realmKey == itemKey }),
               let objct = self.realm.getObject(RealmModsModel.self, forKey: itemKey) else { return }
         self.modsModel[itemIndex].isFavourite.toggle()
@@ -92,6 +124,7 @@ final class ModsViewModel: BaseViewModel {
         firstly {
             self.downloadImage(imagePath: "/Content/\(objct.imagePath)", object: objct, imageView: imageView)
         }.done { [weak self] data in
+            guard self?.modsModel.count ?? 0 > index else { return }
             self?.modsModel[index].imageData = data
         }.catch { error in
             print("\(error)")
@@ -122,11 +155,11 @@ private extension ModsViewModel {
         })
         self.categoryModel.sort(by: { $0.title < $1.title})
         self.modsModel.sort(by: { $0.title < $1.title})
-//        if IAPManager_MWP.shared.productBought.contains(.unlockContentProduct) {
-//            self.selectCategory(category: categoryModel[1])
-//        } else {
+        if IAPManager_MWP.shared.productBought.contains(.unlockContentProduct) {
             self.selectCategory(category: categoryModel[0])
-//        }
+        } else {
+            self.selectCategory(category: categoryModel[1])
+        }
         self.delegate?.reloadData()
     }
 }

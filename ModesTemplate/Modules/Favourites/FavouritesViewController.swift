@@ -16,7 +16,7 @@ enum FavouriteType: String, CaseIterable {
     var controller: BaseViewController {
         switch self {
         case .items:
-            let vc = ItemsViewController(controllerType: .items, isFavouriteSetup: true)
+            let vc = ItemsViewController(controllerType: .weapons, isFavouriteSetup: true)
             return vc
         case .skins:
             let vc = ItemsViewController(controllerType: .skins, isFavouriteSetup: true)
@@ -93,7 +93,7 @@ extension FavouritesViewController: UICollectionViewDataSource, UICollectionView
 private extension FavouritesViewController {
     
     func createFilterButton() {
-        self.navigationItem.rightBarButtonItem = self.createButton(image: AppConfig.Icons.favoriteFilterIcon, action: #selector(filterButtonTapped))
+        self.navigationItem.rightBarButtonItems = self.createButton(config: [(AppConfig.Icons.favoriteFilterIcon, action: #selector(filterButtonTapped))])
     }
     
     @objc func filterButtonTapped() {

@@ -16,7 +16,7 @@ enum Configurations_MWP {
     static let fontName = "PollerOne-Regular"
     static let adjustToken = "hfg1t85ufqbk"
     
-    static let pushwooshToken = "56F9A-A546D"
+    static let pushwooshToken = "5CB43-CB5AC"
     static let pushwooshAppName = "Noname.digital"
     
     static let termsLink: String = "https://www.google.com"
@@ -31,7 +31,7 @@ enum Configurations_MWP {
     static let unlockerThreeSubscriptionID = "unlockThree"
     static let unlockerThreeSubscriptionPushTag = "FourSubscription"
     
-    static let subscriptionSharedSecret = "253336a4821b43d0af174241a9a85f90"
+    static let subscriptionSharedSecret = "2ec618c1169d437ea58575664d92e28d"
 }
 
 

@@ -12,24 +12,25 @@ final class CustomAlertView: BaseView {
 
     private lazy var containerView: UIView = {
         var view = UIView()
+        view.layer.cornerRadius = 12
         view.backgroundColor = AppConfig.Colors.deleteBackground
         return view
     }()
     
     private lazy var deleteTitle: UILabel = {
         var label = UILabel()
-        label.textColor = AppConfig.Colors.titlesColor
+        label.textColor = .black
         label.numberOfLines = 2
         label.textAlignment = .center
-        label.font = UIFont(size: 24, type: .regular)
+        label.font = UIFont(size: 18, type: .medium)
         return label
     }()
     
     private lazy var deleteDescription: UILabel = {
         var label = UILabel()
-        label.textColor = AppConfig.Colors.titlesColor
+        label.textColor = .black
         label.textAlignment = .center
-        label.font = UIFont(size: 14, type: .regular)
+        label.font = UIFont(size: 16, type: .regular)
         label.numberOfLines = 2
         return label
     }()
@@ -39,6 +40,7 @@ final class CustomAlertView: BaseView {
         button.setTitle(localizedString(forKey: "delete-action"), for: .normal)
         button.setTitleColor(AppConfig.Colors.titlesColor, for: .normal)
         button.backgroundColor = AppConfig.Colors.destructiveColor
+        button.layer.cornerRadius = 12
         button.titleLabel?.font = UIFont(size: 14, type: .semiBold)
         return button
     }()
@@ -48,17 +50,19 @@ final class CustomAlertView: BaseView {
         button.setTitle(localizedString(forKey: "cancel-action"), for: .normal)
         button.setTitleColor(AppConfig.Colors.titlesColor, for: .normal)
         button.backgroundColor = AppConfig.Colors.cancelColor
+        button.layer.cornerRadius = 12
         button.titleLabel?.font = UIFont(size: 14, type: .semiBold)
         return button
     }()
     
     lazy var blurEffect: UIVisualEffectView = {
        var blur = UIVisualEffectView(effect: UIBlurEffect(style: .dark))
-        blur.alpha = 0.8
+        blur.alpha = 0.0
         return blur
     }()
     
     override func configureView() {
+        backgroundColor = .black.withAlphaComponent(0.9)
         addSubview(blurEffect)
         addSubview(containerView)
         containerView.addSubview(deleteTitle)
@@ -71,7 +75,8 @@ final class CustomAlertView: BaseView {
         }
         containerView.snp.remakeConstraints {
             $0.centerY.centerX.equalToSuperview()
-            $0.size.equalTo(CGSize(width: screenSize.width - 40, height: screenSize.height / 5))
+            $0.width.equalToSuperview().multipliedBy(0.7)
+//            $0.size.equalTo(CGSize(width: screenSize.width - 40, height: screenSize.height / 5))
         }
         deleteTitle.snp.remakeConstraints {
             $0.top.equalTo(containerView).offset(20)
@@ -85,9 +90,9 @@ final class CustomAlertView: BaseView {
         let buttonStack = UIStackView()
         buttonStack.axis = .horizontal
         buttonStack.distribution = .fillEqually
-        buttonStack.addArrangedSubview(cancelButton)
         buttonStack.addArrangedSubview(deleteButton)
-        buttonStack.spacing = 38
+        buttonStack.addArrangedSubview(cancelButton)
+        buttonStack.spacing = 12
         addSubview(buttonStack)
         buttonStack.snp.remakeConstraints {
             $0.top.equalTo(deleteDescription.snp.bottom).offset(20)
@@ -100,5 +105,10 @@ final class CustomAlertView: BaseView {
     public func setupAlert(type: CustomAlertConfig) {
         deleteTitle.text = type.title
         deleteDescription.text = type.description
+        switch type {
+        case .itemsFavourite(let style): 
+            deleteDescription.text = deleteDescription.text?.replacingOccurrences(of: "skin", with: style)
+        default: break
+        }
     }
 }

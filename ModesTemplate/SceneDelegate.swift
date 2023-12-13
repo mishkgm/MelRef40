@@ -22,9 +22,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
         window?.overrideUserInterfaceStyle = .light
         self.coordinator = MainFlowCoordinator()
-        let controller = self.coordinator?.launchViewController()
-        
-        self.window?.rootViewController = controller
+        IAPManager_MWP.shared.validateSubscriptions_MWP(productIdentifiers: [Configurations_MWP.mainSubscriptionID, Configurations_MWP.unlockFuncSubscriptionID, Configurations_MWP.unlockContentSubscriptionID, Configurations_MWP.unlockerThreeSubscriptionID]) { prod in
+            if prod[Configurations_MWP.mainSubscriptionID] ?? false {
+                let controller = self.coordinator?.launchViewController()
+                self.window?.rootViewController = controller
+            } else {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    let controller = self.coordinator?.launchSub()
+                    self.window?.rootViewController = controller
+                }
+            }
+        }
         self.window?.makeKeyAndVisible()
     }
     

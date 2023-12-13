@@ -94,6 +94,21 @@
                   endingLineNumber = "115"
                   offsetFromSymbolStart = "92">
                </Location>
+               <Location
+                  uuid = "3F96ACA4-2E09-4929-B192-FB9A8F279CF2 - d93002cc3aa37a30"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ModesTemplate.DeteilEditorViewModel.updateData(type: ModesTemplate.EditorDataType, newValue: Any) -&gt; ()"
+                  moduleName = "ModesTemplate"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/picamonster/Documents/work/noname/melon%2028/ModesTemplate/Modules/Editor/DeteilEditor/DeteilEditorViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "115"
+                  endingLineNumber = "115"
+                  offsetFromSymbolStart = "28">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -107,8 +122,8 @@
             filePath = "ModesTemplate/Modules/Editor/DeteilEditor/DeteilItemsEditor/DeteilEditorCells/FourthView/SwitchCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
             landmarkName = "makeConstraints()"
             landmarkType = "7">
          </BreakpointContent>
@@ -123,8 +138,8 @@
             filePath = "ModesTemplate/Modules/Editor/DeteilEditor/DeteilItemsEditor/DeteilEditorCells/EditorCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
             landmarkName = "updateData(data:type:)"
             landmarkType = "7">
             <Locations>
@@ -188,68 +203,140 @@
                   endingLineNumber = "110"
                   offsetFromSymbolStart = "52">
                </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "42FB172C-1199-4729-A769-4EACD1A5C7BB"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ModesTemplate/Modules/Editor/DeteilEditor/DeteilItemsEditor/DeteilEditorCells/ThirdVew/SliderViewCell.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
-            landmarkName = "sliderValueChanged(_:)"
-            landmarkType = "7">
-            <Locations>
                <Location
-                  uuid = "42FB172C-1199-4729-A769-4EACD1A5C7BB - cce10eec2cfa55b3"
+                  uuid = "F817E32B-D6E3-4A5F-BE6C-5D4A09CE39C0 - a6109089e885d7c5"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "ModesTemplate.SliderViewCell.sliderValueChanged(__C.UISlider) -&gt; ()"
+                  symbolName = "ModesTemplate.EditorCell.textFieldDidChangeSelection(__C.UITextField) -&gt; ()"
                   moduleName = "ModesTemplate"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/picamonster/MelmanTemplate/ModesTemplate/Modules/Editor/DeteilEditor/DeteilItemsEditor/DeteilEditorCells/ThirdVew/SliderViewCell.swift"
+                  urlString = "file:///Users/picamonster/Documents/work/noname/melon%2028/ModesTemplate/Modules/Editor/DeteilEditor/DeteilItemsEditor/DeteilEditorCells/EditorCell.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "82"
-                  endingLineNumber = "82"
-                  offsetFromSymbolStart = "148">
+                  startingLineNumber = "110"
+                  endingLineNumber = "110"
+                  offsetFromSymbolStart = "184">
                </Location>
                <Location
-                  uuid = "42FB172C-1199-4729-A769-4EACD1A5C7BB - cce10eec2cfa55b3"
+                  uuid = "F817E32B-D6E3-4A5F-BE6C-5D4A09CE39C0 - a7382c8b63e2ce76"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "ModesTemplate.SliderViewCell.sliderValueChanged(__C.UISlider) -&gt; ()"
                   moduleName = "ModesTemplate"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/picamonster/MelmanTemplate/ModesTemplate/Modules/Editor/DeteilEditor/DeteilItemsEditor/DeteilEditorCells/ThirdVew/SliderViewCell.swift"
+                  urlString = "file:///Users/picamonster/Documents/work/noname/melon%2028/ModesTemplate/Modules/Editor/DeteilEditor/DeteilItemsEditor/DeteilEditorCells/EditorCell.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "82"
-                  endingLineNumber = "82"
-                  offsetFromSymbolStart = "68">
+                  startingLineNumber = "110"
+                  endingLineNumber = "110"
+                  offsetFromSymbolStart = "804">
                </Location>
                <Location
-                  uuid = "42FB172C-1199-4729-A769-4EACD1A5C7BB - cce10eec2cfa51d1"
+                  uuid = "F817E32B-D6E3-4A5F-BE6C-5D4A09CE39C0 - 30aa72fb3fa3b28"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 ((Swift.Bool, ModesTemplate.EditorDataType)) -&gt; () in closure #2 (ModesTemplate.EditorDataType) -&gt; () in ModesTemplate.SwitchCell.makeConstraints() -&gt; ()"
+                  moduleName = "ModesTemplate"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/picamonster/Documents/work/noname/melon%2028/ModesTemplate/Modules/Editor/DeteilEditor/DeteilItemsEditor/DeteilEditorCells/EditorCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "110"
+                  endingLineNumber = "110"
+                  offsetFromSymbolStart = "108">
+               </Location>
+               <Location
+                  uuid = "F817E32B-D6E3-4A5F-BE6C-5D4A09CE39C0 - a6109089e885d724"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ModesTemplate.EditorCell.textFieldDidChangeSelection(__C.UITextField) -&gt; ()"
+                  moduleName = "ModesTemplate"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/picamonster/Documents/work/noname/melon%2028/ModesTemplate/Modules/Editor/DeteilEditor/DeteilItemsEditor/DeteilEditorCells/EditorCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "109"
+                  endingLineNumber = "109"
+                  offsetFromSymbolStart = "184">
+               </Location>
+               <Location
+                  uuid = "F817E32B-D6E3-4A5F-BE6C-5D4A09CE39C0 - a7382c8b63e2ce97"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "ModesTemplate.SliderViewCell.sliderValueChanged(__C.UISlider) -&gt; ()"
                   moduleName = "ModesTemplate"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/picamonster/MelmanTemplate/ModesTemplate/Modules/Editor/DeteilEditor/DeteilItemsEditor/DeteilEditorCells/ThirdVew/SliderViewCell.swift"
+                  urlString = "file:///Users/picamonster/Documents/work/noname/melon%2028/ModesTemplate/Modules/Editor/DeteilEditor/DeteilItemsEditor/DeteilEditorCells/EditorCell.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "112"
-                  endingLineNumber = "112"
-                  offsetFromSymbolStart = "1544">
+                  startingLineNumber = "109"
+                  endingLineNumber = "109"
+                  offsetFromSymbolStart = "284">
+               </Location>
+               <Location
+                  uuid = "F817E32B-D6E3-4A5F-BE6C-5D4A09CE39C0 - 2c3286ee96bb7427"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 ((Swift.Bool, ModesTemplate.EditorDataType)) -&gt; () in closure #4 (ModesTemplate.EditorDataType) -&gt; () in ModesTemplate.SwitchCell.makeConstraints() -&gt; ()"
+                  moduleName = "ModesTemplate"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/picamonster/Documents/work/noname/melon%2028/ModesTemplate/Modules/Editor/DeteilEditor/DeteilItemsEditor/DeteilEditorCells/EditorCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "109"
+                  endingLineNumber = "109"
+                  offsetFromSymbolStart = "108">
+               </Location>
+               <Location
+                  uuid = "F817E32B-D6E3-4A5F-BE6C-5D4A09CE39C0 - a7382c8b63e2ce97"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ModesTemplate.SliderViewCell.sliderValueChanged(__C.UISlider) -&gt; ()"
+                  moduleName = "ModesTemplate"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/picamonster/Documents/work/noname/melon%2028/ModesTemplate/Modules/Editor/DeteilEditor/DeteilItemsEditor/DeteilEditorCells/EditorCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "109"
+                  endingLineNumber = "109"
+                  offsetFromSymbolStart = "304">
+               </Location>
+               <Location
+                  uuid = "F817E32B-D6E3-4A5F-BE6C-5D4A09CE39C0 - a7382c8b63e2ce97"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ModesTemplate.SliderViewCell.sliderValueChanged(__C.UISlider) -&gt; ()"
+                  moduleName = "ModesTemplate"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/picamonster/Documents/work/noname/melon%2028/ModesTemplate/Modules/Editor/DeteilEditor/DeteilItemsEditor/DeteilEditorCells/EditorCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "109"
+                  endingLineNumber = "109"
+                  offsetFromSymbolStart = "292">
+               </Location>
+               <Location
+                  uuid = "F817E32B-D6E3-4A5F-BE6C-5D4A09CE39C0 - a7382c8b63e2ce97"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ModesTemplate.SliderViewCell.sliderValueChanged(__C.UISlider) -&gt; ()"
+                  moduleName = "ModesTemplate"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/picamonster/Documents/work/noname/melon%2028/ModesTemplate/Modules/Editor/DeteilEditor/DeteilItemsEditor/DeteilEditorCells/EditorCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "109"
+                  endingLineNumber = "109"
+                  offsetFromSymbolStart = "336">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -264,8 +351,8 @@
             filePath = "ModesTemplate/Modules/Editor/DeteilEditor/DeteilEditorViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "175"
-            endingLineNumber = "175"
+            startingLineNumber = "208"
+            endingLineNumber = "208"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
             <Locations>
@@ -314,6 +401,66 @@
                   endingLineNumber = "173"
                   offsetFromSymbolStart = "52">
                </Location>
+               <Location
+                  uuid = "D9DE9F50-8B2D-4B64-B544-2FC0D02B7B4E - 1a55f6d455e3d87f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in ModesTemplate.DeteilEditorViewController.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
+                  moduleName = "ModesTemplate"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/picamonster/Documents/work/noname/melon%2028/ModesTemplate/Modules/Editor/DeteilEditor/DeteilEditorViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "175"
+                  endingLineNumber = "175"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "D9DE9F50-8B2D-4B64-B544-2FC0D02B7B4E - 1a55f6d455e3d912"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in ModesTemplate.DeteilEditorViewController.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
+                  moduleName = "ModesTemplate"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/picamonster/Documents/work/noname/melon%2028/ModesTemplate/Modules/Editor/DeteilEditor/DeteilEditorViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "164"
+                  endingLineNumber = "164"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "D9DE9F50-8B2D-4B64-B544-2FC0D02B7B4E - 1a55f6d455e3d954"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in ModesTemplate.DeteilEditorViewController.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
+                  moduleName = "ModesTemplate"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/picamonster/Documents/work/noname/melon%2028/ModesTemplate/Modules/Editor/DeteilEditor/DeteilEditorViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "166"
+                  endingLineNumber = "166"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  uuid = "D9DE9F50-8B2D-4B64-B544-2FC0D02B7B4E - 1a55f6d455e3dcbe"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in ModesTemplate.DeteilEditorViewController.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
+                  moduleName = "ModesTemplate"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/picamonster/Documents/work/noname/melon%2028/ModesTemplate/Modules/Editor/DeteilEditor/DeteilEditorViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "208"
+                  endingLineNumber = "208"
+                  offsetFromSymbolStart = "20">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -327,8 +474,8 @@
             filePath = "ModesTemplate/Modules/Editor/DeteilEditor/DeteilEditorViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
             landmarkName = "imagePickerController(_:didFinishPickingMediaWithInfo:)"
             landmarkType = "7">
             <Locations>
@@ -377,6 +524,96 @@
                   endingLineNumber = "99"
                   offsetFromSymbolStart = "344">
                </Location>
+               <Location
+                  uuid = "F477257C-D74B-4B2B-AA77-825BA01B2833 - 437cff9238a351ab"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ModesTemplate.DeteilEditorViewController.imagePickerController(_: __C.UIImagePickerController, didFinishPickingMediaWithInfo: Swift.Dictionary&lt;__C.UIImagePickerControllerInfoKey, Any&gt;) -&gt; ()"
+                  moduleName = "ModesTemplate"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/picamonster/Documents/work/noname/melon%2028/ModesTemplate/Modules/Editor/DeteilEditor/DeteilEditorViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "101"
+                  endingLineNumber = "101"
+                  offsetFromSymbolStart = "208">
+               </Location>
+               <Location
+                  uuid = "F477257C-D74B-4B2B-AA77-825BA01B2833 - 437cff9238a351ce"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ModesTemplate.DeteilEditorViewController.imagePickerController(_: __C.UIImagePickerController, didFinishPickingMediaWithInfo: Swift.Dictionary&lt;__C.UIImagePickerControllerInfoKey, Any&gt;) -&gt; ()"
+                  moduleName = "ModesTemplate"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/picamonster/Documents/work/noname/melon%2028/ModesTemplate/Modules/Editor/DeteilEditor/DeteilEditorViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "98"
+                  endingLineNumber = "98"
+                  offsetFromSymbolStart = "208">
+               </Location>
+               <Location
+                  uuid = "F477257C-D74B-4B2B-AA77-825BA01B2833 - 437cff9238a351ed"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ModesTemplate.DeteilEditorViewController.imagePickerController(_: __C.UIImagePickerController, didFinishPickingMediaWithInfo: Swift.Dictionary&lt;__C.UIImagePickerControllerInfoKey, Any&gt;) -&gt; ()"
+                  moduleName = "ModesTemplate"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/picamonster/Documents/work/noname/melon%2028/ModesTemplate/Modules/Editor/DeteilEditor/DeteilEditorViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "99"
+                  endingLineNumber = "99"
+                  offsetFromSymbolStart = "220">
+               </Location>
+               <Location
+                  uuid = "F477257C-D74B-4B2B-AA77-825BA01B2833 - 437cff9238a351ab"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ModesTemplate.DeteilEditorViewController.imagePickerController(_: __C.UIImagePickerController, didFinishPickingMediaWithInfo: Swift.Dictionary&lt;__C.UIImagePickerControllerInfoKey, Any&gt;) -&gt; ()"
+                  moduleName = "ModesTemplate"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/picamonster/Documents/work/noname/melon%2028/ModesTemplate/Modules/Editor/DeteilEditor/DeteilEditorViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "101"
+                  endingLineNumber = "101"
+                  offsetFromSymbolStart = "220">
+               </Location>
+               <Location
+                  uuid = "F477257C-D74B-4B2B-AA77-825BA01B2833 - 437cff9238a3518c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ModesTemplate.DeteilEditorViewController.imagePickerController(_: __C.UIImagePickerController, didFinishPickingMediaWithInfo: Swift.Dictionary&lt;__C.UIImagePickerControllerInfoKey, Any&gt;) -&gt; ()"
+                  moduleName = "ModesTemplate"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/picamonster/Documents/work/noname/melon%2028/ModesTemplate/Modules/Editor/DeteilEditor/DeteilEditorViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "100"
+                  endingLineNumber = "100"
+                  offsetFromSymbolStart = "208">
+               </Location>
+               <Location
+                  uuid = "F477257C-D74B-4B2B-AA77-825BA01B2833 - 437cff9238a32fbc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ModesTemplate.DeteilEditorViewController.imagePickerController(_: __C.UIImagePickerController, didFinishPickingMediaWithInfo: Swift.Dictionary&lt;__C.UIImagePickerControllerInfoKey, Any&gt;) -&gt; ()"
+                  moduleName = "ModesTemplate"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/picamonster/Documents/work/noname/melon%2028/ModesTemplate/Modules/Editor/DeteilEditor/DeteilEditorViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "116"
+                  endingLineNumber = "116"
+                  offsetFromSymbolStart = "220">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -394,6 +631,53 @@
             endingLineNumber = "50"
             landmarkName = "currentType"
             landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "BD366E10-3D35-4CCD-A890-9E4EADA1E8AF - 4e392e802ba5cd96"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ModesTemplate.FavouritesViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "ModesTemplate"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/picamonster/Documents/work/noname/melon%2028/ModesTemplate/Modules/Favourites/FavouritesViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "50"
+                  endingLineNumber = "50"
+                  offsetFromSymbolStart = "68">
+               </Location>
+               <Location
+                  uuid = "BD366E10-3D35-4CCD-A890-9E4EADA1E8AF - e8341c719a2e87df"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "function signature specialization &lt;Arg[0] = Dead&gt; of ModesTemplate.FavouritesViewController.collectionView(_: __C.UICollectionView, didSelectItemAt: Foundation.IndexPath) -&gt; ()"
+                  moduleName = "ModesTemplate"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/picamonster/Documents/work/noname/melon%2028/ModesTemplate/Modules/Favourites/FavouritesViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "50"
+                  endingLineNumber = "50"
+                  offsetFromSymbolStart = "120">
+               </Location>
+               <Location
+                  uuid = "BD366E10-3D35-4CCD-A890-9E4EADA1E8AF - 4e392e802ba5cd96"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ModesTemplate.FavouritesViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "ModesTemplate"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/picamonster/Documents/work/noname/melon%2028/ModesTemplate/Modules/Favourites/FavouritesViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "50"
+                  endingLineNumber = "50"
+                  offsetFromSymbolStart = "72">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -410,6 +694,38 @@
             endingLineNumber = "44"
             landmarkName = "reloadData()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4DAD5A08-6476-426D-993C-500122BC6DE1 - ef7c2f9fc31ac236"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ModesTemplate.MyWorksViewController.reloadData() -&gt; ()"
+                  moduleName = "ModesTemplate"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/picamonster/Documents/work/noname/melon%2028/ModesTemplate/Modules/MyWorks/MyWorksViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "124">
+               </Location>
+               <Location
+                  uuid = "4DAD5A08-6476-426D-993C-500122BC6DE1 - ef7c2f9fc31ac219"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ModesTemplate.MyWorksViewController.reloadData() -&gt; ()"
+                  moduleName = "ModesTemplate"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/picamonster/Documents/work/noname/melon%2028/ModesTemplate/Modules/MyWorks/MyWorksViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "24">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -422,40 +738,40 @@
             filePath = "ModesTemplate/Flow/MainFlowCoordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "143"
-            endingLineNumber = "143"
+            startingLineNumber = "170"
+            endingLineNumber = "170"
             landmarkName = "funcBought()"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "5D77E88C-C9B4-4B40-8D80-18FB0AA83198 - 39ab83c2809cd784"
+                  uuid = "5D77E88C-C9B4-4B40-8D80-18FB0AA83198 - 23aa9bf7516d1f15"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "ModesTemplate.MainFlowCoordinator.funcBought() -&gt; ()"
+                  symbolName = "protocol witness for ModesTemplate.PremiumMainController_MWPDelegate.contentBought() -&gt; () in conformance ModesTemplate.MainFlowCoordinator : ModesTemplate.PremiumMainController_MWPDelegate in ModesTemplate"
                   moduleName = "ModesTemplate"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/picamonster/MelmanTemplate/ModesTemplate/Flow/MainFlowCoordinator.swift"
+                  urlString = "file:///Users/picamonster/Documents/work/noname/melon%2028/ModesTemplate/Flow/MainFlowCoordinator.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "134"
-                  endingLineNumber = "134"
-                  offsetFromSymbolStart = "28">
+                  startingLineNumber = "168"
+                  endingLineNumber = "168"
+                  offsetFromSymbolStart = "0">
                </Location>
                <Location
-                  uuid = "5D77E88C-C9B4-4B40-8D80-18FB0AA83198 - 39ab83c2809cd0ad"
+                  uuid = "5D77E88C-C9B4-4B40-8D80-18FB0AA83198 - c0434625dc81a01a"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "ModesTemplate.MainFlowCoordinator.funcBought() -&gt; ()"
+                  symbolName = "protocol witness for ModesTemplate.PremiumMainController_MWPDelegate.funcBought() -&gt; () in conformance ModesTemplate.MainFlowCoordinator : ModesTemplate.PremiumMainController_MWPDelegate in ModesTemplate"
                   moduleName = "ModesTemplate"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/picamonster/MelmanTemplate/ModesTemplate/Flow/MainFlowCoordinator.swift"
+                  urlString = "file:///Users/picamonster/Documents/work/noname/melon%2028/ModesTemplate/Flow/MainFlowCoordinator.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "143"
-                  endingLineNumber = "143"
-                  offsetFromSymbolStart = "28">
+                  startingLineNumber = "168"
+                  endingLineNumber = "168"
+                  offsetFromSymbolStart = "0">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -486,40 +802,433 @@
             filePath = "ModesTemplate/Modules/MyWorks/MyWorksViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
             landmarkName = "configureCell(title:imageData:createdDate:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C9C33B33-1C96-4255-8BFE-72A061D11D22"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ModesTemplate/Modules/Deteil/DeteilViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "toggleFavouriteStatus()"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "56B22C39-75F7-4051-ADA0-DADFBA711373 - cfbac8d8f005f38f"
+                  uuid = "C9C33B33-1C96-4255-8BFE-72A061D11D22 - ce6324a6f1887de2"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "ModesTemplate.MyWorksViewCell.configureCell(title: Swift.String, imageData: Swift.Optional&lt;Foundation.Data&gt;, createdDate: Foundation.Date) -&gt; ()"
+                  symbolName = "ModesTemplate.DeteilViewModel.toggleFavouriteStatus() -&gt; ()"
                   moduleName = "ModesTemplate"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/picamonster/MelmanTemplate/ModesTemplate/Modules/MyWorks/MyWorksViewCell.swift"
+                  urlString = "file:///Users/picamonster/Documents/work/noname/melon%2028/ModesTemplate/Modules/Deteil/DeteilViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "104"
-                  endingLineNumber = "104"
-                  offsetFromSymbolStart = "224">
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "580">
                </Location>
                <Location
-                  uuid = "56B22C39-75F7-4051-ADA0-DADFBA711373 - cfbac8d8f005f38f"
+                  uuid = "C9C33B33-1C96-4255-8BFE-72A061D11D22 - ce6324a6f1887c03"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "ModesTemplate.MyWorksViewCell.configureCell(title: Swift.String, imageData: Swift.Optional&lt;Foundation.Data&gt;, createdDate: Foundation.Date) -&gt; ()"
+                  symbolName = "ModesTemplate.DeteilViewModel.toggleFavouriteStatus() -&gt; ()"
                   moduleName = "ModesTemplate"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/picamonster/MelmanTemplate/ModesTemplate/Modules/MyWorks/MyWorksViewCell.swift"
+                  urlString = "file:///Users/picamonster/Documents/work/noname/melon%2028/ModesTemplate/Modules/Deteil/DeteilViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "104"
-                  endingLineNumber = "104"
-                  offsetFromSymbolStart = "280">
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "460">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FE162CDF-A74C-4CFE-B6AC-CC2944763E2A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ModesTemplate/Modules/Deteil/DeteilViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "toggleFavouriteStatus()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "FE162CDF-A74C-4CFE-B6AC-CC2944763E2A - ce6324a6f1887c87"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ModesTemplate.DeteilViewModel.toggleFavouriteStatus() -&gt; ()"
+                  moduleName = "ModesTemplate"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/picamonster/Documents/work/noname/melon%2028/ModesTemplate/Modules/Deteil/DeteilViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
+                  offsetFromSymbolStart = "56">
+               </Location>
+               <Location
+                  uuid = "FE162CDF-A74C-4CFE-B6AC-CC2944763E2A - ce6324a6f1887c66"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ModesTemplate.DeteilViewModel.toggleFavouriteStatus() -&gt; ()"
+                  moduleName = "ModesTemplate"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/picamonster/Documents/work/noname/melon%2028/ModesTemplate/Modules/Deteil/DeteilViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "56">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9E631522-2D76-4BAF-8A8B-30F94A42DA6E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ModesTemplate/Modules/Deteil/DeteilViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "183"
+            endingLineNumber = "183"
+            landmarkName = "customAlert()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "9E631522-2D76-4BAF-8A8B-30F94A42DA6E - fc1f9e30579fb560"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ModesTemplate.DeteilViewController.customAlert() -&gt; ()"
+                  moduleName = "ModesTemplate"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/picamonster/Documents/work/noname/melon%2028/ModesTemplate/Modules/Deteil/DeteilViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "148"
+                  endingLineNumber = "148"
+                  offsetFromSymbolStart = "2816">
+               </Location>
+               <Location
+                  uuid = "9E631522-2D76-4BAF-8A8B-30F94A42DA6E - fc1f9e30579fb560"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ModesTemplate.DeteilViewController.customAlert() -&gt; ()"
+                  moduleName = "ModesTemplate"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/picamonster/Documents/work/noname/melon%2028/ModesTemplate/Modules/Deteil/DeteilViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "148"
+                  endingLineNumber = "148"
+                  offsetFromSymbolStart = "2792">
+               </Location>
+               <Location
+                  uuid = "9E631522-2D76-4BAF-8A8B-30F94A42DA6E - fc1f9e30579fb479"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ModesTemplate.DeteilViewController.customAlert() -&gt; ()"
+                  moduleName = "ModesTemplate"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/picamonster/Documents/work/noname/melon%2028/ModesTemplate/Modules/Deteil/DeteilViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "155"
+                  endingLineNumber = "155"
+                  offsetFromSymbolStart = "2724">
+               </Location>
+               <Location
+                  uuid = "9E631522-2D76-4BAF-8A8B-30F94A42DA6E - fc1f9e30579fb479"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ModesTemplate.DeteilViewController.customAlert() -&gt; ()"
+                  moduleName = "ModesTemplate"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/picamonster/Documents/work/noname/melon%2028/ModesTemplate/Modules/Deteil/DeteilViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "155"
+                  endingLineNumber = "155"
+                  offsetFromSymbolStart = "2736">
+               </Location>
+               <Location
+                  uuid = "9E631522-2D76-4BAF-8A8B-30F94A42DA6E - fc1f9e30579fb479"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ModesTemplate.DeteilViewController.customAlert() -&gt; ()"
+                  moduleName = "ModesTemplate"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/picamonster/Documents/work/noname/melon%2028/ModesTemplate/Modules/Deteil/DeteilViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "155"
+                  endingLineNumber = "155"
+                  offsetFromSymbolStart = "2972">
+               </Location>
+               <Location
+                  uuid = "9E631522-2D76-4BAF-8A8B-30F94A42DA6E - fc1f9e30579fb3f5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ModesTemplate.DeteilViewController.customAlert() -&gt; ()"
+                  moduleName = "ModesTemplate"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/picamonster/Documents/work/noname/melon%2028/ModesTemplate/Modules/Deteil/DeteilViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "159"
+                  endingLineNumber = "159"
+                  offsetFromSymbolStart = "2736">
+               </Location>
+               <Location
+                  uuid = "9E631522-2D76-4BAF-8A8B-30F94A42DA6E - fc1f9e30579fb3f5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ModesTemplate.DeteilViewController.customAlert() -&gt; ()"
+                  moduleName = "ModesTemplate"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/picamonster/Documents/work/noname/melon%2028/ModesTemplate/Modules/Deteil/DeteilViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "159"
+                  endingLineNumber = "159"
+                  offsetFromSymbolStart = "2724">
+               </Location>
+               <Location
+                  uuid = "9E631522-2D76-4BAF-8A8B-30F94A42DA6E - fc1f9e30579fb123"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ModesTemplate.DeteilViewController.customAlert() -&gt; ()"
+                  moduleName = "ModesTemplate"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/picamonster/Documents/work/noname/melon%2028/ModesTemplate/Modules/Deteil/DeteilViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "181"
+                  endingLineNumber = "181"
+                  offsetFromSymbolStart = "2724">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F394F7C7-AF5C-4C5C-98D9-5B0A8BCAEE5A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ModesTemplate/Modules/MyWorks/MyWorksViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "collectionView(_:layout:sizeForItemAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C0AB318B-9C41-44C6-81E1-C7B828C05F44"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ModesTemplate/Modules/Editor/DeteilEditor/DeteilItemsEditor/DeteilEditorCells/ThirdVew/SliderViewCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "151"
+            endingLineNumber = "151"
+            landmarkName = "sliderValueChanged(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C0AB318B-9C41-44C6-81E1-C7B828C05F44 - 539908db2f99ea11"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ModesTemplate.SliderViewCell.sliderValueChanged(__C.UISlider) -&gt; ()"
+                  moduleName = "ModesTemplate"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/picamonster/Documents/work/noname/melon%2028/ModesTemplate/Modules/Editor/DeteilEditor/DeteilItemsEditor/DeteilEditorCells/ThirdVew/SliderViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "151"
+                  endingLineNumber = "151"
+                  offsetFromSymbolStart = "328">
+               </Location>
+               <Location
+                  uuid = "C0AB318B-9C41-44C6-81E1-C7B828C05F44 - 539908db2f99ea11"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ModesTemplate.SliderViewCell.sliderValueChanged(__C.UISlider) -&gt; ()"
+                  moduleName = "ModesTemplate"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/picamonster/Documents/work/noname/melon%2028/ModesTemplate/Modules/Editor/DeteilEditor/DeteilItemsEditor/DeteilEditorCells/ThirdVew/SliderViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "151"
+                  endingLineNumber = "151"
+                  offsetFromSymbolStart = "372">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E2A74380-A6D6-41EC-9302-F04791F87EEE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ModesTemplate/Modules/Mods/ModsViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
+            landmarkName = "togleFavouriteStatus(for:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E2A74380-A6D6-41EC-9302-F04791F87EEE - 30a0b369c3b695bc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ModesTemplate.ModsViewModel.togleFavouriteStatus(for: Swift.Int) -&gt; ()"
+                  moduleName = "ModesTemplate"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/picamonster/Documents/work/noname/melon%2028/ModesTemplate/Modules/Mods/ModsViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "114"
+                  endingLineNumber = "114"
+                  offsetFromSymbolStart = "1768">
+               </Location>
+               <Location
+                  uuid = "E2A74380-A6D6-41EC-9302-F04791F87EEE - 30a0b369c3b695bc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ModesTemplate.ModsViewModel.togleFavouriteStatus(for: Swift.Int) -&gt; ()"
+                  moduleName = "ModesTemplate"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/picamonster/Documents/work/noname/melon%2028/ModesTemplate/Modules/Mods/ModsViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "114"
+                  endingLineNumber = "114"
+                  offsetFromSymbolStart = "716">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "897299A0-30F4-4ED2-A2A1-F038D5EF9FAC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ModesTemplate/Modules/Mods/ModsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "257"
+            endingLineNumber = "257"
+            landmarkName = "showFavouriteAlert(index:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "55374824-4F2D-4278-9119-81145CE15B61"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ModesTemplate/Flow/MainFlowCoordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "162"
+            endingLineNumber = "162"
+            landmarkName = "openApp_MWP()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "55374824-4F2D-4278-9119-81145CE15B61 - 1e2dbb0bb0b88267"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ModesTemplate.MainFlowCoordinator.openApp_MWP() -&gt; ()"
+                  moduleName = "ModesTemplate"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/picamonster/Documents/work/noname/melon%2028/ModesTemplate/Flow/MainFlowCoordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "161"
+                  endingLineNumber = "161"
+                  offsetFromSymbolStart = "172">
+               </Location>
+               <Location
+                  uuid = "55374824-4F2D-4278-9119-81145CE15B61 - 1e2dbb0bb0b88267"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ModesTemplate.MainFlowCoordinator.openApp_MWP() -&gt; ()"
+                  moduleName = "ModesTemplate"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/picamonster/Documents/work/noname/melon%2028/ModesTemplate/Flow/MainFlowCoordinator.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "161"
+                  endingLineNumber = "161"
+                  offsetFromSymbolStart = "728">
+               </Location>
+               <Location
+                  uuid = "55374824-4F2D-4278-9119-81145CE15B61 - 88a763a99e97857"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 @Swift.MainActor () -&gt; () in ModesTemplate.MainFlowCoordinator.openApp_MWP() -&gt; ()"
+                  moduleName = "ModesTemplate"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/picamonster/Documents/work/noname/melon%2028/ModesTemplate/Modules/Root/RootViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "56">
                </Location>
             </Locations>
          </BreakpointContent>

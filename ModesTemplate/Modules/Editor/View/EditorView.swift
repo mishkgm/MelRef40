@@ -15,7 +15,8 @@ final class EditorView: BaseView {
         var layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         var view = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        view.backgroundColor = AppConfig.Colors.editorSelectorBackground
+//        view.backgroundColor = AppConfig.Colors.editorSelectorBackground
+        view.backgroundColor = .clear
         view.register(EditorSelectorCell.self)
         return view
     }()
@@ -29,11 +30,6 @@ final class EditorView: BaseView {
         return view
     }()
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        self.selectorView.setGradientBorder(width: 1, colors: [AppConfig.Colors.cellBorderColor, UIColor(hex: "#42535A")])
-    }
-    
     override func configureView() {
         super.configureView()
         addSubview(selectorView)
@@ -44,7 +40,7 @@ final class EditorView: BaseView {
         super.makeConstraints()
         selectorView.snp.remakeConstraints { make in
             make.top.equalTo(bannerView.snp.bottom).offset(10)
-            make.height.equalTo(isPad ? 130 : 65)
+            make.height.equalTo(isPad ? 80 : 50)
             make.trailing.leading.equalToSuperview().inset(isPad ? 60 : 20)
         }
         collectionView.snp.remakeConstraints { make in

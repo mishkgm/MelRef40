@@ -30,7 +30,9 @@ class BaseCollectionViewCell: UICollectionViewCell {
     
     func configureView() {
         self.backgroundColor = AppConfig.Colors.cellBackgroundColor
-        self.setGradientBorder(width: 1, colors: [AppConfig.Colors.cellBorderColor, UIColor(hex: "#42535A")])
+        self.layer.cornerRadius = 12
+        self.layer.borderWidth = 1.5
+        self.layer.borderColor = AppConfig.Colors.cellBorderColor.cgColor
     }
     
     func makeConstraints() {

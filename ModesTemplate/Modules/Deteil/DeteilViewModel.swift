@@ -29,12 +29,16 @@ final class DeteilViewModel {
     init(model: DeteilModel, type: ContentType) {
         self.model = model
         self.type = type
+        print(model)
     }
     
     func toggleFavouriteStatus() {
         self.model.isFavourite.toggle()
-        guard let obcjet = RealmManager.shared.getObject(RealmItemsModel.self, forKey: model.realmKey) else { return }
-        RealmManager.shared.update(obcjet, with: ["isFavourite": self.model.isFavourite])
+        if let obcjet = RealmManager.shared.getObject(RealmItemsModel.self, forKey: model.realmKey) {
+            RealmManager.shared.update(obcjet, with: ["isFavourite": self.model.isFavourite])
+        } else if let obcjet = RealmManager.shared.getObject(RealmModsModel.self, forKey: model.realmKey) {
+            RealmManager.shared.update(obcjet, with: ["isFavourite": self.model.isFavourite])
+        }
     }
     
     func checkIfFileExist() -> Bool {
@@ -44,6 +48,18 @@ final class DeteilViewModel {
             return true
         } else {
             return false
+        }
+    }
+    
+    func downloadImage(imageView: UIImageView) {
+        firstly {
+            self.dropBox.downloadImage(imagePath: "/Content/\(model.imagePath)")
+        }.then { urlString in
+            imageView.setImage(with: urlString)
+        }.done { _ in
+            
+        }.catch { error in
+            print(error)
         }
     }
     

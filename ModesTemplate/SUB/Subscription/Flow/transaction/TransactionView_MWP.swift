@@ -155,7 +155,7 @@ class TransactionView_MWP: UIView,AnimatedButton_MWPEvent,IAPManagerProtocol_MWP
 // TEXT FOR FUNC REFACTOR
         self.purchaseBtn.delegate = self
         self.purchaseBtn.style = .native
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
             self.purchaseBtn.setPulseAnimation_MWP()
         }
     }
@@ -214,12 +214,16 @@ class TransactionView_MWP: UIView,AnimatedButton_MWPEvent,IAPManagerProtocol_MWP
     
     @IBAction func privacyAction_MWP(_ sender: UIButton) {
 // TEXT FOR FUNC REFACTOR
-        self.delegate?.termsOpen()
+        DispatchQueue.main.async {
+            self.delegate?.termsOpen()
+        }
     }
     
     @IBAction func termsAction_MWP(_ sender: UIButton) {
 // TEXT FOR FUNC REFACTOR
-        self.delegate?.privacyOpen()
+        DispatchQueue.main.async {
+            self.delegate?.privacyOpen()
+        }
     }
     
     func onClick_MWP() {

@@ -11,14 +11,21 @@ import SnapKit
 
 final class DeteilEditorView: BaseView {
     
-    lazy var selectorColletion: DropDownMenu = {
-        var view = DropDownMenu()
+    lazy var selectorColletion: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        var view = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        view.register(CategoriesViewCell.self)
+        view.backgroundColor = .clear
         return view
     }()
     
     lazy var imageView: UIImageView = {
        var image = UIImageView()
-        image.backgroundColor = UIColor(hex: "#737B89")
+        image.layer.cornerRadius = 12
+        image.layer.borderWidth = 1.5
+        image.layer.borderColor = AppConfig.Colors.cellBorderColor.cgColor
+        image.backgroundColor = AppConfig.Colors.imagesBackgoundColor
         image.contentMode = .scaleAspectFit
         return image
     }()
@@ -41,13 +48,6 @@ final class DeteilEditorView: BaseView {
         return view
     }()
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        self.selectorColletion.layer.sublayers?.removeAll(where: { $0.isKind(of: CAGradientLayer.self )})
-        self.selectorColletion.setGradientBorder(width: 1, colors: [AppConfig.Colors.cellBorderColor, UIColor(hex: "#42535A")])
-        self.selectorColletion.layoutIfNeeded()
-    }
-    
     override func configureView() {
         super.configureView()
         addSubview(imageView)
@@ -59,11 +59,12 @@ final class DeteilEditorView: BaseView {
     override func makeConstraints() {
         super.makeConstraints()
         selectorColletion.snp.remakeConstraints { make in
-            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(10)
-            make.trailing.leading.equalToSuperview().inset(isPad ? 60 : 20)
+            make.top.equalTo(bannerView.snp.bottom).offset(10)
+            make.trailing.leading.equalToSuperview()
+            make.height.equalTo(isPad ? 95 : 65)
         }
         imageView.snp.remakeConstraints { make in
-            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(isPad ? 100 : 70)
+            make.top.equalTo(selectorColletion.snp.bottom).offset(10)
             make.trailing.leading.equalToSuperview().inset(isPad ? 60 : 20)
             make.height.equalTo(isPad ? 250 : 150)
         }

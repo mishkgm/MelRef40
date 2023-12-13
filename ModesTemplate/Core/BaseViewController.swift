@@ -13,8 +13,9 @@ protocol BaseViewControllerDelegate: AnyObject {
     func openMenu()
     func showDeteil(item: DeteilModel, type: ContentType)
     func showDeteilEditor(imageData: Data, title: String)
-    func showDeteilEditor(objct: EditorDeteilModel)
+    func showDeteilEditor(objct: EditorDeteilModel, title: String)
     func openSub(style: PremiumMainController_MWPStyle)
+    func navigateToController(filter: FilterMods)
 }
 
 class BaseViewController: UIViewController {
@@ -70,24 +71,31 @@ class BaseViewController: UIViewController {
     
     func makeBackButton() {
         let buttonImage = AppConfig.Icons.backButton
-        let backButton = createButton(image: buttonImage, action: #selector(backAction))
+        let backButton = createButton(config: [(buttonImage, #selector(backAction))])
         
-        navigationItem.leftBarButtonItem = backButton
-        navigationItem.leftBarButtonItem?.imageInsets = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
+        navigationItem.leftBarButtonItems = backButton
     }
     
-    func createButton(image: UIImage?, action: Selector) -> UIBarButtonItem {
-        
-        let button = UIButton(type: .custom)
-        button.setBackgroundImage(image, for: .normal)
-        button.addTarget(self, action: action, for: .touchUpInside)
-        
-        let isPad = UIDevice.current.userInterfaceIdiom == .pad
-        let buttonSize = CGSize(width: isPad ? 38 : 25, height: isPad ? 38 : 25)
-        button.frame = CGRect(origin: .zero, size: buttonSize)
-        button.tintColor = .white
-        let barButton = UIBarButtonItem(customView: button)
-        return barButton
+    func createButton(config: [(UIImage?, Selector)]) -> [UIBarButtonItem] {
+        var barButtons: [UIBarButtonItem] = []
+        config.forEach { config in
+            let button = UIButton(type: .custom)
+            button.setBackgroundImage(config.0, for: .normal)
+            button.addTarget(self, action: config.1, for: .touchUpInside)
+            
+            let isPad = UIDevice.current.userInterfaceIdiom == .pad
+            let buttonSize = CGSize(width: isPad ? 38 : 25, height: isPad ? 38 : 25)
+            button.frame = CGRect(origin: .zero, size: buttonSize)
+            button.tintColor = .white
+            let barButton = UIBarButtonItem(customView: button)
+            barButtons.append(barButton)
+        }
+        let spacer = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
+        spacer.width = 60
+        if isPad {
+            barButtons.insert(spacer, at: 0)
+        }
+        return barButtons
     }
     
     func checkConection() -> Bool {
@@ -111,16 +119,15 @@ private extension BaseViewController {
     func configureNavBar() {
         
         let buttonImage = UIImage(named: "menu")
-        let menuButton = createButton(image: buttonImage, action: #selector(showMenu))
+        let menuButton = createButton(config: [(buttonImage, #selector(showMenu))])
         
-        navigationItem.leftBarButtonItem = menuButton
-        navigationItem.leftBarButtonItem?.imageInsets = isPad ? UIEdgeInsets(top: 20, left: 60, bottom: 0, right: 0) : UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
-        navigationItem.rightBarButtonItem?.imageInsets = isPad ? UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 60) : UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
+        navigationItem.leftBarButtonItems = menuButton
         
         let appearence = UINavigationBarAppearance()
         appearence.configureWithOpaqueBackground()
+        appearence.shadowColor = nil // Убирает тень/полосу
         appearence.backgroundColor = .clear
-        guard let font = UIFont(size: 20, type: .regular) else { return }
+        guard let font = UIFont(size: 22, type: .semiBold) else { return }
         appearence.titleTextAttributes = [
             NSAttributedString.Key.foregroundColor : AppConfig.Colors.titleViewControllerColor,
             NSAttributedString.Key.font : font]

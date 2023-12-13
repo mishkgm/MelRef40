@@ -10,6 +10,7 @@ protocol PremiumMainController_MWPDelegate: AnyObject {
     func openApp_MWP()
     func funcBought()
     func contentBought()
+    func otherBought()
 }
 
 class PremiumMainController_MWP: UIViewController {
@@ -32,7 +33,6 @@ class PremiumMainController_MWP: UIViewController {
     override  func viewDidLoad() {
         super.viewDidLoad()
 // TEXT FOR FUNC REFACTOR
-        
         do {
             try AVAudioSession.sharedInstance().setCategory(.playback)
         } catch(let error) {
@@ -91,7 +91,7 @@ class PremiumMainController_MWP: UIViewController {
         }
 
        let player = Player()
-        player.muted = true
+//        player.muted = true
         player.playerDelegate = self
         player.playbackDelegate = self
         player.view.frame = self.view.bounds
@@ -241,7 +241,8 @@ class PremiumMainController_MWP: UIViewController {
             delegate?.funcBought()
             self.dismiss(animated: true)
         case .unlockOther:
-            break
+            delegate?.otherBought()
+            self.dismiss(animated: true)
         }
     }
     
@@ -255,12 +256,16 @@ class PremiumMainController_MWP: UIViewController {
     
     @IBAction func restoreAction_MWP(_ sender: UIButton) {
 // TEXT FOR FUNC REFACTOR
-        self.viewTransaction.restoreAction_MWP()
+        DispatchQueue.main.async {
+            self.viewTransaction.restoreAction_MWP()
+        }
     }
     
     @IBAction func closeController(_ sender: UIButton) {
 // TEXT FOR FUNC REFACTOR
-        self.dismiss(animated: true)
+        DispatchQueue.main.async {
+            self.dismiss(animated: true)
+        }
     }
 }
 
@@ -300,10 +305,12 @@ extension PremiumMainController_MWP : TransactionView_MWPEvents {
     
     func transactionTreatment_MWP(title: String, message: String) {
 // TEXT FOR FUNC REFACTOR
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default))
-        present(alert, animated: true)
-        UIApplication.shared.notificationFeedbackGenerator(type: .warning)
+        DispatchQueue.main.async {
+            let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            self.present(alert, animated: true)
+            UIApplication.shared.notificationFeedbackGenerator(type: .warning)
+        }
     }
     
     func transactionFailed() {

@@ -35,21 +35,20 @@ final class RootViewModel {
     }
     
     private func getContent() -> Promise<Void> {
-        return Promise { comlition in
-            firstly {
-                dropBox.getContentFor(type: .mods)
-            }.then { _ in
-                self.dropBox.getContentFor(type: .category)
-            }.then { _ in
-                self.dropBox.getContentFor(type: .editor)
-            }.then { _ in
-                self.dropBox.getContentFor(type: .items)
-            }.then { _ in
-                self.dropBox.getContentFor(type: .skins)
-            }.done { _ in
-                comlition.fulfill(())
+        return Promise { completion in
+            let promises = [
+                dropBox.getContentFor(type: .mods),
+                dropBox.getContentFor(type: .category),
+                dropBox.getContentFor(type: .editor),
+                dropBox.getContentFor(type: .items),
+                dropBox.getContentFor(type: .skins),
+                dropBox.getContentFor(type: .maps)
+            ]
+            
+            when(fulfilled: promises).done { _ in
+                completion.fulfill(())
             }.catch { error in
-                comlition.reject(error)
+                completion.reject(error)
             }
         }
     }

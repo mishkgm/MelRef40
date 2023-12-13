@@ -10,9 +10,9 @@ import UIKit
 
 extension UIFont {
     enum FontType: String {
-        case regular = "Goldman-Regular"
+        case regular = "Inter-Regular"
         case semiBold = "Inter-SemiBold"
-        case bold = "Goldman-Bold"
+        case bold = "Inter-Bold"
         case medium = "Inter-Medium"
     }
     

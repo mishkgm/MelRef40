@@ -8,10 +8,10 @@
 import Foundation
 
 struct DropBoxKeys {
-    static let appkey = "oxgt0xv8z7rqum7"
-    static let appSecret = "g8al018czh6g4jt"
-    static let token = "czHFetFkAxAAAAAAAAAERnze66OpFiUfZlyS02t6IJY"
+    static let appkey = "0jzpj5nmlqij3vl"
+    static let appSecret = "71tuul9e2ughz2v"
+    static let token = "czHFetFkAxAAAAAAAAAEyN3lgTAqRuQ0inmmnt1eKtQ"
     static let apiLink = "https://api.dropboxapi.com/oauth2/token"
-    static let refreshToken = "Kft8R7EcAJIAAAAAAAAAASrZri6M8FFxFglkitUDX625v1T3zD0Dyj2ZbeE2cHwl"
+    static let refreshToken = "YUQBiQchUjwAAAAAAAAAAfLFYhNFZH1iAPKmVqQqeeYy7s7CN168hoUhARHjFLOz"
     //watch in response in init functions for this shitt
 }

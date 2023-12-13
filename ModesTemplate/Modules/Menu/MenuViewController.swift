@@ -17,7 +17,10 @@ final class MenuViewController: UIViewController {
     lazy var mainView: MenuView = {
        var view = MenuView()
         view.tableView.delegate = self
+        
+        ////
         view.tableView.dataSource = self
+        view.closeButton.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
         return view
     }()
     
@@ -42,6 +45,10 @@ final class MenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+    }
+    
+    @objc func closeButtonTapped() {
+        self.dismiss(animated: true)
     }
 }
 

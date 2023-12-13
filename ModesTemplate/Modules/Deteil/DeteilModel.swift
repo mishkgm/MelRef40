@@ -11,8 +11,9 @@ import UIKit
 struct DeteilModel {
     var title: String
     var description: String
-    var image: UIImage
+    var image: UIImage?
     var downloadPath: String
     var isFavourite: Bool = false
     var realmKey: String = ""
+    var imagePath: String = ""
 }

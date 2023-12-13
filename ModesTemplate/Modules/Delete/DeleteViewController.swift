@@ -8,16 +8,16 @@
 import UIKit
 
 enum CustomAlertConfig {
-    case myWorksDelete
-    case itemsFavourite
+    case myWorksDelete(modName: String)
+    case itemsFavourite(style: String)
     case custom(title: String, description: String)
     
     var title: String {
         switch self {
-        case .myWorksDelete:
-            return "Are yo sure?"
+        case .myWorksDelete(let mod):
+            return mod
         case .itemsFavourite:
-            return "Are you sure?"
+            return "Alert"
         case .custom(let title, _):
             return title
         }
@@ -25,10 +25,10 @@ enum CustomAlertConfig {
     
     var description: String {
         switch self {
-        case .myWorksDelete:
+        case .myWorksDelete(_):
             return "Are you sure want to delete this mode?"
         case .itemsFavourite:
-            return "Do you want to delete a skin from your favorites?"
+            return "Would you like to delete a skin from your favorites?"
         case .custom(_, let description):
             return description
         }
@@ -37,7 +37,7 @@ enum CustomAlertConfig {
 
 final class CustomAlertViewController: UIViewController {
     
-    private lazy var customAlertView: CustomAlertView = {
+    lazy var customAlertView: CustomAlertView = {
        var view = CustomAlertView()
         view.deleteButton.addTarget(self, action: #selector(deleteAction), for: .touchUpInside)
         view.cancelButton.addTarget(self, action: #selector(cancelAction), for: .touchUpInside)
@@ -62,7 +62,7 @@ final class CustomAlertViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .black.withAlphaComponent(0.1)
+        view.backgroundColor = .black.withAlphaComponent(0.7)
     }
 }
 

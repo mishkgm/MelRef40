@@ -13,34 +13,34 @@ final class NameTextFieldCell<model: EditorCellModel>: EditorCell {
     
     lazy var conteinerView: UIView = {
        var view = UIView()
-        view.backgroundColor = AppConfig.Colors.deteilModsbuttonBackground
+        view.layer.cornerRadius = 12
+        view.layer.borderWidth = 1
+        view.layer.borderColor = UIColor.white.cgColor
+        view.backgroundColor = AppConfig.Colors.editorNameTextFieldBackground
+        
         return view
     }()
     
     lazy var titleLabel: UILabel = {
        var label = UILabel()
         label.textColor = .white
-        label.font = UIFont(size: 16)
+        label.font = UIFont(size: 18, type: .medium)
         label.textAlignment = .left
+        label.isHidden = true
         label.text = "Name"
         return label
     }()
     
-    lazy var textField: DeteilEditorTextField = {
-        var field = DeteilEditorTextField(fieldType: .name)
+    lazy var textField: NameField = {
+        var field = NameField(fieldType: .name)
         field.delegate = self
         field.textColor = .white
         field.backgroundColor = .clear
-        field.textAlignment = .right
+        field.textAlignment = .left
+        let text = NSMutableAttributedString(string: "Name", attributes: [.foregroundColor: UIColor(hex: "#DEDEDE")])
+        field.attributedPlaceholder = text
         return field
     }()
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-            self.conteinerView.setGradientBorder(width: 1, colors: [AppConfig.Colors.cellBorderColor, UIColor(hex: "#42535A")])
-        }
-    }
     
     override func configureView() {
         super.configureView()
@@ -51,15 +51,16 @@ final class NameTextFieldCell<model: EditorCellModel>: EditorCell {
     
     override func makeConstraints() {
         conteinerView.snp.remakeConstraints { make in
-            make.top.bottom.equalToSuperview().inset(10)
+            make.top.equalToSuperview().inset(2)
             make.trailing.leading.equalToSuperview().inset(20)
+            make.bottom.equalToSuperview().inset(12)
         }
         titleLabel.snp.remakeConstraints { make in
             make.leading.equalToSuperview().offset(20)
             make.centerY.equalToSuperview()
         }
         textField.snp.remakeConstraints { make in
-            make.leading.equalTo(titleLabel.snp.trailing).offset(5)
+            make.leading.equalToSuperview().offset(20)
             make.trailing.equalToSuperview().offset(-20)
             make.centerY.equalToSuperview()
         }

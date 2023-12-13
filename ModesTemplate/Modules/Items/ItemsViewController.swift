@@ -10,8 +10,9 @@ import UIKit
 import SnapKit
 
 enum ItemsType: String {
-    case items = "Items"
+    case weapons = "Weapons"
     case skins = "Skins"
+    case maps = "Maps"
 }
 
 final class ItemsViewController: BaseViewController {
@@ -21,11 +22,18 @@ final class ItemsViewController: BaseViewController {
         view.collectionView.dataSource = self
         view.collectionView.delegate = self
         view.bannerView.subDelegate = self
+        view.filterList.delegate = self
         return view
     }()
     
     lazy var viewModel: ItemsViewModel = {
-        let type = self.controllerType == .items ? ContentType.items : ContentType.skins
+        var type: ContentType = .maps
+        switch self.controllerType {
+        case .maps: type = .maps
+        case .skins: type = .skins
+        case .weapons: type = .items
+        default: break
+        }
         var model = ItemsViewModel(contentType: type, delegate: self)
         return model
     }()
@@ -46,17 +54,63 @@ final class ItemsViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let btn = self.createButton(config: [(AppConfig.Icons.filterIcon, #selector(openFilter))])
+        self.navigationItem.rightBarButtonItems = btn
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         viewModel.updateContent()
     }
+    
+    @objc func openFilter() {
+        self.mainView.filterShow()
+        var currentFilter = self.viewModel.contentType == .items ? FilterMods.items.rawValue : FilterMods.skins.rawValue
+        if viewModel.contentType == .maps {
+            currentFilter = ""
+        }
+        self.mainView.filterList.openСategoryPicker(items: FilterMods.allCases.map({ $0.rawValue }), isCurrent: viewModel.isFavouriteSetup ? FilterMods.favourite.rawValue : currentFilter)
+        self.navigationItem.rightBarButtonItems = self.createButton(config: [(AppConfig.Icons.crossButton, #selector(hideFilter))])
+    }
+    
+    @objc func hideFilter() {
+        self.mainView.filterHide()
+        self.navigationItem.rightBarButtonItems = self.createButton(config: [(AppConfig.Icons.filterIcon, #selector(openFilter))])
+    }
+}
+
+extension ItemsViewController: DropDownMenuDelegate {
+    func cellDidTap(text: String?) {
+        switch FilterMods(rawValue: text ?? "") ?? .favourite {
+        case .items:
+            if viewModel.contentType == .items {
+                self.mainView.noFoundLabel.isHidden = true
+                self.viewModel.isFavouriteSetup = false
+                self.viewModel.updateContent()
+            } else {
+                self.flowDelegate?.navigateToController(filter: .items)
+            }
+        case .mods:
+            self.flowDelegate?.navigateToController(filter: FilterMods(rawValue: text ?? "") ?? .mods)
+        case .skins:
+            if viewModel.contentType == .skins {
+                self.mainView.noFoundLabel.isHidden = true
+                self.viewModel.isFavouriteSetup = false
+                self.viewModel.updateContent()
+            } else {
+                self.flowDelegate?.navigateToController(filter: .skins)
+            }
+        case .favourite:
+            self.viewModel.isFavouriteSetup = true
+            self.viewModel.updateContent()
+        }
+        self.hideFilter()
+    }
 }
 
 extension ItemsViewController: BaseViewModelDelegate {
     func isEmtyCollection(_ isEmty: Bool) {
-        self.emptyCollection?(isEmty)
+        self.mainView.noFoundLabel.isHidden = !isEmty
     }
     
     func reloadData() {
@@ -76,16 +130,8 @@ extension ItemsViewController: UICollectionViewDataSource, UICollectionViewDeleg
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch viewModel.contentType {
-        case .items:
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ItemsCollectionViewCell.cellIdentifier(), for: indexPath) as? ItemsCollectionViewCell else { return UICollectionViewCell() }
-            cell.favouriteButton.tag = indexPath.row
-            cell.favouriteComplition = { [weak self] index in
-                self?.showFavouriteAlert(index: index)
-            }
-            cell.configureCell(item: viewModel.model[indexPath.row])
-            viewModel.downloadImage(index: indexPath.row, imageView: cell.imageView)
-            return cell
-        default:
+            // Skins
+        case .skins:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SkinsCollectionViewCell.cellIdentifier(), for: indexPath) as? SkinsCollectionViewCell else { return UICollectionViewCell() }
             cell.favouriteButton.tag = indexPath.row
             cell.saveButton.tag = indexPath.row
@@ -98,6 +144,16 @@ extension ItemsViewController: UICollectionViewDataSource, UICollectionViewDeleg
             cell.configureCell(item: viewModel.model[indexPath.row])
             viewModel.downloadImage(index: indexPath.row, imageView: cell.imageView)
             return cell
+            // Weapons + Maps
+        default:
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ItemsCollectionViewCell.cellIdentifier(), for: indexPath) as? ItemsCollectionViewCell else { return UICollectionViewCell() }
+            cell.favouriteButton.tag = indexPath.row
+            cell.favouriteComplition = { [weak self] index in
+                self?.showFavouriteAlert(index: index)
+            }
+            cell.configureCell(item: viewModel.model[indexPath.row])
+            viewModel.downloadImage(index: indexPath.row, imageView: cell.mainImage)
+            return cell
         }
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -108,12 +164,7 @@ extension ItemsViewController: UICollectionViewDataSource, UICollectionViewDeleg
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        switch viewModel.contentType {
-        case .items:
-            return isPad ? CGSize(width: screenSize.width / 2 - 70, height: screenSize.height / 4.1) : CGSize(width: screenSize.width / 2 - 25, height: screenSize.height / 3.6)
-        default:
-            return isPad ? CGSize(width: screenSize.width - 120, height: screenSize.height / 6) : CGSize(width: screenSize.width - 32, height: screenSize.height / 6.6)
-        }
+        return isPad ? CGSize(width: screenSize.width/3 - 48, height: screenSize.height / 3.94) : CGSize(width: screenSize.width / 2 - 25, height: screenSize.height / 3.65)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
@@ -128,7 +179,14 @@ private extension ItemsViewController {
             self.mainView.collectionView.reloadItems(at: [IndexPath(row: index, section: 0)])
             return
         }
-        let alert = CustomAlertViewController(alertStyle: .itemsFavourite)
+        let style = switch viewModel.contentType {
+        case .maps: "map"
+        case .mods: "mod"
+        case .items: "item"
+        case .skins: "skin"
+        default: ""
+        }
+        let alert = CustomAlertViewController(alertStyle: .itemsFavourite(style: style))
         alert.modalPresentationStyle = .overCurrentContext
         alert.deleteHandler = { [weak self] in
             self?.viewModel.toggleFavouriteStatus(index: index)

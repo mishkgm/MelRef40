@@ -28,26 +28,27 @@ enum AppConfig {
         ]
         static let mainTextColor = UIColor.white
         static let tableViewSeparatorColor = UIColor.clear
-        static let cellBackgroundColor = UIColor(hex: "#242528")
-        static let cellBorderColor = UIColor.white
+        static let cellBackgroundColor = #colorLiteral(red: 0.2714084983, green: 0.4273136854, blue: 0.3375319242, alpha: 1)
+        static let cellBorderColor = UIColor(hex: "#FAFEFB").withAlphaComponent(0.5)
 //        UIColor(hex: "#BCC5C9")
-        static let titlesColor = UIColor.white
-        static let descriptionsColor = UIColor.white.withAlphaComponent(0.7)
-        static let imagesBackgoundColor = UIColor(red: 0.26, green: 0.33, blue: 0.35, alpha: 1)
+        static let titlesColor = UIColor(hex: "#FAFEFB")
+        static let descriptionsColor = UIColor(hex: "#EBEEEC")
+        static let imagesBackgoundColor = #colorLiteral(red: 0.4048410654, green: 0.6089814305, blue: 0.4934465885, alpha: 1)
         
         // Delete
-        static let deleteBackground = UIColor(red: 0.241, green: 0.247, blue: 0.267, alpha: 1)
-        static let destructiveColor = #colorLiteral(red: 0.6304040551, green: 0.2612381577, blue: 0.2590059042, alpha: 1)
-        static let cancelColor = #colorLiteral(red: 0.5960784554, green: 0.5960784554, blue: 0.5960784554, alpha: 1)
+        static let deleteBackground = #colorLiteral(red: 0.9824573398, green: 0.9964340329, blue: 0.9838054776, alpha: 1)
+        static let destructiveColor = #colorLiteral(red: 0.79918468, green: 0.0995830074, blue: 0.0975901261, alpha: 1)
+        static let cancelColor = #colorLiteral(red: 0.2714084983, green: 0.4273136854, blue: 0.3375319242, alpha: 1)
         
         static let deteilModsbuttonBackground = UIColor(red: 0.241, green: 0.247, blue: 0.267, alpha: 1)
-        static let startEditBackground = UIColor(red: 0.941, green: 0.816, blue: 0.271, alpha: 1)
-        static let startEditForeground = UIColor(red: 0.241, green: 0.247, blue: 0.267, alpha: 1)
+        static let startEditBackground = #colorLiteral(red: 0.085603185, green: 0.09039581567, blue: 0.09023798257, alpha: 1)
+        static let startEditForeground = #colorLiteral(red: 0.9824573398, green: 0.9964340329, blue: 0.9838054776, alpha: 1)
         
         // Editor
         static let editorSelectorBackground = UIColor(hex: "#242528")
         static let editorSelectorBorder = UIColor(hex: "#BCC5C9")
         static let editorCellBackground = UIColor(hex: "#242528")
+        static let editorNameTextFieldBackground = #colorLiteral(red: 0.6819491982, green: 0.685982883, blue: 0.6614944339, alpha: 1)
         
         // Skins
         static let buttonsColors = UIColor(hex: "#F0D045")
@@ -58,6 +59,7 @@ enum AppConfig {
         // General
         static let background = UIImage(named: "background")
         static let backButton = UIImage(named: "back_image")
+        static let crown = UIImage(named: "solar_crown")
         
         // Favourite
         static let checkmark = UIImage(named: "checkmark")
@@ -92,6 +94,7 @@ enum AppConfig {
         static let myWorks = UIImage(named: "myWorks")
         
         // Mods
+        static let filterIcon = UIImage(named: "filter")
         static let categoryChevron = UIImage(named: "chevron_left")
         static let searchImage = UIImage(named: "search")
         static let crossButton = UIImage(named: "cross")

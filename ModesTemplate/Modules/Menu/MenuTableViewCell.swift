@@ -21,6 +21,7 @@ final class MenuTableViewCell: BaseTableViewCell {
     
     lazy var selectedBackground: UIImageView = {
        var image = UIImageView()
+        image.contentMode = .scaleToFill
         image.image = AppConfig.Icons.menuGradient
         return image
     }()
@@ -35,7 +36,7 @@ final class MenuTableViewCell: BaseTableViewCell {
     
     lazy var titleLabel: UILabel = {
        var label = UILabel()
-        label.font = UIFont(size: 24, type: .regular)
+        label.font = UIFont(size: 24, type: .semiBold)
         label.textColor = AppConfig.Colors.titlesColor
         return label
     }()
@@ -72,7 +73,7 @@ final class MenuTableViewCell: BaseTableViewCell {
     }
     
     func configureCell(for type: ControllersType, isSelected: Bool) {
-        self.titleLabel.text = type.title.uppercased()
+        self.titleLabel.text = type.title
         configure(for: isSelected)
         if type == .editor && !IAPManager_MWP.shared.productBought.contains(.unlockFuncProduct) {
             self.lockSetup()
@@ -82,13 +83,19 @@ final class MenuTableViewCell: BaseTableViewCell {
     }
     
     private func configure(for isSelected: Bool) {
-        self.selectedBackground.isHidden = !isSelected
-        self.conteinerView.backgroundColor = AppConfig.Colors.isUnselectedCategory//.gray.withAlphaComponent(0.9)
+        self.selectedBackground.isHidden = true
+        self.conteinerView.backgroundColor = isSelected ? #colorLiteral(red: 0.406277895, green: 0.6093138456, blue: 0.4893463254, alpha: 1) : AppConfig.Colors.isUnselectedCategory
     }
     
     private func lockSetup() {
-        self.conteinerView.backgroundColor = UIColor(hex: "#242528")
-        self.lockImage.isHidden = false
-        self.titleLabel.textColor = UIColor(hex: "#989898")
+        self.conteinerView.backgroundColor = #colorLiteral(red: 0.5215685964, green: 0.5215685964, blue: 0.5215685964, alpha: 1)
+        let text = NSAttributedString(string: self.titleLabel.text ?? "")
+        let image = NSAttributedString(attachment: NSTextAttachment(image: AppConfig.Icons.crown!))
+        let fullText = NSMutableAttributedString(attributedString: text)
+        fullText.append(image)
+        self.titleLabel.attributedText = fullText
+//        self.lockImage.isHidden = false
+        
+//        self.titleLabel.textColor = UIColor(hex: "#989898")
     }
 }

@@ -9,8 +9,8 @@ import Foundation
 import UIKit
 
 enum Setting: String, CaseIterable {
-    case privacy = "Privacy Police"
-    case terms = "Tearms of Use"
+    case privacy = "Privacy Policy"
+    case terms = "Terms of Use"
     
     var settingUrl: URL? {
         switch self {
@@ -61,7 +61,6 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: SettingViewCell.cellIdentifier(), for: indexPath) as? SettingViewCell else { return UITableViewCell() }
         cell.configureCell(setting: Setting.allCases[indexPath.row])
         cell.selectionStyle = .none
-        cell.bottomSeparator.isHidden = indexPath.row == 1
         return cell
     }
     
@@ -70,6 +69,6 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource {
         UIApplication.shared.open(url)
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return isPad ? 100 : 60
+        return isPad ? 112 : 72
     }
 }

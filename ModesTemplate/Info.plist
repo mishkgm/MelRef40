@@ -2,8 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSUserTrackingUsageDescription</key>
-	<string>templatetemplatetemplatetemplatetemplate</string>
+	<key>PW_APP_GROUPS_NAME</key>
+	<string>group.com.noname.digital.development</string>
+	<key>Pushwoosh_APPID</key>
+	<string>429D4-B25E4</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Goldman-Bold.ttf</string>
@@ -33,9 +35,5 @@
 			</array>
 		</dict>
 	</dict>
-	<key>PW_APP_GROUPS_NAME</key>
-	<string>group.com.noname.digital.development</string>
-	<key>Pushwoosh_APPID</key>
-	<string>56F9A-A546D</string>
 </dict>
 </plist>

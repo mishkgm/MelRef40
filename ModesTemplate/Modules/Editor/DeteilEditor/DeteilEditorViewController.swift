@@ -7,24 +7,25 @@
 
 import Foundation
 import UIKit
+import IQKeyboardManagerSwift
 
 enum EditorViewType: String, CaseIterable {
     
-    case first = "Misk templates"
-    case second = "Set soliders"
+    case first = "Misс templates"
+    case second = "Set solliders"
     case third = "Select texture"
-    case fourth = "Set propetries"
+    case fourth = "Set properties"
     
     var cells: [EditorCellType] {
         switch self {
         case .first:
             return [.name, .icon, .fields]
         case .second:
-            return [.titalCell, .coordinatesX, .coordinatesW]
+            return [.coordinatesX, .coordinatesW]
         case .third:
-            return [.titalCell, .slider]
+            return [.slider]
         case .fourth:
-            return [.titalCell, .switchCell]
+            return [.switchCell]
         }
     }
 }
@@ -36,23 +37,26 @@ final class DeteilEditorViewController: BaseViewController {
         view.tableView.delegate = self
         view.tableView.dataSource = self
         view.selectorColletion.delegate = self
-        let gesture = UITapGestureRecognizer(target: self, action: #selector(openСategoryPicker))
-        view.selectorColletion.addGestureRecognizer(gesture)
+        view.selectorColletion.dataSource = self
+        view.bannerView.subDelegate = self
         return view
     }()
     
+    var titleHeader: String = "Editor"
     var viewModel: DeteilEditorViewModel
     private var currentItem: EditorViewType = .first
+    private var isAlreadyUp: Bool = false
     
-    init(objct: RealmEditorDeteilModel) {
+    init(objct: RealmEditorDeteilModel, title: String) {
         viewModel = DeteilEditorViewModel(object: objct)
         super.init(controllerType: .mods)
+        self.titleHeader = title
         viewModel.delegate = self
         setupImage()
     }
     
     convenience init(imageData: Data, title: String) {
-        self.init(objct: RealmEditorDeteilModel(name: title, imageData: imageData, type: "type", category: "category", xValue: "0.0", yValue: "0.0", heightValue: "0.0", widthValue: "0.0", pixelValue: "0", canBeTaken: false, canGlow: false, canBurn: false, canFloat: false))
+        self.init(objct: RealmEditorDeteilModel(name: title, imageData: imageData, type: "type", category: "category", xValue: "0.0", yValue: "0.0", heightValue: "0.0", widthValue: "0.0", pixelValue: "0", canBeTaken: false, canGlow: false, canBurn: false, canFloat: false), title: "Editor")
     }
     
     required init?(coder: NSCoder) {
@@ -67,13 +71,23 @@ final class DeteilEditorViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavBar()
-        let gesture = UITapGestureRecognizer(target: self, action: #selector(closeCategoryPicker))
-        self.view.addGestureRecognizer(gesture)
+        if mainView.bannerView.isHidden == false {
+            IQKeyboardManager.shared.disabledDistanceHandlingClasses.append(DeteilEditorViewController.self)
+        } else {
+            IQKeyboardManager.shared.disabledDistanceHandlingClasses.removeAll()
+        }
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(goBackground), name: UIApplication.didEnterBackgroundNotification, object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         reloadData()
+    }
+    
+    @objc func goBackground() {
+        self.mainView.endEditing(true)
     }
     
     @objc func setupIcon() {
@@ -118,7 +132,7 @@ extension DeteilEditorViewController: DeteilEditorViewModelDelegate {
     }
     
     func saveChangesAlert() {
-        let alert = UIAlertController(title: "Are you sure?", message: "Are your sure u want to leave with no saving?", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Are you sure?", message: "Are your sure you want to leave with no saving?", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "Yes", style: .default) { _ in
             self.navigationController?.popViewController(animated: true)
         }
@@ -131,7 +145,7 @@ extension DeteilEditorViewController: DeteilEditorViewModelDelegate {
     }
     
     func nothingToSave() {
-        let alert = UIAlertController(title: "Nothing to save", message: "Are your sure u want to leave?", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Nothing to save", message: "Are your sure you want to leave?", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "Ok", style: .default)
         let back = UIAlertAction(title: "back", style: .default) { _ in
             self.navigationController?.popViewController(animated: true)
@@ -152,13 +166,32 @@ extension DeteilEditorViewController: DeteilEditorViewModelDelegate {
         self.mainView.endEditing(true)
         self.present(alert, animated: true)
     }
-}
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        if currentItem == .first && mainView.bannerView.isHidden == false {
+            guard !isAlreadyUp else { return }
+            isAlreadyUp = true
+            if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+                let animationDuration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double ?? 0.25
+                UIView.animate(withDuration: animationDuration) {
+                    // Поднимаем ваше представление вверх на высоту клавиатуры
+                    let popUpY = self.mainView.frame.minY
+                    self.mainView.transform = CGAffineTransform(translationX: 0, y: popUpY - keyboardSize.height)
+                }
+            }
+        }
+    }
 
-// MARK: - Selector CollectionView
-extension DeteilEditorViewController: DropDownMenuDelegate {
-    func cellDidTap(index: Int) {
-        self.currentItem = EditorViewType.allCases[index]
-        self.reloadData()
+    @objc func keyboardWillHide(notification: NSNotification) {
+        if currentItem == .first && mainView.bannerView.isHidden == false {
+            
+            isAlreadyUp = false
+            let animationDuration = notification.userInfo?[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double ?? 0.25
+            UIView.animate(withDuration: animationDuration) {
+                // Возвращаем ваше представление в исходное положение
+                self.mainView.transform = .identity
+            }
+        }
     }
 }
 
@@ -182,7 +215,38 @@ extension DeteilEditorViewController: UITableViewDelegate, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return isPad ? currentItem.cells[indexPath.row].heightForRow * 1.6 : currentItem.cells[indexPath.row].heightForRow
+        return isPad ? currentItem.cells[indexPath.row].heightForRow * 1.4 : currentItem.cells[indexPath.row].heightForRow
+    }
+}
+
+// MARK: - UICollectionView
+extension DeteilEditorViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        EditorViewType.allCases.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoriesViewCell.cellIdentifier(), for: indexPath) as? CategoriesViewCell else { return UICollectionViewCell() }
+        cell.configureCell(item: EditorViewType.allCases[indexPath.row].rawValue, isLoked: false, isSelected: currentItem == EditorViewType.allCases[indexPath.row])
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.row == 0 && mainView.bannerView.isHidden == false {
+            IQKeyboardManager.shared.disabledDistanceHandlingClasses.append(DeteilEditorViewController.self)
+        } else {
+            IQKeyboardManager.shared.disabledDistanceHandlingClasses.removeAll()
+        }
+        self.currentItem = EditorViewType.allCases[indexPath.row]
+        self.reloadData()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.width / 2.5, height: collectionView.frame.height - 8)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: isPad ? 60 : 20, bottom: 0, right: isPad ? 60 : 20)
     }
 }
 
@@ -190,7 +254,7 @@ extension DeteilEditorViewController: UITableViewDelegate, UITableViewDataSource
 private extension DeteilEditorViewController {
     
     func nameFieldEmty() {
-        self.cellDidTap(index: 0)
+        self.collectionView(self.mainView.selectorColletion, didSelectItemAt: IndexPath(row: 0, section: 0))
         guard let cell = self.mainView.tableView.visibleCells.first as? NameTextFieldCell<EditorCellType> else { return
         }
         cell.textField.becomeFirstResponder()
@@ -198,7 +262,7 @@ private extension DeteilEditorViewController {
     
     func reloadData() {
         setupImage()
-        self.mainView.selectorColletion.closeCategoryPicker(currentItem: currentItem.rawValue)
+        self.mainView.selectorColletion.reloadData()
         self.mainView.tableView.reloadData()
     }
     
@@ -208,20 +272,11 @@ private extension DeteilEditorViewController {
     
     func setupNavBar() {
         makeBackButton()
-        self.title = "Editor"
-        self.navigationItem.rightBarButtonItem = createButton(image: AppConfig.Icons.saveicon, action: #selector(saveMod))
-        let backButton = createButton(image: AppConfig.Icons.backButton, action: #selector(self.backButton))
+        self.title = titleHeader
+        self.navigationItem.rightBarButtonItems = createButton(config: [(AppConfig.Icons.saveicon, #selector(saveMod))])
+        let backButton = createButton(config: [(AppConfig.Icons.backButton, #selector(self.backButton))])
         
-        self.navigationItem.leftBarButtonItem = backButton
+        self.navigationItem.leftBarButtonItems = backButton
         
-    }
-    
-    @objc func openСategoryPicker() {
-        self.mainView.selectorColletion.openСategoryPicker(items: EditorViewType.allCases.map { $0.rawValue })
-    }
-    
-    @objc func closeCategoryPicker() {
-        self.mainView.endEditing(true)
-        self.mainView.selectorColletion.closeCategoryPicker(currentItem: currentItem.rawValue)
     }
 }

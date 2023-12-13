@@ -54,3 +54,24 @@ extension UIImageView {
         }
     }
 }
+
+extension UIImage {
+  static func resizedImage(named: String, size: CGSize) -> UIImage? {
+    guard let image = UIImage(named: named) else { return nil }
+    return image.resizedImage(targetSize: size)
+  }
+  func resizedImage(targetSize: CGSize) -> UIImage? {
+    UIGraphicsBeginImageContextWithOptions(targetSize, false, UIScreen.main.scale)
+    self.draw(in: CGRect(origin: .zero, size: targetSize))
+    let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
+    UIGraphicsEndImageContext()
+    return resizedImage
+  }
+  func resizeImageTo(size: CGSize) -> UIImage? {
+    UIGraphicsBeginImageContextWithOptions(size, false, 0.0)
+    self.draw(in: CGRect(origin: CGPoint.zero, size: size))
+    let resizedImage = UIGraphicsGetImageFromCurrentImageContext()!
+    UIGraphicsEndImageContext()
+    return resizedImage
+  }
+}

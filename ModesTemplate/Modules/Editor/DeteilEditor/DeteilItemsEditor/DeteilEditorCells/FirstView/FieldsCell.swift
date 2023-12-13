@@ -15,20 +15,11 @@ final class FieldCell<model: EditorCellModel>: EditorCell {
        var stack = UIStackView()
         stack.axis = .vertical
         stack.distribution = .fillEqually
-        stack.backgroundColor = AppConfig.Colors.deteilModsbuttonBackground
-//        stack.layer.borderWidth = 1.5
-//        stack.layer.borderColor = AppConfig.Colors.editorSelectorBorder.cgColor
+        stack.spacing = 8
         return stack
     }()
     
     private var textFields: [DeteilEditorTextField] = []
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-            self.textFieldConteiner.setGradientBorder(width: 1, colors: [AppConfig.Colors.cellBorderColor, UIColor(hex: "#42535A")])
-        }
-    }
     
     override func configureView() {
         super.configureView()
@@ -38,7 +29,7 @@ final class FieldCell<model: EditorCellModel>: EditorCell {
     override func makeConstraints() {
         textFieldConteiner.snp.remakeConstraints { make in
 //            make.edges.equalToSuperview().inset()
-            make.top.bottom.equalToSuperview().inset(10)
+            make.top.bottom.equalToSuperview().inset(12)
             make.trailing.leading.equalToSuperview().inset(20)
         }
         model.types(for: .fields).forEach { item in
@@ -46,17 +37,26 @@ final class FieldCell<model: EditorCellModel>: EditorCell {
             let textField = DeteilEditorTextField(fieldType: item)
             let label = createLabel(text: item.displayName)
             
-            textField.backgroundColor = UIColor(hex: "#BCC5C9")
-            textField.layer.borderWidth = 1.5
-            textField.layer.borderColor = UIColor(hex: "#F0D045").cgColor
-            textField.textColor = .black
-            textField.textAlignment = .center
-            
+            textField.backgroundColor = #colorLiteral(red: 0.6819491982, green: 0.685982883, blue: 0.6614944339, alpha: 1)
+            textField.layer.borderWidth = 1
+            textField.layer.borderColor = UIColor.white.cgColor
+            textField.layer.cornerRadius = 12
+            textField.textColor = .white
+            textField.textAlignment = .left
+            let text = NSMutableAttributedString(string: "Enter text....", attributes: [.foregroundColor: UIColor(hex: "#DEDEDE")])
+            textField.attributedPlaceholder = text
             textField.delegate = self
             stack.addArrangedSubview(label)
             stack.addArrangedSubview(textField)
             textFieldConteiner.addArrangedSubview(stack)
             textFields.append(textField)
+            
+            label.snp.remakeConstraints { make in
+                make.height.equalToSuperview().multipliedBy(0.25)
+            }
+            textField.snp.remakeConstraints { make in
+                make.height.equalToSuperview().multipliedBy(0.55)
+            }
         }
     }
     
@@ -72,11 +72,12 @@ final class FieldCell<model: EditorCellModel>: EditorCell {
     
     func createStack() -> UIStackView {
         let stack = UIStackView()
-        stack.axis = .horizontal
-        stack.layoutMargins = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+        stack.axis = .vertical
+        stack.layoutMargins = UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 0)
         stack.isLayoutMarginsRelativeArrangement = true
-        stack.contentMode = .scaleAspectFit
-        stack.distribution = .fillEqually
+//        stack.contentMode = .scaleAspectFit
+        stack.distribution = .fillProportionally
+        stack.spacing = 10
         return stack
     }
     
@@ -85,7 +86,7 @@ final class FieldCell<model: EditorCellModel>: EditorCell {
         label.text = text
         label.textColor = .white
         label.textAlignment = .left
-        label.font = UIFont(size: 16)
+        label.font = UIFont(size: 18, type: .medium)
         return label
     }
 }

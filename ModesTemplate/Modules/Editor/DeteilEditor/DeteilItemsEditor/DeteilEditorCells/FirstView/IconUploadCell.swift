@@ -11,73 +11,60 @@ import SnapKit
 
 final class IconUploadCell<model: EditorCellModel>: EditorCell {
     
-    lazy var iconTitle: UILabel = {
-       var label = UILabel()
-        label.textColor = .white
-        label.text = "Load icon:"
-        label.font = UIFont(size: 16)
-        return label
+    lazy var iconImage: UIImageView = {
+       var image = UIImageView()
+        image.layer.cornerRadius = 12
+        image.contentMode = .scaleAspectFit
+        image.backgroundColor = AppConfig.Colors.imagesBackgoundColor
+        return image
     }()
     
     lazy var iconButton: UIButton = {
        var button = UIButton()
-        button.setTitle("Upload", for: .normal)
-        button.backgroundColor = #colorLiteral(red: 0.9390731454, green: 0.8152710795, blue: 0.2688673437, alpha: 1)
-        button.setTitleColor(UIColor(hex: "#3D3F44"), for: .normal)
+        button.layer.cornerRadius = 12
+        button.setTitle("Upload Icon", for: .normal)
+        button.backgroundColor = #colorLiteral(red: 0.9196677804, green: 0.9337717891, blue: 0.9251947999, alpha: 1)
+        button.setTitleColor(UIColor(hex: "#161717"), for: .normal)
         button.titleLabel?.font = UIFont(size: 16)
         return button
     }()
-    
-    lazy var iconImage: UIImageView = {
-       var image = UIImageView()
-        image.contentMode = .scaleAspectFit
-        image.backgroundColor = UIColor(hex: "#737B89")
-        return image
-    }()
-    
-    lazy var iconButtonConteiner: UIStackView = {
-       var stack = UIStackView()
-        stack.axis = .horizontal
-        stack.distribution = .fillEqually
-        stack.backgroundColor = .clear
-        return stack
-    }()
-    
+
     lazy var iconConteiner: UIStackView = {
         var stack = UIStackView()
+        stack.layer.cornerRadius = 12
+        stack.layer.borderWidth = 1.5
+        stack.layer.borderColor = AppConfig.Colors.cellBorderColor.cgColor
         stack.axis = .vertical
         stack.distribution = .fillProportionally
-        stack.backgroundColor = AppConfig.Colors.deteilModsbuttonBackground
+        stack.backgroundColor = AppConfig.Colors.cellBackgroundColor
         stack.layoutMargins = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
         stack.isLayoutMarginsRelativeArrangement = true
         stack.spacing = 10
         return stack
     }()
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-            self.iconConteiner.setGradientBorder(width: 1, colors: [AppConfig.Colors.cellBorderColor, UIColor(hex: "#42535A")])
-        }
-    }
-    
     override func configureView() {
         super.configureView()
         contentView.addSubview(iconConteiner)
-        iconConteiner.addArrangedSubview(iconButtonConteiner)
-        iconButtonConteiner.addArrangedSubview(iconTitle)
-        iconButtonConteiner.addArrangedSubview(iconButton)
         iconConteiner.addArrangedSubview(iconImage)
+        iconConteiner.addArrangedSubview(iconButton)
         self.iconButton.addTarget(self, action: #selector(loadIcon), for: .touchUpInside)
     }
     
     override func makeConstraints() {
         iconConteiner.snp.remakeConstraints { make in
-            make.top.bottom.equalToSuperview().inset(10)
+            make.top.bottom.equalToSuperview().inset(12)
             make.trailing.leading.equalToSuperview().inset(20)
         }
         iconImage.snp.remakeConstraints { make in
-            make.height.equalToSuperview().multipliedBy(0.6)
+//            make.height.equalToSuperview().multipliedBy(0.6)
+            make.trailing.leading.top.equalToSuperview().inset(12)
+        }
+        iconButton.snp.remakeConstraints { make in
+            make.height.equalTo(isPad ? 80 : 40)
+            make.top.equalTo(iconImage.snp.bottom).offset(12)
+            make.trailing.leading.equalToSuperview().inset(12)
+            make.bottom.equalToSuperview().inset(12)
         }
     }
     

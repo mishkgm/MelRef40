@@ -16,7 +16,7 @@ final class MenuView: BaseView {
         label.text = "Menu"
         label.textColor = .white
         label.textAlignment = .center
-        label.font = UIFont(size: 24)
+        label.font = UIFont(size: 24, type: .semiBold)
         return label
     }()
     
@@ -28,9 +28,16 @@ final class MenuView: BaseView {
         return view
     }()
     
+    lazy var closeButton: UIButton = {
+       var button = UIButton()
+        button.setBackgroundImage(AppConfig.Icons.crossButton, for: .normal)
+        return button
+    }()
+    
     override func configureView() {
-        backgroundColor = UIColor(hex: "#456D56").withAlphaComponent(0.8)
+        backgroundColor = UIColor(hex: "#5F735D")
         addSubview(titleLabel)
+        addSubview(closeButton)
         addSubview(tableView)
         bannerView.isHidden = true
     }
@@ -44,6 +51,11 @@ final class MenuView: BaseView {
             make.top.equalTo(titleLabel.snp.bottom).offset(10)
             make.trailing.leading.equalToSuperview().inset(isPad ? 60 : 20)
             make.bottom.equalToSuperview()
+        }
+        closeButton.snp.remakeConstraints { make in
+            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(10)
+            make.trailing.equalToSuperview().inset(isPad ? 60 : 20)
+            make.height.width.equalTo(isPad ? 38 : 24)
         }
     }
     
