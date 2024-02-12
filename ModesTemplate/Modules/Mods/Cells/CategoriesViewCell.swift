@@ -20,7 +20,7 @@ final class CategoriesViewCell: BaseCollectionViewCell {
     private lazy var titleLabel: UILabel = {
         var label = UILabel()
         label.textAlignment = .center
-        label.font = UIFont(size: 18, type: .regular)
+        label.font = UIFont(size: 18, type: .sarpanch)
         label.textColor = .white
         return label
     }()

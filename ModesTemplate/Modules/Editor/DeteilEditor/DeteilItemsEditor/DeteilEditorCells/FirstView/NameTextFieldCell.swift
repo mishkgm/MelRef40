@@ -14,7 +14,7 @@ final class NameTextFieldCell<model: EditorCellModel>: EditorCell {
     lazy var conteinerView: UIView = {
        var view = UIView()
         view.layer.cornerRadius = 12
-        view.layer.borderWidth = 1
+        view.layer.borderWidth = 0.5
         view.layer.borderColor = UIColor.white.cgColor
         view.backgroundColor = AppConfig.Colors.editorNameTextFieldBackground
         

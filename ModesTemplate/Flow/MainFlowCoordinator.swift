@@ -2,7 +2,7 @@
 //  MainFlowCoordinator.swift
 //  ModesTemplate
 //
-//  Created by Данил Веланський on 23.11.2023.
+//  
 //
 
 import Foundation
@@ -10,12 +10,12 @@ import UIKit
 
 // MARK: - MainFLow
 enum ControllersType: Int, CaseIterable {
+    case myWorks
     case mods
     case maps
     case skins
     case editor
     case weapons
-    case myWorks
     case settings
     
     var viewController: BaseViewController {

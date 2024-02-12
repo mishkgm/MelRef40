@@ -2,8 +2,7 @@
 //  MyWorksViewController.swift
 //  ModesTemplate
 //
-//  Created by Данил Веланський on 30.11.2023.
-//
+//  
 
 import Foundation
 import UIKit
@@ -68,7 +67,7 @@ extension MyWorksViewController: UICollectionViewDelegate, UICollectionViewDataS
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return isPad ? CGSize(width: screenSize.width/3 - 45, height: screenSize.height / 4) :
-        CGSize(width: screenSize.width / 2 - 25, height: screenSize.height / 3.3)
+        CGSize(width: screenSize.width / 1 - 25, height: screenSize.height / 3.3)
 
     }
     

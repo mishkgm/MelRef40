@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		395A247D2B79827B000A7660 /* Sarpanch-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 395A247C2B79827B000A7660 /* Sarpanch-Medium.ttf */; };
+		395A247E2B79827B000A7660 /* Sarpanch-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 395A247C2B79827B000A7660 /* Sarpanch-Medium.ttf */; };
 		7A24CB5A2B1765B300F725C1 /* ModDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A24CB592B1765B300F725C1 /* ModDescriptionView.swift */; };
 		7A24CB5C2B176C6100F725C1 /* DetailButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A24CB5B2B176C6100F725C1 /* DetailButton.swift */; };
 		7A24CB5F2B17742800F725C1 /* CompleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A24CB5E2B17742800F725C1 /* CompleteView.swift */; };
@@ -171,6 +173,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		395A247C2B79827B000A7660 /* Sarpanch-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Sarpanch-Medium.ttf"; path = "../../../../../Downloads/Sarpanch/Sarpanch-Medium.ttf"; sourceTree = "<group>"; };
 		7A24CB592B1765B300F725C1 /* ModDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModDescriptionView.swift; sourceTree = "<group>"; };
 		7A24CB5B2B176C6100F725C1 /* DetailButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailButton.swift; sourceTree = "<group>"; };
 		7A24CB5E2B17742800F725C1 /* CompleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteView.swift; sourceTree = "<group>"; };
@@ -360,6 +363,7 @@
 				DE9488862B21EAD0009210E4 /* Inter-Regular.ttf */,
 				DE9488882B21EAD6009210E4 /* Inter-Medium.ttf */,
 				DE94888A2B21EADD009210E4 /* Inter-SemiBold.ttf */,
+				395A247C2B79827B000A7660 /* Sarpanch-Medium.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -1085,6 +1089,7 @@
 				DE0804F12B2B37AE0058BD18 /* Inter-Bold.ttf in Resources */,
 				DEFABE902B1CEA6D0051ACB7 /* pad.mp4 in Resources */,
 				DE0804F02B2B37AB0058BD18 /* Inter-Regular.ttf in Resources */,
+				395A247D2B79827B000A7660 /* Sarpanch-Medium.ttf in Resources */,
 				DEEA02352B298D6B000E51D3 /* Localizable.strings in Resources */,
 				DEFABE932B1CEA6D0051ACB7 /* SFProText-Bold.ttf in Resources */,
 				DE0804F22B2B37B00058BD18 /* Inter-SemiBold.ttf in Resources */,
@@ -1106,6 +1111,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				395A247E2B79827B000A7660 /* Sarpanch-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

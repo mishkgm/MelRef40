@@ -14,6 +14,7 @@ extension UIFont {
         case semiBold = "Inter-SemiBold"
         case bold = "Inter-Bold"
         case medium = "Inter-Medium"
+        case sarpanch = "Sarpanch-Medium"
     }
     
     convenience init?(size: CGFloat, type: FontType = .regular) {

@@ -2,7 +2,7 @@
 //  TitleCell.swift
 //  ModesTemplate
 //
-//  Created by Данил Веланський on 06.12.2023.
+//
 //
 
 import Foundation

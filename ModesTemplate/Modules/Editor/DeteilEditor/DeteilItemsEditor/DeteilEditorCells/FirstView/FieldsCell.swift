@@ -38,7 +38,7 @@ final class FieldCell<model: EditorCellModel>: EditorCell {
             let label = createLabel(text: item.displayName)
             
             textField.backgroundColor = #colorLiteral(red: 0.6819491982, green: 0.685982883, blue: 0.6614944339, alpha: 1)
-            textField.layer.borderWidth = 1
+            textField.layer.borderWidth = 0.5
             textField.layer.borderColor = UIColor.white.cgColor
             textField.layer.cornerRadius = 12
             textField.textColor = .white

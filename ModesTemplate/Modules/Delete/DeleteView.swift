@@ -51,7 +51,7 @@ final class CustomAlertView: BaseView {
         button.setTitleColor(AppConfig.Colors.titlesColor, for: .normal)
         button.backgroundColor = AppConfig.Colors.cancelColor
         button.layer.cornerRadius = 12
-        button.titleLabel?.font = UIFont(size: 14, type: .semiBold)
+        button.titleLabel?.font = UIFont(size: 14, type: .sarpanch)
         return button
     }()
     

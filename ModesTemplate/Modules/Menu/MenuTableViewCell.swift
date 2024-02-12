@@ -14,8 +14,8 @@ final class MenuTableViewCell: BaseTableViewCell {
     lazy var conteinerView: UIView = {
        var view = UIView()
         view.layer.cornerRadius = 12
-        view.layer.borderWidth = 1.5
-        view.layer.borderColor = UIColor(hex: "#FAFEFB").cgColor
+        view.layer.borderWidth = 0.5
+        view.layer.borderColor = UIColor(hex: "#4F4E51").cgColor
         return view
     }()
     
@@ -36,7 +36,7 @@ final class MenuTableViewCell: BaseTableViewCell {
     
     lazy var titleLabel: UILabel = {
        var label = UILabel()
-        label.font = UIFont(size: 24, type: .semiBold)
+        label.font = UIFont(size: 24, type: .sarpanch)
         label.textColor = AppConfig.Colors.titlesColor
         return label
     }()
@@ -84,11 +84,11 @@ final class MenuTableViewCell: BaseTableViewCell {
     
     private func configure(for isSelected: Bool) {
         self.selectedBackground.isHidden = true
-        self.conteinerView.backgroundColor = isSelected ? #colorLiteral(red: 0.406277895, green: 0.6093138456, blue: 0.4893463254, alpha: 1) : AppConfig.Colors.isUnselectedCategory
+        self.conteinerView.backgroundColor = isSelected ? #colorLiteral(red: 0.1921568627, green: 0.7058823529, blue: 0.5843137255, alpha: 1) : AppConfig.Colors.isUnselectedCategory
     }
     
     private func lockSetup() {
-        self.conteinerView.backgroundColor = #colorLiteral(red: 0.5215685964, green: 0.5215685964, blue: 0.5215685964, alpha: 1)
+        self.conteinerView.backgroundColor = #colorLiteral(red: 0.1843137255, green: 0.1803921569, blue: 0.2039215686, alpha: 1)
         let text = NSAttributedString(string: self.titleLabel.text ?? "")
         let image = NSAttributedString(attachment: NSTextAttachment(image: AppConfig.Icons.crown!))
         let fullText = NSMutableAttributedString(attributedString: text)

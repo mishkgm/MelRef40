@@ -15,7 +15,7 @@ final class SettingViewCell: BaseTableViewCell {
        var view = UIView()
         view.backgroundColor = AppConfig.Colors.cellBackgroundColor
         view.layer.cornerRadius = 12
-        view.layer.borderWidth = 1.5
+        view.layer.borderWidth = 0.5
         view.layer.borderColor = AppConfig.Colors.cellBorderColor.cgColor
         return view
     }()
@@ -28,7 +28,7 @@ final class SettingViewCell: BaseTableViewCell {
     lazy var titleLabel: UILabel = {
        var label = UILabel()
         label.textColor = AppConfig.Colors.titlesColor
-        label.font = UIFont(size: 16, type: .semiBold)
+        label.font = UIFont(size: 18, type: .sarpanch)
         return label
     }()
     

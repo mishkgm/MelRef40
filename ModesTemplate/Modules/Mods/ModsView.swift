@@ -55,7 +55,7 @@ final class ModsView: BaseView {
         button.setImage(AppConfig.Icons.crossButton, for: .normal)
         button.tintColor = UIColor(hex: "#989898").withAlphaComponent(0.8)
         button.backgroundColor = AppConfig.Colors.cellBackgroundColor
-        button.layer.borderWidth = 1.5
+        button.layer.borderWidth = 0.5
         button.layer.borderColor = AppConfig.Colors.cellBorderColor.cgColor
         return button
     }()
@@ -256,7 +256,7 @@ private extension ModsView {
             searchField.background = UIImage() // Удаляет задний фон для UITextField
             searchField.backgroundColor = UIColor(hex: "#456D56")
             searchField.layer.cornerRadius = 12
-            searchField.layer.borderWidth = 1.5
+            searchField.layer.borderWidth = 0.5
             searchField.layer.borderColor = AppConfig.Colors.cellBorderColor.cgColor
         }
     }

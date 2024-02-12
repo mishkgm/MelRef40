@@ -23,7 +23,7 @@ final class CoordinateFieldCellX<model: EditorCellModel>: EditorCell {
     lazy var conteinerView: UIView = {
        var view = UIView()
         view.layer.cornerRadius = 12
-        view.layer.borderWidth = 1.5
+        view.layer.borderWidth = 0.5
         view.layer.borderColor = AppConfig.Colors.cellBorderColor.cgColor
         view.backgroundColor = #colorLiteral(red: 0.2714084983, green: 0.4273136854, blue: 0.3375319242, alpha: 1)
         return view

@@ -164,7 +164,7 @@ extension ItemsViewController: UICollectionViewDataSource, UICollectionViewDeleg
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return isPad ? CGSize(width: screenSize.width/3 - 48, height: screenSize.height / 3.94) : CGSize(width: screenSize.width / 2 - 25, height: screenSize.height / 3.65)
+        return isPad ? CGSize(width: screenSize.width/3 - 48, height: screenSize.height / 3.94) : CGSize(width: screenSize.width / 1 - 25, height: screenSize.height / 3.65)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {

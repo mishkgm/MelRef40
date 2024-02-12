@@ -16,7 +16,7 @@ enum AppConfig {
         // Menu
         static let backgound = UIColor.clear
         static let labelTextColor = UIColor.white
-        static let isUnselectedCategory = #colorLiteral(red: 0.2714084983, green: 0.4273136854, blue: 0.3375319242, alpha: 1)
+        static let isUnselectedCategory = #colorLiteral(red: 0.06274509804, green: 0.05882352941, blue: 0.09019607843, alpha: 1)
         
         // General
         static let titleViewControllerColor = UIColor.white
@@ -28,21 +28,21 @@ enum AppConfig {
         ]
         static let mainTextColor = UIColor.white
         static let tableViewSeparatorColor = UIColor.clear
-        static let cellBackgroundColor = #colorLiteral(red: 0.2714084983, green: 0.4273136854, blue: 0.3375319242, alpha: 1)
-        static let cellBorderColor = UIColor(hex: "#FAFEFB").withAlphaComponent(0.5)
+        static let cellBackgroundColor = #colorLiteral(red: 0.1176470588, green: 0.1098039216, blue: 0.1647058824, alpha: 1)
+        static let cellBorderColor = UIColor(hex: "#707070").withAlphaComponent(0.5)
 //        UIColor(hex: "#BCC5C9")
         static let titlesColor = UIColor(hex: "#FAFEFB")
         static let descriptionsColor = UIColor(hex: "#EBEEEC")
-        static let imagesBackgoundColor = #colorLiteral(red: 0.4048410654, green: 0.6089814305, blue: 0.4934465885, alpha: 1)
+        static let imagesBackgoundColor = #colorLiteral(red: 0.1843137255, green: 0.1803921569, blue: 0.2039215686, alpha: 1)
         
         // Delete
-        static let deleteBackground = #colorLiteral(red: 0.9824573398, green: 0.9964340329, blue: 0.9838054776, alpha: 1)
-        static let destructiveColor = #colorLiteral(red: 0.79918468, green: 0.0995830074, blue: 0.0975901261, alpha: 1)
-        static let cancelColor = #colorLiteral(red: 0.2714084983, green: 0.4273136854, blue: 0.3375319242, alpha: 1)
+        static let deleteBackground = #colorLiteral(red: 0.1843137255, green: 0.1803921569, blue: 0.2039215686, alpha: 1)
+        static let destructiveColor = #colorLiteral(red: 0.6156862745, green: 0.01960784314, blue: 0.01960784314, alpha: 1)
+        static let cancelColor = #colorLiteral(red: 0.06360176951, green: 0.05865498632, blue: 0.08853062242, alpha: 1)
         
         static let deteilModsbuttonBackground = UIColor(red: 0.241, green: 0.247, blue: 0.267, alpha: 1)
-        static let startEditBackground = #colorLiteral(red: 0.085603185, green: 0.09039581567, blue: 0.09023798257, alpha: 1)
-        static let startEditForeground = #colorLiteral(red: 0.9824573398, green: 0.9964340329, blue: 0.9838054776, alpha: 1)
+        static let startEditBackground = #colorLiteral(red: 0.6509803922, green: 0.6549019608, blue: 0.6588235294, alpha: 1)
+        static let startEditForeground = #colorLiteral(red: 0.9568627451, green: 0.9568627451, blue: 0.9568627451, alpha: 1)
         
         // Editor
         static let editorSelectorBackground = UIColor(hex: "#242528")

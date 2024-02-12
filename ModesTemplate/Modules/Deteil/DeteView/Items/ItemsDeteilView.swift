@@ -20,7 +20,7 @@ final class ItemsDeteilView: BaseView {
     lazy var conteinerView: UIView = {
        var view = UIView()
         view.layer.cornerRadius = 12
-        view.layer.borderWidth = 1.5
+        view.layer.borderWidth = 0.5
         view.layer.borderColor = AppConfig.Colors.cellBorderColor.cgColor
         view.backgroundColor = AppConfig.Colors.cellBackgroundColor
         return view
@@ -56,7 +56,7 @@ final class ItemsDeteilView: BaseView {
     lazy var downloadButton: UIButton = {
         var button = UIButton()
         button.layer.cornerRadius = 12
-        button.layer.borderWidth = 1.5
+        button.layer.borderWidth = 0.5
         button.layer.borderColor = AppConfig.Colors.cellBorderColor.cgColor
         button.setTitle("Download", for: .normal)
         button.titleLabel?.textAlignment = .center
@@ -69,7 +69,7 @@ final class ItemsDeteilView: BaseView {
     lazy var exportButton: UIButton = {
         var button = UIButton()
         button.layer.cornerRadius = 12
-        button.layer.borderWidth = 1.5
+        button.layer.borderWidth = 0.5
         button.layer.borderColor = AppConfig.Colors.cellBorderColor.cgColor
         button.setTitle("Export", for: .normal)
         button.titleLabel?.textAlignment = .center

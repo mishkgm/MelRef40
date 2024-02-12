@@ -2,7 +2,7 @@
 //  BaseViewController.swift
 //  ModesTemplate
 //
-//  Created by Данил Веланський on 23.11.2023.
+//  
 //
 
 import Foundation
@@ -127,7 +127,7 @@ private extension BaseViewController {
         appearence.configureWithOpaqueBackground()
         appearence.shadowColor = nil // Убирает тень/полосу
         appearence.backgroundColor = .clear
-        guard let font = UIFont(size: 22, type: .semiBold) else { return }
+        guard let font = UIFont(size: 22, type: .sarpanch) else { return }
         appearence.titleTextAttributes = [
             NSAttributedString.Key.foregroundColor : AppConfig.Colors.titleViewControllerColor,
             NSAttributedString.Key.font : font]

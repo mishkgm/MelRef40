@@ -2,8 +2,7 @@
 //  MyWorksCollectionViewCell.swift
 //  ModesTemplate
 //
-//  Created by Данил Веланський on 30.11.2023.
-//
+//  
 
 import Foundation
 import UIKit
@@ -21,10 +20,10 @@ final class MyWorksViewCell: BaseCollectionViewCell {
     
     lazy var titleLabel: UILabel = {
        var label = UILabel()
-        label.font = UIFont(size: 16, type: .regular)
+        label.font = UIFont(size: 18, type: .regular)
         label.textColor = AppConfig.Colors.titlesColor
         label.numberOfLines = 2
-        label.textAlignment = .center
+        label.textAlignment = .left
         return label
     }()
     
@@ -32,7 +31,7 @@ final class MyWorksViewCell: BaseCollectionViewCell {
        var label = UILabel()
         label.font = UIFont(size: 14, type: .regular)
         label.textColor = UIColor(hex: "#BCC5C9")
-        label.textAlignment = .center
+        label.textAlignment = .left
         label.text = "Create: 13 Oct,2023\nTime: 20:54"
         label.numberOfLines = 2
         label.adjustsFontSizeToFitWidth = true
@@ -50,7 +49,7 @@ final class MyWorksViewCell: BaseCollectionViewCell {
     lazy var editButton: UIButton = {
        var button = UIButton()
         button.layer.cornerRadius = 12
-        button.backgroundColor = #colorLiteral(red: 0.4048410654, green: 0.6089814305, blue: 0.4934465885, alpha: 1)
+        button.backgroundColor = #colorLiteral(red: 0.1921568627, green: 0.7058823529, blue: 0.5843137255, alpha: 1)
         button.setImage(AppConfig.Icons.editIcon, for: .normal)
         return button
     }()
@@ -58,7 +57,7 @@ final class MyWorksViewCell: BaseCollectionViewCell {
     lazy var deleteButton: UIButton = {
        var button = UIButton()
         button.layer.cornerRadius = 12
-        button.backgroundColor = #colorLiteral(red: 0.79918468, green: 0.0995830074, blue: 0.0975901261, alpha: 1)
+        button.backgroundColor = #colorLiteral(red: 0.6156862745, green: 0.01960784314, blue: 0.01960784314, alpha: 1)
         button.setImage(AppConfig.Icons.binIcon, for: .normal)
         return button
     }()

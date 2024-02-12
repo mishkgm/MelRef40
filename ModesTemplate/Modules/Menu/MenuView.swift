@@ -15,7 +15,7 @@ final class MenuView: BaseView {
        var label = UILabel()
         label.text = "Menu"
         label.textColor = .white
-        label.textAlignment = .center
+        label.textAlignment = .left
         label.font = UIFont(size: 24, type: .semiBold)
         return label
     }()
@@ -35,7 +35,7 @@ final class MenuView: BaseView {
     }()
     
     override func configureView() {
-        backgroundColor = UIColor(hex: "#5F735D")
+        backgroundColor = UIColor(hex: "#2F2E34")
         addSubview(titleLabel)
         addSubview(closeButton)
         addSubview(tableView)
